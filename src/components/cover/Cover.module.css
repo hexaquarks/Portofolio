@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Merriweather&family=Playfair+Display:wght@500&display=swap');
+
+.container {
+    background-color: rgb(231, 231, 231);
+    width: 100vw;
+    height:500px;
+    display: flex;
+}
+
+.description {
+    align-items: stretch;
+    width: 70%;
+    height: inherit;
+    text-align: left;
+    vertical-align:middle;
+    margin-left: 50px;
+}
+.description h1 {
+    font-size:60px;
+    color:rgb(2, 2, 2);
+    font-family: 'Perpetua', serif;
+    /*Palatino is nice */
+}
+.description h2 {
+    /* width: 100%; */
+    width: inherit;
+    max-width: 580px;
+    min-width: 350px;
+    word-wrap: break-word;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+}
+img[alt~="cover_picture"]{
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+    
+}
+
+
+/* .picture {
+    align-items: stretch;
+    background: url('../../assets//profile_picture.png');
+    width: 50%;
+    height: 100%;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+} */

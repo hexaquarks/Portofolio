@@ -1,0 +1,23 @@
+.navbar {
+    width: 100vw;
+    height: 50px;
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    background-color: rgb(26, 19, 19);
+
+}
+
+.component {
+    margin: 10px -5px 10px -5px;
+    width: 10ch;
+    font-size: 20px;
+    color: #d1d1d1;
+    transition: color 0.2s;
+    cursor: pointer;
+}
+
+.component:hover {
+    color: white;
+    filter: drop-shadow(0px 0px 6px rgb(248, 0, 0));
+}
