@@ -13,9 +13,6 @@ const Cover = () => {
                 </h2>
             </div>
             <img src={coverPicture} alt='cover_picture' />
-            {/* <div className={styles.picture}>
-                <img src={coverPicture} 
-            </div> */}
         </div>
     );
 }
