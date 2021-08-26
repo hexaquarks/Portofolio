@@ -1,0 +1,52 @@
+.container {
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    margin-left: 5%;
+    margin-left: 5%;
+}
+
+.container::before {
+    width: 200px;
+     height: 50px;
+  position: absolute;
+  left: 0;
+  margin-top: 10px;
+  padding: 0px 0px 0px 15px;
+  background-color:  rgb(231, 231, 231);
+  content: "About Me";
+  font-weight: 600;
+  font-size: 33px;
+  font-family: 'Playfair Display', serif;
+  /* text-align: center; */
+  border-radius: 0px 10px 10px 0px;
+}
+.container::after{
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent; 
+  
+  border-right:45px solid #100c08;
+  position: absolute;
+  left: 170px;
+  margin-top: 10px;
+  background-color:  rgb(231, 231, 231);
+  content: '';
+}
+
+.leftParagraph, 
+.rightParagraph {
+    margin: 20px;
+    margin-top: 55px;
+    width: 40%;
+    height: 500px;   
+    color: white;
+}
+
+p{
+    /* word-break: break-all; */
+    text-align: justify;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+}
