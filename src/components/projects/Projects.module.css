@@ -59,21 +59,13 @@
     margin-right: 10%;
     transform-style: preserve-3d;
     /* z-index: 999; */
-
-    background-color: black;
-    background-image: url('../../assets/gifTry4.gif');
-    background-size: 100% 100%;
-    /* opacity: 50%; */
+    
 }
-.secondProjectGif {
-    position: relative;
-    width: 400px;
-    height: 400px;
-    top: 40px;
-    margin: 0 auto;
-    transform-style: preserve-3d;
-
-    background-color: red;
+.firstProjectPicture{
+    width: inherit;
+    height:inherit; 
+    background-image: url('../../assets/gifTry4.gif');
+    background-size: 100% 100%;   
 }
 
 .firstProjectDescription {
@@ -83,9 +75,28 @@
     top:40px;
     right: 40px;
     transform: translateZ(-10px);
+    cursor: pointer;
+    /* opacity: 50%; */
 
-    background-color: red;
+    background-color: #100c08;
 }
+.secondProjectGif {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    top: 40px;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+}
+
+.secondProjectPicture {
+    width: inherit;
+    height:inherit; 
+    background-color: rgb(231, 231, 231, 0.1);
+    background-image: url('https://i.gyazo.com/90a4f5ee5c93f5002de981e61ec615ca.gif');
+    background-size: 100% 100%; 
+}
+
 .secondProjectDescription {
     position: absolute;
     width: 400px;
