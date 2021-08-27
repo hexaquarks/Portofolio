@@ -4,12 +4,13 @@
     height: 500px;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 160px;
+    margin-top: 190px;
     background-color: rgb(231, 231, 231);
     /* margin-left: 5%;
     margin-left: 5%; */
-    /* bottom: 200px;
-    justify-content: center; */
+    /* bottom: 200px; */
+    justify-content: center; 
+    
 }
 
 .container::before {
@@ -49,6 +50,54 @@
       animation-duration: 0.75s;
 }
 
+.firstProjectGif {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    top: 40px;
+    margin: 0 auto;
+    margin-right: 10%;
+    transform-style: preserve-3d;
+    /* z-index: 999; */
+
+    background-color: black;
+    background-image: url('../../assets/gifTry4.gif');
+    background-size: 100% 100%;
+    /* opacity: 50%; */
+}
+.secondProjectGif {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    top: 40px;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+
+    background-color: red;
+}
+
+.firstProjectDescription {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top:40px;
+    right: 40px;
+    transform: translateZ(-10px);
+
+    background-color: red;
+}
+.secondProjectDescription {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top:40px;
+    left: 40px;
+    transform: translateZ(-10px);
+
+    /* margin: 0 auto; */
+
+    background-color: black;
+}
 
 @keyframes containerFadeIn {
     from {
