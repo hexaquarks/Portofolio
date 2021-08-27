@@ -7,14 +7,28 @@ const Projects = () => {
         topPictureLeft: 'top',
         leftTopStyle: 'preserve-3d',
         leftBottomStyle: 'translateZ(-10px)',
-        cursorLeft: 'default'
     });
     const [{topPictureRight, rightTopStyle, rightBottomStyle, cursorRight}, setTopPictureRight] = useState({
         topPictureRight: 'top',
         rightTopStyle: 'preserve-3d',
         rightBottomStyle: 'translateZ(-10px)',
-        cursorRight: 'default'
     });
+
+    const cursorStyle = (direction, stack) =>{
+        if(direction === 'left'){
+            if(stack === 'top'){
+                return (topPictureLeft==='top') ? 'default' : 'pointer';                
+            } else {
+                return (topPictureLeft==='top') ? 'pointer' : 'default';
+            }
+        } else {
+            if(stack === 'top'){
+                return (topPictureRight==='top') ? 'default' : 'pointer';                
+            } else {
+                return (topPictureRight==='top') ? 'pointer' : 'default';
+            }
+        }
+    }
 
     const changePicture = (stack, direction) => {
 
@@ -24,14 +38,12 @@ const Projects = () => {
                     topPictureLeft: 'top',
                     leftTopStyle: 'preserve-3d',
                     leftBottomStyle: 'translateZ(-10px)',
-                    cursorLeft: 'pointer'
                 });
             } else if (stack === 'bottom' && topPictureLeft === 'top') {
                 setTopPictureLeft({
                     topPictureLeft: 'bottom',
                     leftTopStyle: 'none',
                     leftBottomStyle: 'translateZ(0px)',
-                    cursorLeft: 'default'
                 });
             }
         }
@@ -41,14 +53,12 @@ const Projects = () => {
                     topPictureRight: 'top',
                     rightTopStyle: 'preserve-3d',
                     rightBottomStyle: 'translateZ(-10px)',
-                    cursorRight: 'pointer'
                 });
             } else if (stack === 'bottom' && topPictureRight === 'top') {
                 setTopPictureRight({
                     topPictureRight: 'bottom',
                     rightTopStyle: 'none',
                     rightBottomStyle: 'translateZ(0px)',
-                    cursorRight: 'default'
                 });
             }
         }
@@ -57,24 +67,24 @@ const Projects = () => {
     return (
         <div className={styles.container}>
             <div className={styles.firstProjectGif}
-                style={{ transformStyle: leftTopStyle, cursor: cursorLeft }}>
+                style={{ transformStyle: leftTopStyle, cursor: cursorStyle('left', 'top') }}>
 
                 <div className={styles.firstProjectPicture}
                     onClick={() => { changePicture('top', 'left') }}>
                 </div>
                 <div className={styles.firstProjectDescription}
                     onClick={() => { changePicture('bottom', 'left') }}
-                    style={{ transform: leftBottomStyle , cursor: cursorLeft}}>
+                    style={{ transform: leftBottomStyle , cursor: cursorStyle('left', 'bottom')}}>
                 </div>
             </div>
 
             <div className={styles.secondProjectGif}
-                style={{ transformStyle: rightTopStyle }}>
+                style={{ transformStyle: rightTopStyle, cursor: cursorStyle('right', 'top') }}>
                 <div className={styles.secondProjectPicture}
                     onClick={() => { changePicture('top', 'right') }} />
                 <div className={styles.secondProjectDescription}
                     onClick={() => { changePicture('bottom', 'right') }}
-                    style={{ transform: rightBottomStyle }} />
+                    style={{ transform: rightBottomStyle, cursor: cursorStyle('right', 'bottom') }} />
             </div>
         </div>
     );
