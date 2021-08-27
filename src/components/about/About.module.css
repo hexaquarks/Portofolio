@@ -1,6 +1,6 @@
 .container {
     width: 100vw;
-    height: 500px;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
     /* margin-left: 5%;
@@ -11,17 +11,17 @@
 .container::before {
     width: 200px;
      height: 50px;
-  position: absolute;
-  left: 0;
-  margin-top: 10px;
-  padding: 0px 0px 0px 15px;
-  background-color:  rgb(231, 231, 231);
-  content: "About Me";
-  font-weight: 600;
-  font-size: 33px;
-  font-family: 'Playfair Display', serif;
+    position: absolute;
+    left: 0;
+    margin-top: 10px;
+    padding: 0px 0px 0px 15px;
+    background-color:  rgb(231, 231, 231);
+    content: "About Me";
+    font-weight: 600;
+    font-size: 33px;
+    font-family: 'Playfair Display', serif;
   /* text-align: center; */
-  border-radius: 0px 10px 10px 0px;
+     border-radius: 0px 10px 10px 0px;
 
   -webkit-animation-name: containerFadeIn;
       animation-name: containerFadeIn;
@@ -46,9 +46,10 @@
 .container > div {
     margin: 0 auto;
     position:relative;
-    left:50px;
-    right:10px;
+    left:25px;
+    /* right:50px; */
     margin-top: 55px;
+    /* margin-right: 50px; */
     /* width: 400px; */
     height: 250px;   
     /* flex-grow: 1; */
@@ -60,7 +61,6 @@
 }
 .rightParagraph .rightParagraph {
     width: 800px;
-    text-overflow: clip;
 }
 
 hr {
@@ -83,6 +83,15 @@ hr {
 .rightParagraph > p {
     display: grid;
     grid-template-columns: 50px 750px;
+}
+
+i {
+    font-family: 'Lucida Sans', serif;
+    font-size: 16px;
+}
+
+span {
+    font-family: 'Trebuchet', serif;
 }
 /* img[alt~="mcgillPicture"], 
 img[alt~="bdebPicture"] {

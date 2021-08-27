@@ -1,0 +1,81 @@
+
+.container {
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 160px;
+    background-color: rgb(231, 231, 231);
+    /* margin-left: 5%;
+    margin-left: 5%; */
+    /* bottom: 200px;
+    justify-content: center; */
+}
+
+.container::before {
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    margin-top: -60px;
+    margin-right: -45px;
+    padding: 0px 0px 0px -40px;
+    background-color:  #100c08;
+    content: "Projects";
+    font-weight: 600;
+    font-size: 33px;
+    font-family: 'Playfair Display', serif;
+    color: rgb(231, 231, 231);
+  /* text-align: center; */
+     border-radius: 0px 10px 10px 0px;
+
+  -webkit-animation-name: containerFadeIn;
+      animation-name: containerFadeIn;
+      animation-duration: 0.75s;
+}
+.container::after{
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent; 
+  
+  border-left: 45px solid rgb(231, 231, 231);
+  position: absolute;
+  right: 155px;
+  margin-top: -60px;
+  background-color:  #100c08;
+  content: '';
+
+  -webkit-animation-name: containerFadeIn;
+      animation-name: containerFadeIn;
+      animation-duration: 0.75s;
+}
+
+
+@keyframes containerFadeIn {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(2000px, 0, 0);
+      transform: translate3d(2000px, 0, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @media only screen and (min-width: 1600px) {
+    .container::before,
+    .container::after {
+        margin-top: -20px;
+    }
+  }
+  
+  @media only screen and (max-width: 800px) {
+    .container::before,
+    .container::after {
+      margin-top: -30px;
+    }
+  }
+
+  

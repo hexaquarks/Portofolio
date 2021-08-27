@@ -10,8 +10,8 @@ const About = () => {
                     Work
                 </h2>
                 <hr />
-                <p>
-                Pariatur laborum enim velit incididunt magna adipisicing adipisicing aute ut. Officia aliquip sint duis occaecat commodo aliquip. Irure laborum dolore ex excepteur fugiat aliqua et fugiat cupidatat id qui. Ad aute labore voluptate voluptate minim nostrud officia irure consectetur velit quis laborum.
+                <p> 
+                    I am currently a full-time student majoring in Physics and Computer Science after doing 2 years of Honours Physics. I practice coding daily and have experience with: Java, JavaFX, Python, Javascript, HTML5, CSS and ReactJS.
                 </p>
             </div> 
             <div className={styles.middleParagraph}>
@@ -20,8 +20,7 @@ const About = () => {
                 </h2> 
                 <hr />              
                 <p>
-                Pariatur laborum enim velit incididunt magna adipisicing adipisicing aute ut. Officia aliquip sint duis occaecat commodo aliquip. Irure laborum dolore ex excepteur fugiat aliqua et fugiat cupidatat id qui. Ad aute labore voluptate voluptate minim nostrud officia irure consectetur velit quis laborum.
-
+                    I am passionate developper with a strong interest in the natural sciences (physics, natural philosophy) ,and mathematics. In my free time I like to play chess, dabble with LaTeX, watch Netflix, and take baths. 
                 </p>
             </div> 
             <div className={styles.rightParagraph}>
@@ -33,20 +32,20 @@ const About = () => {
                     <div> 
                         <img src={mcgillIcon} width="50" height="50" alt="mcgillIcon" />
                     </div>
-                    <div>
-                        McGill University -- BSc Physics <i>(Honours)</i> <i>[2019-2021]</i>
+                    <div style={{marginTop: `6px`}}>
+                        <b>McGill University</b> &#8213; <span>Major Physics and Computer Science</span> <i>[2021-current]</i>
                     </div>
                     <div> 
                         <img src={mcgillIcon} width="50" height="50" alt="mcgillIcon" />
                     </div>
-                    <div>
-                        McGill University -- BSc Physics &#38; Computer Science <i>[2021-current]</i>
+                    <div style={{marginTop: `6px`}}>
+                        <b>McGill University</b> &#8213; <span>Honours Physics</span> <i>[2019-2021]</i>
                     </div>
                     <div> 
                         <img src={bdebIcon} width="40" height="40" style={{marginLeft: `5px`}} alt="bdebIcon" />
                     </div>
-                    <div>
-                        Cegep Bois-de-Boulogne -- Computer Science &#38; Mathematics <i>[2015-2019]</i>
+                    <div style={{marginTop: `6px`}}>
+                        <b>Cegep Bois-de-Boulogne</b> &#8213; <span>Computer Science and Mathematics</span> <i>[2015-2019]</i>
                     </div>
                 </p>
             </div> 
