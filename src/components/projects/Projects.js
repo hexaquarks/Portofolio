@@ -100,13 +100,11 @@ const Projects = () => {
     return (
         <div className={styles.container}>
             <div className={styles.firstProjectGif}
-                style={{ transformStyle: leftTopStyle, 
-                         cursor: cursorStyle('left', 'top')
-                }}>
+                style={{ transformStyle: leftTopStyle }}>
 
                 <div className={styles.firstProjectPicture}
                     onClick={() => { changePicture('top', 'left') }}
-                    style={{opacity: leftTopOpacity}}>
+                    style={{opacity: leftTopOpacity, cursor: cursorStyle('left', 'top')}}>
                 </div>
                 <div className={styles.firstProjectDescription}
                     onClick={() => { changePicture('bottom', 'left') }}
@@ -117,10 +115,10 @@ const Projects = () => {
             </div>
 
             <div className={styles.secondProjectGif}
-                style={{ transformStyle: rightTopStyle, cursor: cursorStyle('right', 'top') }}>
+                style={{ transformStyle: rightTopStyle }}>
                 <div className={styles.secondProjectPicture}
                     onClick={() => { changePicture('top', 'right') }}
-                    style={{opacity: rightTopOpacity}} />
+                    style={{opacity: rightTopOpacity ,cursor: cursorStyle('right', 'top')}} />
                 <div className={styles.secondProjectDescription}
                     onClick={() => { changePicture('bottom', 'right') }}
                     style={{ transform: rightBottomStyle,

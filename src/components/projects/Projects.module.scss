@@ -5,11 +5,13 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 190px;
+    padding-top: 50px;
     background-color: rgb(231, 231, 231);
     /* margin-left: 5%;
     margin-left: 5%; */
     /* bottom: 200px; */
     justify-content: center; 
+    overflow: hidden;
     
 }
 
@@ -17,18 +19,17 @@
     width: 200px;
     height: 50px;
     position: absolute;
-    right: 0;
+    right: 0px;
     margin-top: -60px;
-    margin-right: -45px;
     padding: 0px 0px 0px -40px;
     background-color:  #100c08;
-    content: "Projects";
+    content: ". . .    Projects";
+    // justify-content: center;
     font-weight: 600;
     font-size: 33px;
     font-family: 'Playfair Display', serif;
     color: rgb(231, 231, 231);
   /* text-align: center; */
-     border-radius: 0px 10px 10px 0px;
 
   -webkit-animation-name: containerFadeIn;
       animation-name: containerFadeIn;
@@ -77,9 +78,14 @@
     height: 400px;
     top: 40px;
     margin: 0 auto;
-    margin-right: 10%;
+    // margin-right: 10%;
     transform-style: preserve-3d;
     box-shadow: 2px 3px 30px 9px rgba(0,0,0,0.58);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin-left: 7%;
+    margin-right: 7%;
     /* z-index: 999; */
 
     /* animation-name: opacityDown; */
@@ -91,6 +97,9 @@
     height: inherit; 
     background-image: url('../../assets/gifTry6.gif');
     background-size: 100% 100%;   
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
 
     animation-duration: 0.75s;
     transition: all 0.5s ease-out;
@@ -106,6 +115,9 @@
     transform: translateZ(-10px);
     cursor: pointer;
     box-shadow: 2px 3px 22px 9px rgba(0,0,0,0.81);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
 
     transition: all 0.5s ease-in;
 
@@ -147,6 +159,11 @@
     top: 40px;
     margin: 0 auto;
     box-shadow: 2px 3px 30px 9px rgba(0,0,0,0.58);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin-left: 7%;
+    margin-right: 7%;
     
     transform-style: preserve-3d;
 }
@@ -157,6 +174,9 @@
     background-color: rgba(100, 19, 19, 0.1);
     background-image: url('../../assets/gifWeatherTry3.gif');
     background-size: 100% 100%; 
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
 
     transition: all 1s ease-in;
 }
@@ -169,7 +189,9 @@
   left: 40px;
   transform: translateZ(-10px);
     box-shadow: 2px 3px 22px 9px rgba(0,0,0,0.81);
-
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
 
     /* -webkit-animation-name: opacityDown; */
       animation-duration: 0.75s;
@@ -250,7 +272,7 @@
   @media only screen and (min-width: 1600px) {
     .container::before,
     .container::after {
-        margin-top: -20px;
+        margin-top: -70px;
     }
   }
   
@@ -259,6 +281,17 @@
     .container::after {
       margin-top: -30px;
     }
+  }
+
+  @media only screen and (max-width: 1110px) {
+    .container {
+      height: 1100px;
+    }
+    // .container > div {
+    //   margin-left:5%;
+    //   margin-right:5%;
+      
+    // }
   }
 
   
