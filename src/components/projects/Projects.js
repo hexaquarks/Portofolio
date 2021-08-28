@@ -1,5 +1,9 @@
 import styles from '../projects/Projects.module.scss';
 import react, { useState } from 'react';
+import javaIcon from '../../assets/java_icon.png';
+import javaFXIcon from '../../assets/javaFX_icon.png';
+import sceneBuilderIcon from '../../assets/sceneBuilder_icon.png';
+import cssIcon from '../../assets/css_icon.png';
 
 const Projects = () => {
 
@@ -111,6 +115,21 @@ const Projects = () => {
                     style={{ transform: leftBottomStyle ,
                              cursor: cursorStyle('left', 'bottom'),
                              opacity: leftBottomOpacity}}>
+                    <span></span>
+                    <p>The program alows the user to add and remove particles with variable size. The program simulates gravitational force, electrostatic force and allows for elastic collisions. Further, the dynamic quantity of particles can be arranged in shapes such as: circle, square, diamond, spiral, loose spiral, sunflower spiral. And finally, the shapes can then also be divided and rotated.</p>
+                    <div className={styles.technologiesContainer}>
+                        <img src={javaIcon} width="45px" height="45px"/>
+                        <span >Java</span>
+                        <img src={javaFXIcon} width="50px" height="60px"
+                            style={{ marginTop: `-6px`}}/>
+                        <span >JavaFX</span>
+                        <img src={sceneBuilderIcon} width="30px" height="40px"
+                            style={{marginLeft: `7px`}}/>
+                        <span >SceneBuilder</span>
+                        <img src={cssIcon} width="30px" height="35px"
+                            style={{marginLeft: `7px`, marginTop: `2px`}}/>
+                        <span >CSS</span>
+                    </div>
                 </div>
             </div>
 

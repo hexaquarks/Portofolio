@@ -128,6 +128,93 @@
     background-color: #100c08;
 }
 
+.firstProjectDescription::before {
+  position: absolute;
+  width:300px;
+  height: 40px;
+  background-color:coral;
+  box-shadow: 2px 3px 22px 9px rgba(0,0,0,0.5);
+  content: 'Description';
+  padding-left: 25px;
+  font-size: 24px;
+  font-family: 'Playfair Display', serif;
+  color: rgb(231, 231, 231);
+  left:-20px;
+  top:20px;
+}
+.firstProjectDescription::after {
+  position: absolute;
+  content: '';
+  left:-20px;
+  top:60px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 20px 20px 0;
+  border-color: transparent #74240c transparent transparent;
+}
+
+.firstProjectDescription > p {
+  float:left;
+  color: aliceblue;
+  font-size: 18px;
+  margin-top: 65px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-family: 'Times New Roman';
+}
+// .firstProjectDescription > p > h5 {
+//   color:white;
+//   font-size: 19px;
+//   float:left;
+//   height: 1px;
+// }
+
+.firstProjectDescription > span::before {
+  position: absolute;
+  width:300px;
+  height: 40px;
+  background-color:coral;
+  box-shadow: 2px 3px 22px 9px rgba(0,0,0,0.5);
+  content: 'Technologies';
+  padding-left: 25px;
+  font-size: 24px;
+  font-family: 'Playfair Display', serif;
+  color: rgb(231, 231, 231);
+  left:-20px;
+  top:245px;
+}
+.firstProjectDescription > span::after {
+  position: absolute;
+  content: '';
+  left:-20px;
+  top:285px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 20px 20px 0;
+  border-color: transparent #74240c transparent transparent;
+}
+.firstProjectDescription > div {
+  position: absolute;
+  top: 300px;
+  left: 20px;
+  display: grid; 
+  grid-template-columns: 50px 150px 50px 150px; 
+  grid-template-rows: 50px 50px; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". . . ."
+    ". . . ."; 
+  color: aliceblue;
+}
+
+.firstProjectDescription > div > span {
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+
 .firstProjectDescription:hover {
     transform: z
 }
@@ -285,13 +372,15 @@
 
   @media only screen and (max-width: 1110px) {
     .container {
-      height: 1100px;
+      height: 1050px;
     }
-    // .container > div {
-    //   margin-left:5%;
-    //   margin-right:5%;
-      
-    // }
+    .secondProjectDescription {
+      left:-40px;
+      bottom: -40px;
+    }
+    .secondProjectGif {
+      margin-top: -20px;
+    }
   }
 
   
