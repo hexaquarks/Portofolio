@@ -50,6 +50,27 @@
       animation-duration: 0.75s;
 }
 
+.firstProjectGif::before {
+    position: absolute;
+    width: 600px;
+    height: 50px;
+    content: 'Particle Geometry Simulator';
+    top: -50px;
+    left: 0px;
+    /* background-color: rgb(231, 231, 231, 0.1);
+    color:rgb(194, 55, 55); */
+    font-size: 35px;
+    font-family: 'Playfair Display', serif;
+
+    color: #f35626;
+    background-image: -webkit-linear-gradient(92deg, #ec3a04, #f0ba0a);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: colorGradient 10s infinite linear;
+  }
+  
+  
+
 .firstProjectGif {
     position: relative;
     width: 400px;
@@ -58,6 +79,7 @@
     margin: 0 auto;
     margin-right: 10%;
     transform-style: preserve-3d;
+    box-shadow: 2px 3px 30px 9px rgba(0,0,0,0.58);
     /* z-index: 999; */
 
     /* animation-name: opacityDown; */
@@ -72,6 +94,7 @@
 
     animation-duration: 0.75s;
     transition: all 0.5s ease-out;
+    border: black solid 3px;
 }
 
 .firstProjectDescription {
@@ -82,6 +105,7 @@
     right: 40px;
     transform: translateZ(-10px);
     cursor: pointer;
+    box-shadow: 2px 3px 22px 9px rgba(0,0,0,0.81);
 
     transition: all 0.5s ease-in;
 
@@ -92,8 +116,29 @@
     background-color: #100c08;
 }
 
+.firstProjectDescription:hover {
+    transform: z
+}
+
 .firstProjectDescription[animate='1'] {
     animation: opacityDown 0.75s 1;
+}
+
+.secondProjectGif::before {
+    position: absolute;
+    width: 600px;
+    height: 50px;
+    content: 'Weather Application';
+    top: -50px;
+    left: 0px;
+    font-size: 35px;
+    font-family: 'Playfair Display', serif;
+
+    color: #100c08;
+    background-image: -webkit-linear-gradient(92deg, #000000, rgb(141, 141, 141));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: colorGradient 10s infinite linear;
 }
 .secondProjectGif {
     position: relative;
@@ -101,13 +146,15 @@
     height: 400px;
     top: 40px;
     margin: 0 auto;
+    box-shadow: 2px 3px 30px 9px rgba(0,0,0,0.58);
+    
     transform-style: preserve-3d;
 }
 
 .secondProjectPicture {
     width: inherit;
     height: inherit; 
-    background-color: rgb(231, 231, 231, 0.1);
+    background-color: rgba(100, 19, 19, 0.1);
     background-image: url('../../assets/gifWeatherTry3.gif');
     background-size: 100% 100%; 
 
@@ -115,18 +162,29 @@
 }
 
 .secondProjectDescription {
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    top: 40px;
-    left: 40px;
-    transform: translateZ(-10px);
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  top: 40px;
+  left: 40px;
+  transform: translateZ(-10px);
+    box-shadow: 2px 3px 22px 9px rgba(0,0,0,0.81);
+
 
     /* -webkit-animation-name: opacityDown; */
       animation-duration: 0.75s;
     /* margin: 0 auto; */
     transition: all 1s ease-in;
     background-color: #100c08;
+}
+
+@keyframes colorGradient {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(-40deg);
+  }
 }
 
 @keyframes containerFadeIn {
@@ -141,6 +199,32 @@
       -webkit-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0);
     }
+  }
+@keyframes firstProjectColorAnimation {
+    0% {
+        color:rgb(194, 55, 55);
+        opacity: 1;
+    } 25% {
+        color:rgb(216, 97, 0);
+        opacity: 0.8;
+    } 50% {
+        color:rgb(248, 179, 51);
+        opacity: 0.7;
+    } 75% {
+        color:rgb(216, 97, 0);
+        opacity: 0.8;
+    } 100% {
+        color: rgb(194, 55, 55);
+        opacity: 1;
+    }
+
+    /* from {
+      color:rgb(194, 55, 55);
+    }
+  
+    to {
+      color:rgb(216, 97, 0);
+    } */
   }
 
 @keyframes opacityDown {
