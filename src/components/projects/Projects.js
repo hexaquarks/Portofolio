@@ -3,16 +3,24 @@ import react, { useState } from 'react';
 
 const Projects = () => {
 
-    const [{topPictureLeft, leftTopStyle, leftBottomStyle, cursorLeft}, setTopPictureLeft] = useState({
+    const [{topPictureLeft, leftTopStyle, leftBottomStyle, leftBottomOpacity, leftTopOpacity}, setTopPictureLeft] = useState({
         topPictureLeft: 'top',
         leftTopStyle: 'preserve-3d',
         leftBottomStyle: 'translateZ(-10px)',
+        leftTopOpacity: '100%',
+        leftBottomOpacity: '50%'
+
     });
-    const [{topPictureRight, rightTopStyle, rightBottomStyle, cursorRight}, setTopPictureRight] = useState({
+    const [{topPictureRight, rightTopStyle, rightBottomStyle, rightBottomOpacity,rightTopOpacity }, setTopPictureRight] = useState({
         topPictureRight: 'top',
         rightTopStyle: 'preserve-3d',
         rightBottomStyle: 'translateZ(-10px)',
+        rightBottomOpacity: '50%',
+        rightTopOpacity: '100%'
     });
+    // const [{leftAnimationTop, leftAnimationBottom}, setLeftAnimation] = useState({
+    //     leftAnimationTop: 
+    // })
 
     const cursorStyle = (direction, stack) =>{
         if(direction === 'left'){
@@ -30,6 +38,23 @@ const Projects = () => {
         }
     }
 
+    const animationStyle = (direction, stack) =>{
+        console.log("here")
+        if(direction === 'left'){
+            if(stack === 'top'){
+                return (topPictureLeft==='top') ? 'opacityUp;' : 'opacityDown;';                
+            } else {
+                return (topPictureLeft==='top') ? 'opacityDown;' : 'opacityUp;';
+            }
+        } else {
+            if(stack === 'top'){
+                return (topPictureRight==='top') ? 'opacityUp' : 'opacityDown';                
+            } else {
+                return (topPictureRight==='top') ? 'opacityDown' : 'opacityUp';
+            }
+        }
+    }
+
     const changePicture = (stack, direction) => {
 
         if (direction === 'left') {
@@ -38,12 +63,16 @@ const Projects = () => {
                     topPictureLeft: 'top',
                     leftTopStyle: 'preserve-3d',
                     leftBottomStyle: 'translateZ(-10px)',
+                    leftTopOpacity: '100%',
+                    leftBottomOpacity: '50%'
                 });
             } else if (stack === 'bottom' && topPictureLeft === 'top') {
                 setTopPictureLeft({
                     topPictureLeft: 'bottom',
                     leftTopStyle: 'none',
                     leftBottomStyle: 'translateZ(0px)',
+                    leftBottomOpacity: '100%',
+                    leftTopOpacity: '50%'
                 });
             }
         }
@@ -53,12 +82,16 @@ const Projects = () => {
                     topPictureRight: 'top',
                     rightTopStyle: 'preserve-3d',
                     rightBottomStyle: 'translateZ(-10px)',
+                    rightTopOpacity: '100%',
+                    rightBottomOpacity: '50%'
                 });
             } else if (stack === 'bottom' && topPictureRight === 'top') {
                 setTopPictureRight({
                     topPictureRight: 'bottom',
                     rightTopStyle: 'none',
                     rightBottomStyle: 'translateZ(0px)',
+                    rightBottomOpacity: '100%',
+                    rightTopOpacity: '50%'
                 });
             }
         }
@@ -67,24 +100,32 @@ const Projects = () => {
     return (
         <div className={styles.container}>
             <div className={styles.firstProjectGif}
-                style={{ transformStyle: leftTopStyle, cursor: cursorStyle('left', 'top') }}>
+                style={{ transformStyle: leftTopStyle, 
+                         cursor: cursorStyle('left', 'top')
+                }}>
 
                 <div className={styles.firstProjectPicture}
-                    onClick={() => { changePicture('top', 'left') }}>
+                    onClick={() => { changePicture('top', 'left') }}
+                    style={{opacity: leftTopOpacity}}>
                 </div>
                 <div className={styles.firstProjectDescription}
                     onClick={() => { changePicture('bottom', 'left') }}
-                    style={{ transform: leftBottomStyle , cursor: cursorStyle('left', 'bottom')}}>
+                    style={{ transform: leftBottomStyle ,
+                             cursor: cursorStyle('left', 'bottom'),
+                             opacity: leftBottomOpacity}}>
                 </div>
             </div>
 
             <div className={styles.secondProjectGif}
                 style={{ transformStyle: rightTopStyle, cursor: cursorStyle('right', 'top') }}>
                 <div className={styles.secondProjectPicture}
-                    onClick={() => { changePicture('top', 'right') }} />
+                    onClick={() => { changePicture('top', 'right') }}
+                    style={{opacity: rightTopOpacity}} />
                 <div className={styles.secondProjectDescription}
                     onClick={() => { changePicture('bottom', 'right') }}
-                    style={{ transform: rightBottomStyle, cursor: cursorStyle('right', 'bottom') }} />
+                    style={{ transform: rightBottomStyle,
+                         cursor: cursorStyle('right', 'bottom'),
+                         opacity: rightBottomOpacity}} />
             </div>
         </div>
     );

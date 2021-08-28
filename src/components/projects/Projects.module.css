@@ -59,26 +59,41 @@
     margin-right: 10%;
     transform-style: preserve-3d;
     /* z-index: 999; */
+
+    /* animation-name: opacityDown; */
+    animation-duration: 0.75s;
     
 }
 .firstProjectPicture{
     width: inherit;
-    height:inherit; 
-    background-image: url('../../assets/gifTry5.gif');
+    height: inherit; 
+    background-image: url('../../assets/gifTry6.gif');
     background-size: 100% 100%;   
+
+    animation-duration: 0.75s;
+    transition: all 0.5s ease-out;
 }
 
 .firstProjectDescription {
     position: absolute;
     width: 400px;
     height: 400px;
-    top:40px;
+    top: 40px;
     right: 40px;
     transform: translateZ(-10px);
     cursor: pointer;
+
+    transition: all 0.5s ease-in;
+
+    /* animation-name: opacityDown;  */
+    /* animation-duration: 0.75s; */
     /* opacity: 50%; */
 
     background-color: #100c08;
+}
+
+.firstProjectDescription[animate='1'] {
+    animation: opacityDown 0.75s 1;
 }
 .secondProjectGif {
     position: relative;
@@ -91,23 +106,27 @@
 
 .secondProjectPicture {
     width: inherit;
-    height:inherit; 
+    height: inherit; 
     background-color: rgb(231, 231, 231, 0.1);
     background-image: url('../../assets/gifWeatherTry3.gif');
     background-size: 100% 100%; 
+
+    transition: all 1s ease-in;
 }
 
 .secondProjectDescription {
     position: absolute;
     width: 400px;
     height: 400px;
-    top:40px;
+    top: 40px;
     left: 40px;
     transform: translateZ(-10px);
 
+    /* -webkit-animation-name: opacityDown; */
+      animation-duration: 0.75s;
     /* margin: 0 auto; */
-
-    background-color: black;
+    transition: all 1s ease-in;
+    background-color: #100c08;
 }
 
 @keyframes containerFadeIn {
@@ -121,6 +140,26 @@
       opacity: 1;
       -webkit-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0);
+    }
+  }
+
+@keyframes opacityDown {
+    from {
+      opacity: 100%;
+    }
+  
+    to {
+      opacity: 10%;
+    }
+  }
+
+  @keyframes opacityUp {
+    from {
+      opacity: 10%;
+    }
+  
+    to {
+      opacity: 100%;
     }
   }
 
