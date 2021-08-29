@@ -15,12 +15,12 @@
     vertical-align:middle;
     margin-left: 50px;
 }
-.description h1 {
+/* .description h1 {
     font-size:60px;
     color:rgb(2, 2, 2);
     font-family: 'Perpetua', serif;
     /*Palatino is nice */
-}
+
 .description h2 {
     /* width: 100%; */
     width: inherit;
@@ -35,6 +35,20 @@ img[alt~="cover_picture"]{
     height: 100%;
     object-fit: contain;
     
+}
+
+ul li {
+    list-style: none;
+    float: left;
+    font-size:60px;
+    color:rgb(2, 2, 2);
+    font-family: 'Perpetua', serif;
+
+    transition: 0.5s;
+}
+
+li:hover {
+    transform: rotateY(360deg);
 }
 
 

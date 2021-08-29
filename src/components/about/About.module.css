@@ -71,10 +71,22 @@ hr {
 }
 
 .container > div > h2 {
+    width: 8ch;
     font-family: 'Playfair Display', serif;
     font-size: 40px;
-}
+    background: linear-gradient(to right, coral, lightcoral 50%, rgb(235,235,235) 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
 
+    transition: background-position 500ms ease;
+
+}
+.container > div > h2:hover {
+    background-position: 0 100%;
+}
 .container > div > p {
     font-family: 'Playfair Display', serif;
     font-size: 20px;
@@ -93,11 +105,10 @@ i {
 span {
     font-family: 'Trebuchet', serif;
 }
-/* img[alt~="mcgillPicture"], 
-img[alt~="bdebPicture"] {
-    width: 50px;
-    height: 50px;
-} */
+
+.rightParagraph img:hover {
+    transform: scale(1.25);
+}
 
 @keyframes containerFadeIn {
     from {
