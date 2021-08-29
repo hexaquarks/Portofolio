@@ -4,6 +4,10 @@ import javaIcon from '../../assets/java_icon.png';
 import javaFXIcon from '../../assets/javaFX_icon.png';
 import sceneBuilderIcon from '../../assets/sceneBuilder_icon.png';
 import cssIcon from '../../assets/css_icon.png';
+import javascriptIcon from '../../assets/javascript_icon_2.png';
+import htmlIcon from '../../assets/html_icon.png';
+import reactIcon from '../../assets/react_icon.png';
+
 
 const Projects = () => {
 
@@ -148,19 +152,20 @@ const Projects = () => {
                         opacity: rightBottomOpacity
                     }} >
                     <span></span>
-                    <p>The program fetches data from a <a href="https://openweathermap.org/" style={{textDecoration: `none;`}}>OpenWweatherMap</a> API and displays the daily information overview and detailed information. Further, a 24 hours and 7 days forecast for temperature and precipitation, is displayed in a carousel container along with bar graphs respectively. </p>
-                    <div className={styles.technologiesContainerFirst}>
-                        <img src={javaIcon} width="45px" height="45px" />
-                        <span >Java</span>
-                        <img src={javaFXIcon} width="50px" height="60px"
+                    <p>The program fetches data from <a href="https://openweathermap.org/" style={{textDecoration: `none;`}}>OpenWweather</a> API and displays the daily information overview and detailed information. Further, a 24 hours and 7 days forecast for temperature and precipitation, is displayed in a carousel container along with bar graphs respectively. </p>
+                    <div className={styles.technologiesContainerSecond}>
+                        <img src={reactIcon} width="40px" height="40px" 
+                            style={{marginRight: `10px`}}/>
+                        <span >React</span>
+                        <img src={javascriptIcon} width="30px" height="40px"
                             style={{ marginTop: `-6px` }} />
-                        <span >JavaFX</span>
-                        <img src={sceneBuilderIcon} width="30px" height="40px"
-                            style={{ marginLeft: `7px` }} />
-                        <span >SceneBuilder</span>
-                        <img src={cssIcon} width="30px" height="35px"
-                            style={{ marginLeft: `7px`, marginTop: `2px` }} />
+                        <span >Javascript</span>
+                        <img src={cssIcon} width="40px" height="40px"
+                            style={{ marginLeft: `1px` }} />
                         <span >CSS</span>
+                        <img src={htmlIcon} width="30px" height="39px"
+                            style={{ marginLeft: `0px`, marginTop: `2px` }} />
+                        <span >HTML5</span>
                     </div>
                 </div>
             </div>

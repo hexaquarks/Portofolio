@@ -335,13 +335,13 @@
   font-family: 'Playfair Display', serif;
   color: rgb(44, 34, 34);
   left:-20px;
-  top:245px;
+  top:225px;
 }
 .secondProjectDescription > span::after {
   position: absolute;
   content: '';
   left:-20px;
-  top:285px;
+  top:265px;
   width: 0;
   height: 0;
   border-style: solid;
@@ -351,7 +351,7 @@
 
 .secondProjectDescription > div {
   position: absolute;
-  top: 300px;
+  top: 290px;
   left: 20px;
   display: grid; 
   grid-template-columns: 50px 150px 50px 150px; 
@@ -372,10 +372,11 @@
 .secondProjectDescription > p {
   float:left;
   color: aliceblue;
-  font-size: 18px;
+  font-size: 19px;
   margin-top: 70px;
   margin-left: 20px;
   margin-right: 10px;
+  line-height: 24px;
   font-family: 'Times New Roman';
 }
 
