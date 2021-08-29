@@ -15,6 +15,10 @@
     
 }
 
+.container img:hover {
+    transform: scale(1.25);
+}
+
 .container::before {
     width: 200px;
     height: 50px;
@@ -138,7 +142,7 @@
   padding-left: 25px;
   font-size: 24px;
   font-family: 'Playfair Display', serif;
-  color: rgb(231, 231, 231);
+  color: rgb(44, 34, 34);
   left:-20px;
   top:20px;
 }
@@ -158,8 +162,8 @@
   float:left;
   color: aliceblue;
   font-size: 18px;
-  margin-top: 65px;
-  margin-left: 10px;
+  margin-top: 70px;
+  margin-left: 20px;
   margin-right: 10px;
   font-family: 'Times New Roman';
 }
@@ -172,28 +176,31 @@
 
 .firstProjectDescription > span::before {
   position: absolute;
-  width:300px;
+  width:260px;
   height: 40px;
+  display: flex;
+  justify-content: flex-end;
+
   background-color:coral;
   box-shadow: 2px 3px 22px 9px rgba(0,0,0,0.5);
   content: 'Technologies';
-  padding-left: 25px;
+  padding-right: 40px;
   font-size: 24px;
   font-family: 'Playfair Display', serif;
-  color: rgb(231, 231, 231);
-  left:-20px;
+  color: rgb(44, 34, 34);
+  right:-20px;
   top:245px;
 }
 .firstProjectDescription > span::after {
   position: absolute;
   content: '';
-  left:-20px;
+  right:-20px;
   top:285px;
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 0 20px 20px 0;
-  border-color: transparent #74240c transparent transparent;
+  border-width: 20px 20px 0 0;
+  border-color: #74240c transparent transparent transparent;
 }
 .firstProjectDescription > div {
   position: absolute;
@@ -212,6 +219,7 @@
 .firstProjectDescription > div > span {
   margin-top: 10px;
   margin-left: 5px;
+  font-weight: 600;
 }
 
 
@@ -285,6 +293,98 @@
     /* margin: 0 auto; */
     transition: all 1s ease-in;
     background-color: #100c08;
+}
+
+.secondProjectDescription::before {
+  position: absolute;
+  width:260px;
+  height: 40px;
+  display:flex;
+  justify-content: flex-end;
+  background-color:coral;
+  box-shadow: 2px 3px 22px 9px rgba(0,0,0,0.5);
+  content: 'Description';
+  padding-right: 40px;
+  font-size: 24px;
+  font-family: 'Playfair Display', serif;
+  color: rgb(44, 34, 34);
+  right:-20px;
+  top:20px;
+}
+.secondProjectDescription::after {
+  position: absolute;
+  content: '';
+  right:-20px;
+  top:60px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 20px 0 0;
+  border-color: #74240c transparent transparent transparent;
+}
+
+.secondProjectDescription > span::before {
+  position: absolute;
+  width:300px;
+  height: 40px;
+  background-color:coral;
+  box-shadow: 2px 3px 22px 9px rgba(0,0,0,0.5);
+  content: 'Technologies';
+  padding-left: 25px;
+  font-size: 24px;
+  font-family: 'Playfair Display', serif;
+  color: rgb(44, 34, 34);
+  left:-20px;
+  top:245px;
+}
+.secondProjectDescription > span::after {
+  position: absolute;
+  content: '';
+  left:-20px;
+  top:285px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 20px 20px 0;
+  border-color: transparent #74240c transparent transparent;
+}
+
+.secondProjectDescription > div {
+  position: absolute;
+  top: 300px;
+  left: 20px;
+  display: grid; 
+  grid-template-columns: 50px 150px 50px 150px; 
+  grid-template-rows: 50px 50px; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". . . ."
+    ". . . ."; 
+  color: aliceblue;
+}
+
+.secondProjectDescription > div > span {
+  margin-top: 10px;
+  margin-left: 5px;
+  font-weight: 600;
+}
+
+.secondProjectDescription > p {
+  float:left;
+  color: aliceblue;
+  font-size: 18px;
+  margin-top: 70px;
+  margin-left: 20px;
+  margin-right: 10px;
+  font-family: 'Times New Roman';
+}
+
+a {
+  color: lightblue;
+}
+a:hover {
+  color: lightpink;
+  transition: 0.5s;
 }
 
 @keyframes colorGradient {

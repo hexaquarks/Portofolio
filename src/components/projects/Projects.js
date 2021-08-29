@@ -7,7 +7,7 @@ import cssIcon from '../../assets/css_icon.png';
 
 const Projects = () => {
 
-    const [{topPictureLeft, leftTopStyle, leftBottomStyle, leftBottomOpacity, leftTopOpacity}, setTopPictureLeft] = useState({
+    const [{ topPictureLeft, leftTopStyle, leftBottomStyle, leftBottomOpacity, leftTopOpacity }, setTopPictureLeft] = useState({
         topPictureLeft: 'top',
         leftTopStyle: 'preserve-3d',
         leftBottomStyle: 'translateZ(-10px)',
@@ -15,7 +15,7 @@ const Projects = () => {
         leftBottomOpacity: '50%'
 
     });
-    const [{topPictureRight, rightTopStyle, rightBottomStyle, rightBottomOpacity,rightTopOpacity }, setTopPictureRight] = useState({
+    const [{ topPictureRight, rightTopStyle, rightBottomStyle, rightBottomOpacity, rightTopOpacity }, setTopPictureRight] = useState({
         topPictureRight: 'top',
         rightTopStyle: 'preserve-3d',
         rightBottomStyle: 'translateZ(-10px)',
@@ -26,35 +26,35 @@ const Projects = () => {
     //     leftAnimationTop: 
     // })
 
-    const cursorStyle = (direction, stack) =>{
-        if(direction === 'left'){
-            if(stack === 'top'){
-                return (topPictureLeft==='top') ? 'default' : 'pointer';                
+    const cursorStyle = (direction, stack) => {
+        if (direction === 'left') {
+            if (stack === 'top') {
+                return (topPictureLeft === 'top') ? 'default' : 'pointer';
             } else {
-                return (topPictureLeft==='top') ? 'pointer' : 'default';
+                return (topPictureLeft === 'top') ? 'pointer' : 'default';
             }
         } else {
-            if(stack === 'top'){
-                return (topPictureRight==='top') ? 'default' : 'pointer';                
+            if (stack === 'top') {
+                return (topPictureRight === 'top') ? 'default' : 'pointer';
             } else {
-                return (topPictureRight==='top') ? 'pointer' : 'default';
+                return (topPictureRight === 'top') ? 'pointer' : 'default';
             }
         }
     }
 
-    const animationStyle = (direction, stack) =>{
+    const animationStyle = (direction, stack) => {
         console.log("here")
-        if(direction === 'left'){
-            if(stack === 'top'){
-                return (topPictureLeft==='top') ? 'opacityUp;' : 'opacityDown;';                
+        if (direction === 'left') {
+            if (stack === 'top') {
+                return (topPictureLeft === 'top') ? 'opacityUp;' : 'opacityDown;';
             } else {
-                return (topPictureLeft==='top') ? 'opacityDown;' : 'opacityUp;';
+                return (topPictureLeft === 'top') ? 'opacityDown;' : 'opacityUp;';
             }
         } else {
-            if(stack === 'top'){
-                return (topPictureRight==='top') ? 'opacityUp' : 'opacityDown';                
+            if (stack === 'top') {
+                return (topPictureRight === 'top') ? 'opacityUp' : 'opacityDown';
             } else {
-                return (topPictureRight==='top') ? 'opacityDown' : 'opacityUp';
+                return (topPictureRight === 'top') ? 'opacityDown' : 'opacityUp';
             }
         }
     }
@@ -108,26 +108,28 @@ const Projects = () => {
 
                 <div className={styles.firstProjectPicture}
                     onClick={() => { changePicture('top', 'left') }}
-                    style={{opacity: leftTopOpacity, cursor: cursorStyle('left', 'top')}}>
+                    style={{ opacity: leftTopOpacity, cursor: cursorStyle('left', 'top') }}>
                 </div>
                 <div className={styles.firstProjectDescription}
                     onClick={() => { changePicture('bottom', 'left') }}
-                    style={{ transform: leftBottomStyle ,
-                             cursor: cursorStyle('left', 'bottom'),
-                             opacity: leftBottomOpacity}}>
+                    style={{
+                        transform: leftBottomStyle,
+                        cursor: cursorStyle('left', 'bottom'),
+                        opacity: leftBottomOpacity
+                    }}>
                     <span></span>
                     <p>The program alows the user to add and remove particles with variable size. The program simulates gravitational force, electrostatic force and allows for elastic collisions. Further, the dynamic quantity of particles can be arranged in shapes such as: circle, square, diamond, spiral, loose spiral, sunflower spiral. And finally, the shapes can then also be divided and rotated.</p>
-                    <div className={styles.technologiesContainer}>
-                        <img src={javaIcon} width="45px" height="45px"/>
+                    <div className={styles.technologiesContainerFirst}>
+                        <img src={javaIcon} width="45px" height="45px" />
                         <span >Java</span>
                         <img src={javaFXIcon} width="50px" height="60px"
-                            style={{ marginTop: `-6px`}}/>
+                            style={{ marginTop: `-6px` }} />
                         <span >JavaFX</span>
                         <img src={sceneBuilderIcon} width="30px" height="40px"
-                            style={{marginLeft: `7px`}}/>
+                            style={{ marginLeft: `7px` }} />
                         <span >SceneBuilder</span>
                         <img src={cssIcon} width="30px" height="35px"
-                            style={{marginLeft: `7px`, marginTop: `2px`}}/>
+                            style={{ marginLeft: `7px`, marginTop: `2px` }} />
                         <span >CSS</span>
                     </div>
                 </div>
@@ -137,12 +139,30 @@ const Projects = () => {
                 style={{ transformStyle: rightTopStyle }}>
                 <div className={styles.secondProjectPicture}
                     onClick={() => { changePicture('top', 'right') }}
-                    style={{opacity: rightTopOpacity ,cursor: cursorStyle('right', 'top')}} />
+                    style={{ opacity: rightTopOpacity, cursor: cursorStyle('right', 'top') }} />
                 <div className={styles.secondProjectDescription}
                     onClick={() => { changePicture('bottom', 'right') }}
-                    style={{ transform: rightBottomStyle,
-                         cursor: cursorStyle('right', 'bottom'),
-                         opacity: rightBottomOpacity}} />
+                    style={{
+                        transform: rightBottomStyle,
+                        cursor: cursorStyle('right', 'bottom'),
+                        opacity: rightBottomOpacity
+                    }} >
+                    <span></span>
+                    <p>The program fetches data from a <a href="https://openweathermap.org/" style={{textDecoration: `none;`}}>OpenWweatherMap</a> API and displays the daily information overview and detailed information. Further, a 24 hours and 7 days forecast for temperature and precipitation, is displayed in a carousel container along with bar graphs respectively. </p>
+                    <div className={styles.technologiesContainerFirst}>
+                        <img src={javaIcon} width="45px" height="45px" />
+                        <span >Java</span>
+                        <img src={javaFXIcon} width="50px" height="60px"
+                            style={{ marginTop: `-6px` }} />
+                        <span >JavaFX</span>
+                        <img src={sceneBuilderIcon} width="30px" height="40px"
+                            style={{ marginLeft: `7px` }} />
+                        <span >SceneBuilder</span>
+                        <img src={cssIcon} width="30px" height="35px"
+                            style={{ marginLeft: `7px`, marginTop: `2px` }} />
+                        <span >CSS</span>
+                    </div>
+                </div>
             </div>
         </div>
     );
