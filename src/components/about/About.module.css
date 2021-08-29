@@ -101,6 +101,36 @@ hr {
     align-self: center;
     margin: 0 auto;
 }
+.dropArrowTop {
+    position: relative;
+    transition: 1s;
+}
+.topPanel {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    opacity: 1;
+    visibility: initial;
+    transition: 1s;
+}
+.doRotate {
+    position:relative;
+    transition: 1s;
+    animation-fill-mode: forwards !important;
+    animation: rotate 1s;
+}
+
+
+/* .dropDownArrow img{
+    transition: 1s;
+    animation-fill-mode: forwards !important;
+    animation: rotate 1s;
+} */
+
+.dropDownArrow img:active {
+    
+}
 /* .innerGrid {
     display: grid;
     grid-template-columns: 650px;
@@ -121,8 +151,13 @@ span {
     font-family: 'Trebuchet', serif;
 }
 
-.rightParagraph img:hover {
+[alt~="mcgillIcon"]:hover,
+[alt~="bdebIcon"]:hover {
     transform: scale(1.25);
+}
+
+@keyframes rotate {
+    100% {transform: rotate(180deg);}
 }
 
 @media only screen and (max-width: 800px){

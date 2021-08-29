@@ -2,8 +2,18 @@ import styles from '../about/About.module.css';
 import mcgillIcon from '../../assets/mcgill_icon.png';
 import bdebIcon from '../../assets/bdeb_icon.png';
 import downArrow from '../../assets/down_arrow.png';
+import { useState, useRef } from 'react';
+import { CSSTransition } from 'react-transition-group';
+import Fade from '@material-ui/core/Fade';
 
 const About = () => {
+    const [topDropDown, setTopDropDown] = useState(false);
+
+    const onClick = (type) => {
+        if(type==='top'){
+            setTopDropDown(!topDropDown);
+        }
+    }
     return (
         <div className={styles.container}>
             <div className={styles.leftParagraph}>
@@ -31,7 +41,16 @@ const About = () => {
                 <hr />
                 <p>
                     <div className={styles.dropDownArrow}>
-                        <img src={downArrow} width="30" height="30" />
+                        <img className={topDropDown===true ? `${styles.dropArrowTop} ${styles.doRotate}` : `${styles.dropArrowTop}`} 
+                            src={downArrow} width="30" height="30" 
+                            onClick={() => { onClick('top') }}
+                            // styles={{Animation: `rotate 1s`}}
+                            >
+                        </img>
+                        {topDropDown &&  <Fade in={true}><div className={styles.topPanel}>
+                            test
+
+                        </div></Fade>}
                     </div>
                     <div>
                         <img src={mcgillIcon} width="50" height="50" alt="mcgillIcon" />
