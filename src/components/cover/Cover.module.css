@@ -36,7 +36,15 @@ img[alt~="cover_picture"]{
     object-fit: contain;
     
 }
-
+ul {
+    margin-top: 40px;
+    margin-left: -40px;
+    margin-bottom: 125px;
+}
+li {
+     display: inline-block;
+    white-space: nowrap;
+}
 ul li {
     list-style: none;
     float: left;

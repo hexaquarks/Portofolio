@@ -94,7 +94,22 @@ hr {
 
 .rightParagraph > p {
     display: grid;
-    grid-template-columns: 50px 750px;
+    grid-template-columns: 50px 50px 650px;
+    row-gap: 10px;
+}
+.dropDownArrow {
+    align-self: center;
+    margin: 0 auto;
+}
+/* .innerGrid {
+    display: grid;
+    grid-template-columns: 650px;
+    grid-template-rows: 25px 25px;
+} */
+
+.rightParagraph > p > span { 
+    word-wrap: break-word;
+    
 }
 
 i {
@@ -110,6 +125,11 @@ span {
     transform: scale(1.25);
 }
 
+@media only screen and (max-width: 800px){
+    .rightParagraph > p {
+        grid-template-columns: 50px calc(70% + 100px);
+    }
+}
 @keyframes containerFadeIn {
     from {
       opacity: 0;
