@@ -101,18 +101,56 @@ hr {
     align-self: center;
     margin: 0 auto;
 }
-.dropArrowTop {
+.dropArrow {
     position: relative;
     transition: 1s;
+    z-index: 999 !important;
 }
-.topPanel {
+
+
+.decriptionPanel {
     position: absolute;
+    width: 425px;
+    height: auto;
+    background-color: aliceblue;
+    border: 10px solid rgba(255, 255, 255, 0.822);
+    color: black;
+    z-index: 999 !important;
+    box-shadow: 2px 3px 30px 9px rgba(255, 255, 255, 0.25);
+
+    border-radius: 10px 10px 10px 10px;
+    transition: 1s;
+
+}
+
+/* .topPanel::before {
+    position:absolute;
+    content: '';
     width: 100px;
     height: 100px;
-    background-color: white;
-    opacity: 1;
-    visibility: initial;
-    transition: 1s;
+    background-color: black;
+
+    margin: 10px;
+} */
+fieldset {
+    border: 2px solid #000;
+    height: auto;
+    margin:auto;
+    margin-top: -10px;
+}
+legend {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.coursesList {
+    justify-content: center;
+    margin-top: -25px;
+}
+
+.coursesList > ul {
+    line-height: 24px;
+    font-size: 19px;
 }
 .doRotate {
     position:relative;
@@ -120,7 +158,6 @@ hr {
     animation-fill-mode: forwards !important;
     animation: rotate 1s;
 }
-
 
 /* .dropDownArrow img{
     transition: 1s;
