@@ -4,7 +4,7 @@ import downArrow from '../../assets/down_arrow.png';
 import { useState } from 'react';
 import Fade from '@material-ui/core/Fade';
 
-const styles = require('../about/About.module.css');
+const styles = require('../about/About.module.scss');
 
 const About = () => {
     const [topDropDown, setTopDropDown] = useState(false);

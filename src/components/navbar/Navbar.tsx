@@ -1,7 +1,7 @@
 import react from 'react';
 import NavbarComponent from '../navbar/NavbarComponent';
 
-const styles = require('../navbar/Navbar.module.css');
+const styles = require('../navbar/Navbar.module.scss');
 
 const Navbar = () => {
 
