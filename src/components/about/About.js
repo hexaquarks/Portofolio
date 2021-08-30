@@ -6,11 +6,13 @@ import { useState, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import Fade from '@material-ui/core/Fade';
 import { TextField } from '@material-ui/core';
+import { useEffect } from 'react';
 
 const About = () => {
     const [topDropDown, setTopDropDown] = useState(false);
     const [midDropDown, setMidDropDown] = useState(false);
     const [botDropDown, setBotDropDown] = useState(false);
+    
 
     const onClick = (type) => {
         if (type === 'top') {
@@ -27,8 +29,21 @@ const About = () => {
             setMidDropDown(false);
         }
     }
+
+    // const [{gif, loaded} ,setState] = useState({
+    //     gif: `${styles.container}`,
+    //     loaded: `${styles.container}`
+    // });
+
+    // const reloadGif = () => {
+    //     setState({loaded: ''})
+    //     setTimeout(() => {
+    //       setState({loaded: `${styles.container}`})
+    //     }, 0)
+    //   }
     return (
         <div className={styles.container}>
+            {/* <button onClick={reloadGif}>Replay</button> */}
             <div className={styles.leftParagraph}>
                 <h2>
                     Work

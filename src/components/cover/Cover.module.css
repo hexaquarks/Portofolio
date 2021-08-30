@@ -8,6 +8,7 @@
     position: relative;
 }
 .container::before {
+    /* background: url('../../assets/css_icon.png'); */
     background: url('../../assets/chain.gif');
     background-size:cover;
     content: '';
@@ -21,6 +22,7 @@
 
 .container::after {
     background: url('../../assets/chain.gif');
+    /* background: url('../../assets/css_icon.png'); */
     background-size:cover;
     content: '';
     width: 100px;
@@ -46,6 +48,108 @@
     border-radius: 10px 10px 10px 10px;
     position:absolute;
     z-index: 999 !important;
+
+    /* transform: rotate(1deg) translate(279px, 28px);
+	animation: T-animation 3s linear infinite alternate-reverse; */
+    animation: animationFrames linear 6.20s;
+    animation-iteration-count: infinite;
+    transform-origin: 100% 0%;
+    animation-fill-mode:forwards; /*when the spec is finished*/
+    -webkit-animation: animationFrames linear 6.20s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transform-origin: 100% 0%;
+    -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/   
+}
+
+  
+.element-animation{
+    animation: animationFrames linear 6.20s;
+    animation-iteration-count: infinite;
+    transform-origin: 100% 0%;
+    animation-fill-mode:forwards; /*when the spec is finished*/
+    -webkit-animation: animationFrames linear 6.20s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transform-origin: 100% 0%;
+    -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/ 
+  }
+  
+  @keyframes animationFrames{
+    0% {
+      transform:  translate(35px,-2px)  rotate(-3deg) ;
+    }
+    23% {
+      transform:  translate(-25px,-14px)  rotate(-11deg) ;
+    }
+    31% {
+      transform:  translate(-25px,-14px)  rotate(-11deg) ;
+    }
+    51% {
+      transform:  translate(35px,-2px)  rotate(-3deg) ;
+    }
+    72% {
+      transform:  translate(67px,-1px)  rotate(8deg) ;
+    }
+    79% {
+      transform:  translate(67px,-1px)  rotate(8deg) ;
+    }
+    86% {
+      transform:  translate(48px,0px)  rotate(6deg) ;
+    }
+    100% {
+      transform:  translate(35px,-2px)  rotate(-3deg) ;
+    }
+  }
+  
+  @-webkit-keyframes animationFrames {
+    0% {
+      -webkit-transform:  translate(35px,-2px)  rotate(-3deg) ;
+    }
+    23% {
+      -webkit-transform:  translate(-25px,-14px)  rotate(-11deg) ;
+    }
+    31% {
+      -webkit-transform:  translate(-25px,-14px)  rotate(-11deg) ;
+    }
+    51% {
+      -webkit-transform:  translate(35px,-2px)  rotate(-3deg) ;
+    }
+    72% {
+      -webkit-transform:  translate(67px,-1px)  rotate(8deg) ;
+    }
+    79% {
+      -webkit-transform:  translate(67px,-1px)  rotate(8deg) ;
+    }
+    86% {
+      -webkit-transform:  translate(48px,0px)  rotate(6deg) ;
+    }
+    100% {
+      -webkit-transform:  translate(35px,-2px)  rotate(-3deg) ;
+    }
+  }
+  
+  
+  
+  
+/* @keyframes T-animation {
+	0% {
+		transform: rotate(-15deg) translateX(50px) translateY(15px);
+	} 50% {
+        transform: rotate(-15deg) translateX(65px) translateY(12px);
+    }
+	100% {
+		transform: rotate(2deg) translateX(20px) translateY(17px);
+	}
+} */
+/* @Keyframes translateBoard {
+    0% {
+        transform: translate3d(-80px, 10px, 0);
+    } 25% {
+        transform: translate3d(-70px, 0, 0);
+    }
+} */
+
+@Keyframes rotateBoard {
+
 }
 .description {
     align-items: stretch;
