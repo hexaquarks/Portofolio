@@ -6,33 +6,31 @@
     height:500px;
     display: flex;
     position: relative;
-}
-.container::before {
-    /* background: url('../../assets/css_icon.png'); */
-    background: url('../../assets/chain.gif');
-    background-size:cover;
-    content: '';
-    width: 100px;
-    height:100px;
-    right:35px;
-    bottom:-10px;
-    position:absolute;
-    z-index: 999 !important;
-  }
 
-.container::after {
-    background: url('../../assets/chain2.png');
-    /* background: url('../../assets/css_icon.png'); */
-    background-size:cover;
-    content: '';
-    width: 100px;
-    height:100px;
-    right:80px;
-    bottom:-15px;
-    position:absolute;
-    rotate: -10deg;
-    z-index: 999 !important;
-  }
+    &:before {
+      background: url('../../assets/chain.gif');
+      background-size:cover;
+      content: '';
+      width: 100px;
+      height:100px;
+      right:35px;
+      bottom:-10px;
+      position:absolute;
+      z-index: 999 !important;
+    }
+
+    &:after { 
+      background-size:cover;
+      content: '';
+      width: 100px;
+      height:100px;
+      right:80px;
+      bottom:-15px;
+      position:absolute;
+      rotate: -10deg;
+      z-index: 999 !important;
+    }
+}
 
 .container > span:before {
     content: '';
@@ -61,18 +59,6 @@
     -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/   
 }
 
-  
-.element-animation{
-    animation: animationFrames linear 6.20s;
-    animation-iteration-count: infinite;
-    transform-origin: 100% 0%;
-    animation-fill-mode:forwards; /*when the spec is finished*/
-    -webkit-animation: animationFrames linear 6.20s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-transform-origin: 100% 0%;
-    -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/ 
-  }
-  
   @keyframes animationFrames{
     0% {
       transform:  translate(35px,-2px)  rotate(-3deg) ;
@@ -126,31 +112,7 @@
       -webkit-transform:  translate(35px,-2px)  rotate(-3deg) ;
     }
   }
-  
-  
-  
-  
-/* @keyframes T-animation {
-	0% {
-		transform: rotate(-15deg) translateX(50px) translateY(15px);
-	} 50% {
-        transform: rotate(-15deg) translateX(65px) translateY(12px);
-    }
-	100% {
-		transform: rotate(2deg) translateX(20px) translateY(17px);
-	}
-} */
-/* @Keyframes translateBoard {
-    0% {
-        transform: translate3d(-80px, 10px, 0);
-    } 25% {
-        transform: translate3d(-70px, 0, 0);
-    }
-} */
 
-@Keyframes rotateBoard {
-
-}
 .description {
     align-items: stretch;
     width: 70%;
@@ -158,63 +120,48 @@
     text-align: left;
     vertical-align:middle;
     margin-left: 50px;
-}
-/* .description h1 {
-    font-size:60px;
-    color:rgb(2, 2, 2);
-    font-family: 'Perpetua', serif;
-    /*Palatino is nice */
 
-.description h2 {
-    /* width: 100%; */
-    width: inherit;
-    max-width: 580px;
-    min-width: 350px;
-    word-wrap: break-word;
-    font-style: italic;
-    font-family: 'Playfair Display', serif;
+    h2 {
+      width: inherit;
+      max-width: 580px;
+      min-width: 350px;
+      word-wrap: break-word;
+      font-style: italic;
+      font-family: 'Playfair Display', serif;
+    }
+
+    ul {
+      margin-top: 40px;
+      margin-left: -40px;
+      margin-bottom: 125px;
+    }
+
+    li {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    ul li {
+      list-style: none;
+      float: left;
+      font-size:60px;
+      color:rgb(2, 2, 2);
+      font-family: 'Perpetua', serif;
+    }
+  
+    li:hover {
+      animation: rotate 1s;
+      animation-fill-mode: forwards !important;
+    }
+  
 }
+
 img[alt~="cover_picture"]{
     width: auto;
     height: 100%;
     object-fit: contain;
-    
-}
-.description ul {
-    margin-top: 40px;
-    margin-left: -40px;
-    margin-bottom: 125px;
-}
-.description li {
-     display: inline-block;
-    white-space: nowrap;
-}
-.description ul li {
-    list-style: none;
-    float: left;
-    font-size:60px;
-    color:rgb(2, 2, 2);
-    font-family: 'Perpetua', serif;
-
-    /* transition: 0.5s; */
-}
-
-.description li:hover {
-    animation: rotate 1s;
-    animation-fill-mode: forwards !important;
 }
 
 @keyframes rotate {
     50% { transform: rotate(180deg); }
 }
-
-
-/* .picture {
-    align-items: stretch;
-    background: url('../../assets//profile_picture.png');
-    width: 50%;
-    height: 100%;
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-position: center;
-} */

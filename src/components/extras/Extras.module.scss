@@ -2,42 +2,39 @@
     width: 100vw;
     height: 500px;
     background-color: #100c08;
+
+    &:before {
+      width: 200px;
+      height: 50px;
+      right: 0px;
+      margin-top: 0;
+      padding: 0px 0px 0px -40px;
+      
+      content: ". . .    Extras";
+      font-weight: 600;
+      font-size: 33px;
+      font-family: 'Playfair Display', serif;
+      color: #100c08;
+    }
+
+    &:after {
+      border-top: 25px solid transparent;
+      border-bottom: 25px solid transparent; 
+      border-left: 45px solid #100c08;
+      right: 155px;
+      content: '';
+    }
+
+    &:before , &:after { 
+      position: absolute;
+      background-color:  rgb(231, 231, 231);
+
+      -webkit-animation-name: containerFadeIn;
+        animation-name: containerFadeIn;
+        animation-duration: 0.75s;
+    }
 }
 
-.container::before {
-    width: 200px;
-    height: 50px;
-    position: absolute;
-    right: 0px;
-    margin-top: 0;
-    padding: 0px 0px 0px -40px;
-    background-color:  rgb(231, 231, 231);
-    content: ". . .    Extras";
-    /* // justify-content: center; */
-    font-weight: 600;
-    font-size: 33px;
-    font-family: 'Playfair Display', serif;
-    color: #100c08;
-  /* text-align: center; */
-
-  -webkit-animation-name: containerFadeIn;
-      animation-name: containerFadeIn;
-      animation-duration: 0.75s;
-}
-.container::after{
-  border-top: 25px solid transparent;
-  border-bottom: 25px solid transparent; 
-  
-  border-left: 45px solid #100c08;
-  position: absolute;
-  right: 155px;
-  background-color:  rgb(231, 231, 231);
-  content: '';
-
-  -webkit-animation-name: containerFadeIn;
-      animation-name: containerFadeIn;
-      animation-duration: 0.75s;
-}
 
 @keyframes containerFadeIn {
     from {

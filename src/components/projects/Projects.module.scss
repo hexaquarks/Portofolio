@@ -8,82 +8,54 @@
     padding-top: 50px;
     padding-bottom: 125px;
     background-color: rgb(231, 231, 231);
-    /* margin-left: 5%;
-    margin-left: 5%; */
-    /* bottom: 200px; */
     justify-content: center; 
     overflow: hidden;
+
+    &:before { 
+      width: 200px;
+      height: 50px;
+      right: 0px;
+      margin-top: -60px;
+      padding: 0px 0px 0px -40px;
+      background-color:  #100c08;
+      content: ". . .    Projects";
+      font-weight: 600;
+      font-size: 33px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    &:after {
+      border-top: 25px solid transparent;
+      border-bottom: 25px solid transparent; 
+      
+      border-left: 45px solid rgb(231, 231, 231);
+      position: absolute;
+      right: 155px;
+      margin-top: -60px;
+      background-color:  #100c08;
+      content: '';
+    }
+
+    &:before , &:after { 
+      position: absolute;
+      color: rgb(231, 231, 231);
+
+      -webkit-animation-name: containerFadeIn;
+          animation-name: containerFadeIn;
+          animation-duration: 0.75s;
+    }
+
+    img:hover { transform: scale(1.25); }
     
 }
-
-.container img:hover {
-    transform: scale(1.25);
-}
-
-.container::before {
-    width: 200px;
-    height: 50px;
-    position: absolute;
-    right: 0px;
-    margin-top: -60px;
-    padding: 0px 0px 0px -40px;
-    background-color:  #100c08;
-    content: ". . .    Projects";
-    // justify-content: center;
-    font-weight: 600;
-    font-size: 33px;
-    font-family: 'Playfair Display', serif;
-    color: rgb(231, 231, 231);
-  /* text-align: center; */
-
-  -webkit-animation-name: containerFadeIn;
-      animation-name: containerFadeIn;
-      animation-duration: 0.75s;
-}
-.container::after{
-  border-top: 25px solid transparent;
-  border-bottom: 25px solid transparent; 
   
-  border-left: 45px solid rgb(231, 231, 231);
-  position: absolute;
-  right: 155px;
-  margin-top: -60px;
-  background-color:  #100c08;
-  content: '';
-
-  -webkit-animation-name: containerFadeIn;
-      animation-name: containerFadeIn;
-      animation-duration: 0.75s;
-}
-
-.firstProjectGif::before {
-    position: absolute;
-    width: 600px;
-    height: 50px;
-    content: 'Particle Geometry Simulator';
-    top: -50px;
-    left: 0px;
-    /* background-color: rgb(231, 231, 231, 0.1);
-    color:rgb(194, 55, 55); */
-    font-size: 35px;
-    font-family: 'Playfair Display', serif;
-
-    color: #f35626;
-    background-image: -webkit-linear-gradient(92deg, #ec3a04, #f0ba0a);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: colorGradient 10s infinite linear;
-  }
-  
-  
-
 .firstProjectGif {
     position: relative;
     width: 400px;
     height: 400px;
     top: 40px;
     margin: 0 auto;
-    // margin-right: 10%;
+
     transform-style: preserve-3d;
     box-shadow: 2px 3px 30px 9px rgba(0,0,0,0.58);
     -webkit-border-radius: 10px;
@@ -91,10 +63,25 @@
     border-radius: 10px;
     margin-left: 7%;
     margin-right: 7%;
-    /* z-index: 999; */
 
-    /* animation-name: opacityDown; */
     animation-duration: 0.75s;
+
+    &:before { 
+      position: absolute;
+      width: 600px;
+      height: 50px;
+      content: 'Particle Geometry Simulator';
+      top: -50px;
+      left: 0px;
+      font-size: 35px;
+      font-family: 'Playfair Display', serif;
+  
+      color: #f35626;
+      background-image: -webkit-linear-gradient(92deg, #ec3a04, #f0ba0a);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: colorGradient 10s infinite linear;
+    }
     
 }
 .firstProjectPicture{
@@ -125,129 +112,101 @@
     border-radius: 10px;
 
     transition: all 0.5s ease-in;
-
-    /* animation-name: opacityDown;  */
-    /* animation-duration: 0.75s; */
-    /* opacity: 50%; */
-
     background-color: #100c08;
-}
 
-.firstProjectDescription::before {
-  position: absolute;
-  width:300px;
-  height: 40px;
-  background-color:coral;
-  box-shadow: 2px 3px 22px 9px rgba(0,0,0,0.5);
-  content: 'Description';
-  padding-left: 25px;
-  font-size: 24px;
-  font-family: 'Playfair Display', serif;
-  color: rgb(44, 34, 34);
-  left:-20px;
-  top:20px;
-}
-.firstProjectDescription::after {
-  position: absolute;
-  content: '';
-  left:-20px;
-  top:60px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 20px 20px 0;
-  border-color: transparent #74240c transparent transparent;
-}
+    &:before {
+      position: absolute;
+      width:300px;
+      height: 40px;
+      background-color:coral;
+      box-shadow: 2px 3px 22px 9px rgba(0,0,0,0.5);
+      content: 'Description';
+      padding-left: 25px;
+      font-size: 24px;
+      font-family: 'Playfair Display', serif;
+      color: rgb(44, 34, 34);
+      left:-20px;
+      top:20px;
+    }
+    
+    &:after {
+      position: absolute;
+      content: '';
+      left:-20px;
+      top:60px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 20px 20px 0;
+      border-color: transparent #74240c transparent transparent;
+    }
 
-.firstProjectDescription > p {
-  float:left;
-  color: aliceblue;
-  font-size: 18px;
-  margin-top: 70px;
-  margin-left: 20px;
-  margin-right: 10px;
-  font-family: 'Times New Roman';
-}
-// .firstProjectDescription > p > h5 {
-//   color:white;
-//   font-size: 19px;
-//   float:left;
-//   height: 1px;
-// }
+    & > p {
+      float:left;
+      color: aliceblue;
+      font-size: 18px;
+      margin-top: 70px;
+      margin-left: 20px;
+      margin-right: 10px;
+      font-family: 'Times New Roman';
+    }
 
-.firstProjectDescription > span::before {
-  position: absolute;
-  width:260px;
-  height: 40px;
-  display: flex;
-  justify-content: flex-end;
+    & > span:before {
+      position: absolute;
+      width:260px;
+      height: 40px;
+      display: flex;
+      justify-content: flex-end;
+    
+      background-color:coral;
+      box-shadow: 2px 3px 22px 9px rgba(0,0,0,0.5);
+      content: 'Technologies';
+      padding-right: 40px;
+      font-size: 24px;
+      font-family: 'Playfair Display', serif;
+      color: rgb(44, 34, 34);
+      right:-20px;
+      top:245px;
+    }
 
-  background-color:coral;
-  box-shadow: 2px 3px 22px 9px rgba(0,0,0,0.5);
-  content: 'Technologies';
-  padding-right: 40px;
-  font-size: 24px;
-  font-family: 'Playfair Display', serif;
-  color: rgb(44, 34, 34);
-  right:-20px;
-  top:245px;
-}
-.firstProjectDescription > span::after {
-  position: absolute;
-  content: '';
-  right:-20px;
-  top:285px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 20px 20px 0 0;
-  border-color: #74240c transparent transparent transparent;
-}
-.firstProjectDescription > div {
-  position: absolute;
-  top: 300px;
-  left: 20px;
-  display: grid; 
-  grid-template-columns: 50px 150px 50px 150px; 
-  grid-template-rows: 50px 50px; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    ". . . ."
-    ". . . ."; 
-  color: aliceblue;
-}
+    & > span:after {
+      position: absolute;
+      content: '';
+      right:-20px;
+      top:285px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 20px 20px 0 0;
+      border-color: #74240c transparent transparent transparent;
+    }
 
-.firstProjectDescription > div > span {
-  margin-top: 10px;
-  margin-left: 5px;
-  font-weight: 600;
-}
+    & > div {
+      position: absolute;
+      top: 300px;
+      left: 20px;
+      display: grid; 
+      grid-template-columns: 50px 150px 50px 150px; 
+      grid-template-rows: 50px 50px; 
+      gap: 0px 0px; 
+      grid-template-areas: 
+        ". . . ."
+        ". . . ."; 
+      color: aliceblue;
 
+      & > span {
+        margin-top: 10px;
+        margin-left: 5px;
+        font-weight: 600;
+      }
+    }
 
-.firstProjectDescription:hover {
-    transform: z
 }
 
 .firstProjectDescription[animate='1'] {
     animation: opacityDown 0.75s 1;
 }
 
-.secondProjectGif::before {
-    position: absolute;
-    width: 600px;
-    height: 50px;
-    content: 'Weather Application';
-    top: -50px;
-    left: 0px;
-    font-size: 35px;
-    font-family: 'Playfair Display', serif;
-
-    color: #100c08;
-    background-image: -webkit-linear-gradient(92deg, #000000, rgb(141, 141, 141));
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: colorGradient 10s infinite linear;
-}
 .secondProjectGif {
     position: relative;
     width: 400px;
@@ -262,6 +221,23 @@
     margin-right: 7%;
     
     transform-style: preserve-3d;
+
+    &:before {
+      position: absolute;
+      width: 600px;
+      height: 50px;
+      content: 'Weather Application';
+      top: -50px;
+      left: 0px;
+      font-size: 35px;
+      font-family: 'Playfair Display', serif;
+  
+      color: #100c08;
+      background-image: -webkit-linear-gradient(92deg, #000000, rgb(141, 141, 141));
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: colorGradient 10s infinite linear;
+    }
 }
 
 .secondProjectPicture {
@@ -289,98 +265,97 @@
     -moz-border-radius: 10px;
     border-radius: 10px;
 
-    /* -webkit-animation-name: opacityDown; */
-      animation-duration: 0.75s;
-    /* margin: 0 auto; */
+    animation-duration: 0.75s;
     transition: all 1s ease-in;
     background-color: #100c08;
-}
 
-.secondProjectDescription::before {
-  position: absolute;
-  width:260px;
-  height: 40px;
-  display:flex;
-  justify-content: flex-end;
-  background-color:coral;
-  box-shadow: 2px 3px 22px 9px rgba(0,0,0,0.5);
-  content: 'Description';
-  padding-right: 40px;
-  font-size: 24px;
-  font-family: 'Playfair Display', serif;
-  color: rgb(44, 34, 34);
-  right:-20px;
-  top:20px;
-}
-.secondProjectDescription::after {
-  position: absolute;
-  content: '';
-  right:-20px;
-  top:60px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 20px 20px 0 0;
-  border-color: #74240c transparent transparent transparent;
-}
+    &:before {
+      position: absolute;
+      width:260px;
+      height: 40px;
+      display:flex;
+      justify-content: flex-end;
+      background-color:coral;
+      box-shadow: 2px 3px 22px 9px rgba(0,0,0,0.5);
+      content: 'Description';
+      padding-right: 40px;
+      font-size: 24px;
+      font-family: 'Playfair Display', serif;
+      color: rgb(44, 34, 34);
+      right:-20px;
+      top:20px;
+    }
 
-.secondProjectDescription > span::before {
-  position: absolute;
-  width:300px;
-  height: 40px;
-  background-color:coral;
-  box-shadow: 2px 3px 22px 9px rgba(0,0,0,0.5);
-  content: 'Technologies';
-  padding-left: 25px;
-  font-size: 24px;
-  font-family: 'Playfair Display', serif;
-  color: rgb(44, 34, 34);
-  left:-20px;
-  top:225px;
-}
-.secondProjectDescription > span::after {
-  position: absolute;
-  content: '';
-  left:-20px;
-  top:265px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 20px 20px 0;
-  border-color: transparent #74240c transparent transparent;
-}
+    &:after {
+      position: absolute;
+      content: '';
+      right:-20px;
+      top:60px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 20px 20px 0 0;
+      border-color: #74240c transparent transparent transparent;
+    }
 
-.secondProjectDescription > div {
-  position: absolute;
-  top: 290px;
-  left: 20px;
-  display: grid; 
-  grid-template-columns: 50px 150px 50px 150px; 
-  grid-template-rows: 50px 50px; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    ". . . ."
-    ". . . ."; 
-  color: aliceblue;
-}
+    & > span:before {
+      position: absolute;
+      width:300px;
+      height: 40px;
+      background-color:coral;
+      box-shadow: 2px 3px 22px 9px rgba(0,0,0,0.5);
+      content: 'Technologies';
+      padding-left: 25px;
+      font-size: 24px;
+      font-family: 'Playfair Display', serif;
+      color: rgb(44, 34, 34);
+      left:-20px;
+      top:225px;
+    }
 
-.secondProjectDescription > div > span {
-  margin-top: 10px;
-  margin-left: 5px;
-  font-weight: 600;
-}
+    & > span:after {
+      position: absolute;
+      content: '';
+      left:-20px;
+      top:265px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 20px 20px 0;
+      border-color: transparent #74240c transparent transparent;
+    }
 
-.secondProjectDescription > p {
-  float:left;
-  color: aliceblue;
-  font-size: 19px;
-  margin-top: 70px;
-  margin-left: 20px;
-  margin-right: 10px;
-  line-height: 24px;
-  font-family: 'Times New Roman';
-}
+    & > div {
+      position: absolute;
+      top: 290px;
+      left: 20px;
+      display: grid; 
+      grid-template-columns: 50px 150px 50px 150px; 
+      grid-template-rows: 50px 50px; 
+      gap: 0px 0px; 
+      grid-template-areas: 
+        ". . . ."
+        ". . . ."; 
+      color: aliceblue;
 
+      & > span { 
+        margin-top: 10px;
+        margin-left: 5px;
+        font-weight: 600;
+      }
+    }
+
+    & > p {
+      float:left;
+      color: aliceblue;
+      font-size: 19px;
+      margin-top: 70px;
+      margin-left: 20px;
+      margin-right: 10px;
+      line-height: 24px;
+      font-family: 'Times New Roman';
+    }
+}
 a {
   color: lightblue;
 }
