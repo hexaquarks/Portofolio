@@ -28,18 +28,36 @@ body {
   display: block;
   width:100%; 
   height: 175px;
-  top: 1875px;
+  top: 1850px;
   margin: auto;
 }
 
-@media only screen and (min-width: 1600px) {
+@media only screen and (min-width: 1720px) {
   .secondSeparator {
     top: 900px;
+  }
+  .thirdSeparator {
+    top: 1550px;
   }
 }
 
 @media only screen and (max-width: 800px) {
   .secondSeparator {
     top: 1500px;
+  }
+  /* .thirdSeparator{
+    top: 1900px;
+  } */
+}
+
+@media only screen and (max-width: 920px) {
+  .secondSeparator{ 
+    top: 1500px;
+  }
+}
+
+@media only screen and (max-width: 1110px){
+  .thirdSeparator{
+    top: 2300px;
   }
 }

@@ -58,8 +58,10 @@
 .container .leftParagraph,
 .container .middleParagraph {
     width: 400px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
-.rightParagraph .rightParagraph {
+.rightParagraph {
     width: 800px;
 }
 
@@ -175,7 +177,7 @@ legend {
 } */
 
 .rightParagraph > p > span { 
-    word-wrap: break-word;
+    /* word-wrap: break-word; */
     
 }
 
@@ -215,3 +217,34 @@ span {
       transform: translate3d(0, 0, 0);
     }
   }
+
+@media only screen and (max-width: 920px) {
+    /* .secondSeparator{ 
+      top: 1500px;
+    } */
+    .container .leftParagraph , 
+    .container .middleParagraph { 
+      margin: 40px;
+      margin-right: 60px;
+      height: 150px;
+      width: auto;
+    }
+    .container .leftParagraph > p,
+    .container .middleParagraph > p{
+        word-wrap: normal;
+    }
+    .container .rightParagraph {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    .container .rightParagraph > p {
+        grid-template-columns: 50px 50px 80%;
+    }
+  }
+
+
+.rightParagraph > p {
+    display: grid;
+    grid-template-columns: 50px 50px 650px;
+    row-gap: 10px;
+}
