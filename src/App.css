@@ -41,23 +41,29 @@ body {
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 920px) {
   .secondSeparator {
-    top: 1500px;
+    top: 1350px;
   }
-  /* .thirdSeparator{
-    top: 1900px;
-  } */
+  .thirdSeparator{
+    top: 2500px !important;
+  }
 }
 
-@media only screen and (max-width: 920px) {
+/* @media only screen and (min-width: 920px){
+  .thirdSeparator{
+    top: 2400px;
+  }
+} */
+
+/* @media only screen and (max-width: 920px) {
   .secondSeparator{ 
     top: 1500px;
   }
-}
-
+} */
+ 
 @media only screen and (max-width: 1110px){
   .thirdSeparator{
-    top: 2300px;
+    top: 2325px;
   }
-}
+} 
