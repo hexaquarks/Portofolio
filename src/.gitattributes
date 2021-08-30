@@ -1,2 +1,2 @@
-*.scss linguist-detectable=false
-*.ts linguist-detectable=true
+*.scss linguist-language=false
+*.ts linguist-language=true
