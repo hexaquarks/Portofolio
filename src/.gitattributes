@@ -1,2 +1,2 @@
-*.scss linguist-language=false
+# *.scss linguist-language=false
 *.ts linguist-language=true
