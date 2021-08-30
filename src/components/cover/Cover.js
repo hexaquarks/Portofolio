@@ -4,6 +4,7 @@ import coverPicture from '../../assets/profile_picture.png';
 const Cover = () => {
     return (
         <div className={styles.container} >
+            <span></span>
             <div className={styles.description} >
                 <ul>
                     <li>M</li>

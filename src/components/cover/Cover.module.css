@@ -5,8 +5,48 @@
     width: 100vw;
     height:500px;
     display: flex;
+    position: relative;
 }
+.container::before {
+    background: url('../../assets/chain.gif');
+    background-size:cover;
+    content: '';
+    width: 100px;
+    height:100px;
+    right:35px;
+    bottom:-10px;
+    position:absolute;
+    z-index: 999 !important;
+  }
 
+.container::after {
+    background: url('../../assets/chain.gif');
+    background-size:cover;
+    content: '';
+    width: 100px;
+    height:100px;
+    right:80px;
+    bottom:-15px;
+    position:absolute;
+    rotate: -10deg;
+    z-index: 999 !important;
+  }
+
+.container > span:before {
+    content: '';
+    background-color: rgb(231, 231, 231);
+    width: 75px;
+    height:40px;
+
+    right:80px;
+    bottom:-55px;
+    rotate: -7deg;
+
+    border: 3px solid rgb(126, 126, 126);
+    border-radius: 10px 10px 10px 10px;
+    position:absolute;
+    z-index: 999 !important;
+}
 .description {
     align-items: stretch;
     width: 70%;
