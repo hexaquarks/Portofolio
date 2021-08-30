@@ -1,5 +1,6 @@
-import styles from '../cover/Cover.module.css';
 import coverPicture from '../../assets/profile_picture.png';
+
+const styles = require('../cover/Cover.module.css');
 
 const Cover = () => {
     return (

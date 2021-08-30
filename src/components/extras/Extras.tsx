@@ -1,4 +1,4 @@
-import styles from '../extras/Extras.module.css';
+const styles = require('../extras/Extras.module.css');
 
 const Extras = () => {
     return( 

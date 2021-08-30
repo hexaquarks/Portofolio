@@ -1,10 +1,10 @@
 
 import './App.css';
-import Navbar from './components/navbar/Navbar.js';
-import Cover from './components/cover/Cover.js';
-import About from './components/about/About.js';
-import Projects from './components/projects/Projects.js';
-import Extras from './components/extras/Extras.js';
+import Navbar from './components/navbar/Navbar';
+import Cover from './components/cover/Cover';
+import About from './components/about/About';
+import Projects from './components/projects/Projects';
+import Extras from './components/extras/Extras';
 
 function App() {
   return (

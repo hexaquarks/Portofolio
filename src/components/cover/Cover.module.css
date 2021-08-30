@@ -21,7 +21,7 @@
   }
 
 .container::after {
-    background: url('../../assets/chain.gif');
+    background: url('../../assets/chain2.png');
     /* background: url('../../assets/css_icon.png'); */
     background-size:cover;
     content: '';

@@ -1,5 +1,4 @@
-import styles from '../projects/Projects.module.scss';
-import react, { useState } from 'react';
+import { useState } from 'react';
 import javaIcon from '../../assets/java_icon.png';
 import javaFXIcon from '../../assets/javaFX_icon.png';
 import sceneBuilderIcon from '../../assets/sceneBuilder_icon.png';
@@ -8,6 +7,7 @@ import javascriptIcon from '../../assets/javascript_icon_2.png';
 import htmlIcon from '../../assets/html_icon.png';
 import reactIcon from '../../assets/react_icon.png';
 
+const styles = require('../projects/Projects.module.scss');
 
 const Projects = () => {
 
@@ -108,7 +108,7 @@ const Projects = () => {
     return (
         <div className={styles.container}>
             <div className={styles.firstProjectGif}
-                style={{ transformStyle: leftTopStyle }}>
+                style={{ transformStyle: 'preserve-3d' }}>
 
                 <div className={styles.firstProjectPicture}
                     onClick={() => { changePicture('top', 'left') }}
@@ -140,7 +140,7 @@ const Projects = () => {
             </div>
 
             <div className={styles.secondProjectGif}
-                style={{ transformStyle: rightTopStyle }}>
+                style={{ transformStyle: 'preserve-3d' }}>
                 <div className={styles.secondProjectPicture}
                     onClick={() => { changePicture('top', 'right') }}
                     style={{ opacity: rightTopOpacity, cursor: cursorStyle('right', 'top') }} />

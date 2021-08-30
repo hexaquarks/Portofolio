@@ -1,12 +1,10 @@
-import styles from '../about/About.module.css';
 import mcgillIcon from '../../assets/mcgill_icon.png';
 import bdebIcon from '../../assets/bdeb_icon.png';
 import downArrow from '../../assets/down_arrow.png';
-import { useState, useRef } from 'react';
-import { CSSTransition } from 'react-transition-group';
+import { useState } from 'react';
 import Fade from '@material-ui/core/Fade';
-import { TextField } from '@material-ui/core';
-import { useEffect } from 'react';
+
+const styles = require('../about/About.module.css');
 
 const About = () => {
     const [topDropDown, setTopDropDown] = useState(false);
@@ -29,18 +27,6 @@ const About = () => {
             setMidDropDown(false);
         }
     }
-
-    // const [{gif, loaded} ,setState] = useState({
-    //     gif: `${styles.container}`,
-    //     loaded: `${styles.container}`
-    // });
-
-    // const reloadGif = () => {
-    //     setState({loaded: ''})
-    //     setTimeout(() => {
-    //       setState({loaded: `${styles.container}`})
-    //     }, 0)
-    //   }
     return (
         <div className={styles.container}>
             {/* <button onClick={reloadGif}>Replay</button> */}
@@ -72,7 +58,6 @@ const About = () => {
                         <img className={topDropDown === true ? `${styles.dropArrow} ${styles.doRotate}` : `${styles.dropArrow}`}
                             src={downArrow} width="30" height="30"
                             onClick={() => { onClick('top') }}
-                            styles={{ Animation: `rotate 1s` }}
                         >
                         </img>
                         <Fade in={topDropDown}>
