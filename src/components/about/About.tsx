@@ -66,9 +66,9 @@ const About = () => {
                                     <legend>Relevent Coursework</legend>
                                     <div className={styles.coursesList} >
                                         <ul>
-                                            <li>Introduction to Computer Science</li>
-                                            <li>Software Systems</li>
-                                            <li>Matrix Numerical analysis</li>
+                                            <li>Introduction to Computer Science <i>(Java)</i></li>
+                                            <li>Software Systems <i>(C, Bash)</i></li>
+                                            <li>Matrix Numerical analysis <i>(MATLAB)</i></li>
                                             <li>Discrete Mathematics</li>
                                         </ul>
                                     </div>
@@ -94,11 +94,11 @@ const About = () => {
                                     <legend>Relevent Coursework</legend>
                                     <div className={styles.coursesList} >
                                         <ul>
-                                            <li>Quantum Mechanics I (Hons.)</li>
-                                            <li>Electricy and Magnetism I (Hons.)</li>
-                                            <li>Ordinary Differential Equations (Hons.)</li>
-                                            <li>Partial Differential Equations (Hons.)</li>
-                                            <li>Signals Processing</li>
+                                            <li>(Hons.) Quantum Mechanics I <i>(Mathematica)</i></li>
+                                            <li>(Hons.) Electricy and Magnetism I <i>(Python)</i></li>
+                                            <li>(Hons.) Ordinary Differential Equations <i>(MATLAB)</i></li>
+                                            <li>(Hons.) Partial Differential Equations </li>
+                                            <li>Signals Processing <i>(Python)</i></li>
                                         </ul>
                                     </div>
                                 </fieldset>
@@ -125,10 +125,10 @@ const About = () => {
                                     <legend>Relevent Coursework</legend>
                                     <div className={styles.coursesList} >
                                         <ul>
-                                            <li>Introduction to Programming</li>
-                                            <li>Data Structures and OOP.</li>
-                                            <li>Programming with Graphical Interfaces</li>
-                                            <li>Degree Programming Final Project </li>
+                                            <li>Introduction to Programming <i>(Java)</i></li>
+                                            <li>Data Structures and OOP. <i>(Java)</i></li>
+                                            <li>Programming with Graphical Interfaces <i>(Java)</i></li>
+                                            <li>Degree Programming Final Project <i>(Java)</i></li>
                                         </ul>
                                     </div>
                                 </fieldset>

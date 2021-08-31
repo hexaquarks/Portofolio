@@ -2,6 +2,7 @@
     width: 100vw;
     height: 500px;
     background-color: #100c08;
+    position: relative;
 
     &:before {
       width: 200px;
@@ -9,7 +10,6 @@
       right: 0px;
       margin-top: 0;
       padding: 0px 0px 0px -40px;
-      
       content: ". . .    Extras";
       font-weight: 600;
       font-size: 33px;
@@ -18,21 +18,72 @@
     }
 
     &:after {
+      
       border-top: 25px solid transparent;
       border-bottom: 25px solid transparent; 
       border-left: 45px solid #100c08;
       right: 155px;
+      top: 0;
       content: '';
     }
 
     &:before , &:after { 
       position: absolute;
+      
       background-color:  rgb(231, 231, 231);
 
       -webkit-animation-name: containerFadeIn;
         animation-name: containerFadeIn;
         animation-duration: 0.75s;
     }
+}
+
+// .chessPicture { 
+//   position: relative;
+//   width: 400px; 
+//   margin: 175px 20px 20px 60px;
+//   // height: 400px;
+// }
+
+.gridContainer {
+  >div > img {
+    grid-area: img;
+    width: 350px;
+  }
+
+  display: grid;
+  grid-template-columns: 350px 300px;
+  grid-template-rows: 350px;
+  gap: 0px 0px; 
+  grid-template-areas: 
+        "img .";
+  margin: 175px 20px 20px 60px;
+
+  > div>  p, >div >span {
+    color: white;
+  }
+
+  > div > p {
+    margin-left: 50px;
+    font-size: 24px;
+    width: 400px;
+    line-height: 34px;
+     font-family: 'Playfair Display', serif;
+  }
+  // img {
+  //   width: 350px; 
+  //   margin: 175px 20px 20px 60px;
+  // }
+  // &:before {
+  //   position:absolute;
+  //   right:100px; 
+  //   top:200px;
+  //   content: 'I am an avid competitive chess player who started playing ~3 years ago. I am currently in the 99.5 percentile ';
+  //   background-color: #100c08;
+  //   color: rgb(231, 231, 231);
+  //   width: 300px;
+  //   height: auto;
+  // }
 }
 
 

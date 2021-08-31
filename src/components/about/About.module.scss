@@ -110,7 +110,7 @@ hr {
 
 .decriptionPanel {
     position: absolute;
-    width: 425px;
+    width: auto;
     height: auto;
     background-color: aliceblue;
     border: 10px solid rgba(255, 255, 255, 0.822);
@@ -191,7 +191,7 @@ span {
 
 @media only screen and (max-width: 920px) {
     .container {
-        .leftParagraph, .rightParagraph {
+        .leftParagraph, .middleParagraph {
             margin: 40px;
             margin-right: 60px;
             height: 150px;
