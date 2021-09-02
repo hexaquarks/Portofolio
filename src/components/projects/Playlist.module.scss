@@ -12,22 +12,22 @@
         justify-content: center;
 
         .time{
-
+            /* Add another calss for the slider with SASS appropriate*/ 
         }
         .actions{
             display : flex;
             justify-content: center;
-
+            width: inherit;
             .prev{
-
+                width: 30%;
             }
             .playState {
-
+                width: 40%;
             }
             .next {
-
+                width: 30%;
             }
         }
-        
+
     }
 }
