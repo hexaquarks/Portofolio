@@ -5,8 +5,58 @@ import Cover from './components/cover/Cover';
 import About from './components/about/About';
 import Projects from './components/projects/Projects';
 import Extras from './components/extras/Extras';
+import { useEffect } from 'react';
+// const express = require('express');
+// const app = express();
+// app.get('/', (req, res) => {
+//     res.send('Welcome to CORS server ')
+// })
+// app.get('/cors', (req, res) => {
+//     res.send('This has CORS enabled ')
+// })
+// app.listen(3000, () => {
+//     console.log('listening on port 8080')
+// })
 
 function App() {
+  const express = require('express')
+  const cors = require('cors')
+  const app = express()
+
+  app.use(cors())
+
+  app.get('/products/:id', function (req, res, next) {
+    res.json({ msg: 'This is CORS-enabled for all origins!' })
+  })
+
+  app.listen(3000, function () {
+    console.log('CORS-enabled web server listening on port 80')
+  })
+  
+  // const makeAPICall = async () => {
+  //   try {
+  //     const response = await fetch('http://localhost:3000/', {mode:'cors'});
+  //     const data = await response.json();
+  //     console.log({ data })
+  //   }
+  //   catch (e) {
+  //     console.log(e)
+  //   }
+  // }
+  // useEffect(() => {
+  //   makeAPICall();
+  // }, [])
+  // fetch('--------------------------------------------',{
+  //   method: "GET",
+  //   headers: {
+  //     "access-control-allow-origin" : "*",
+  //     "Content-type": "application/json; charset=UTF-8"
+  //   }})
+  // .then(results => results.json())
+  // .then(info => {
+  //     console.log(info);
+  //   })
+  // });
   return (
     <div className="App">
       <Navbar />
