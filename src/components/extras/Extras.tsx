@@ -1,4 +1,5 @@
 import chessPicture from '../../assets/chess_picture.jpg';
+import Playlist from './Playlist';
 
 const styles = require('../extras/Extras.module.scss');
 
@@ -19,6 +20,7 @@ const Extras = () => {
             {/* <div>
                 <img src={chessPicture} className={styles.chessPicture} />
             </div> */}
+        <Playlist />
         </div>
     );
 }

@@ -6,7 +6,6 @@ import cssIcon from '../../assets/css_icon.png';
 import javascriptIcon from '../../assets/javascript_icon_2.png';
 import htmlIcon from '../../assets/html_icon.png';
 import reactIcon from '../../assets/react_icon.png';
-import Playlist from './Playlist';
 
 const styles = require('../projects/Projects.module.scss');
 
@@ -170,7 +169,6 @@ const Projects = () => {
                     </div>
                 </div>
             </div>
-            <Playlist />
         </div>
     );
 }
