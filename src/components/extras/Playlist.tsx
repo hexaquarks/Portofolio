@@ -42,7 +42,7 @@ const Playlist = () => {
   
   //first useState hook is to prevent on start 
   //useEffect with currMusic and playState dependency array
-  const [skipCount, setSkipCount] = useState(true);
+  const [skipCount, setSkipCount] = useState(0);
   const [currMusic, setCurrMusic] = useState<any>(null);
   const [playState, setPlayState] = useState<boolean>(false);
   const [playlistIndex, setPlaylistIndex ]  = useState(0);
@@ -99,9 +99,10 @@ const Playlist = () => {
 
 
   useEffect(() => {
-    if(skipCount) setSkipCount(false);
-    if(!skipCount) {
+    if(skipCount<2) setSkipCount(skipCount+1);
+    if(skipCount >= 2) {
       const playMusicFetch = async () => {
+        console.log("IN")
         playState ? await currMusic.play() : await currMusic.pause();
       }
       playMusicFetch();
