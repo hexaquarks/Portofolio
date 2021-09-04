@@ -53,6 +53,11 @@
 
             }
 
+            .prev img:hover, .playState img:hover, .next img:hover {
+                filter: drop-shadow(0px 0px 10px rgb(85, 85, 85));
+                 transition: 0.25s;
+            }
+
             .prev img:active, .playState img:active, .next img:active {
                 background-color: lightgray;
                 border-radius: 50px;

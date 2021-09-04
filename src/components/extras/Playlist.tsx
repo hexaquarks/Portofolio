@@ -1,10 +1,10 @@
-import { useState, useEffect, useLayoutEffect } from 'react';
+import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import playIcon from '../../assets/play.png';
 import pauseIcon from '../../assets/pause.png';
 import prevIcon from '../../assets/prev.png';
 import nextIcon from '../../assets/next.png';
-// import ProgressBar from "@ramonak/react-progress-bar";
-import ProgressBar from './ProgressBarWrapper';
+import ProgressBar from "@ramonak/react-progress-bar";
+// import ProgressBar from './ProgressBarWrapper';
 const styles = require('../extras/Playlist.module.scss');
 
 const playlist = [
@@ -47,6 +47,34 @@ const Playlist = () => {
   const [playState, setPlayState] = useState<boolean>(false);
   const [playlistIndex, setPlaylistIndex ]  = useState(0);
 
+  //time progress
+  const [realTime, setRealTime] = useState(false);
+  const [timeCompleted, setTimeCompleted] = useState(0);
+
+  const countRef = useRef(timeCompleted);
+  countRef.current = timeCompleted;
+
+  useEffect(() => {
+    let interval;
+    if (realTime) {
+      interval = setInterval(() => {
+        let currCount = countRef.current;
+        setTimeCompleted(currCount => currCount + 1);
+      }, 1000);
+    } else {
+        clearInterval(interval);
+    }
+   return () => clearInterval(interval);
+  }, [realTime]);
+
+  const manageRealTime = () => {
+    setRealTime(!realTime);
+  }
+  
+  const reset = () => {
+    setTimeCompleted(0);
+  }
+
   useEffect(() => {
       const fetchImages = async () => {
         let imageUrlString;
@@ -83,6 +111,7 @@ const Playlist = () => {
   const enableMusic = async () => {
       if(currMusic){
         setPlayState(!playState);
+        manageRealTime();
       }
   }
 
@@ -97,19 +126,13 @@ const Playlist = () => {
           ? playlistIndex - 1
           : playlistIndex
     )
+    reset();
   }
 
   const handleClick = async (buttonType) => {
     buttonType === 'play' 
       ? enableMusic()
       : changeMusic(buttonType);
-  }
-
-  const props = {
-    height: "5",
-    completed: 0,
-    bg: "#0096FF",
-    baseBg: "skyblue"
   }
 
   return (
@@ -138,7 +161,11 @@ const Playlist = () => {
 
         </div>
         <div className={styles.time}>
-          <ProgressBar {...props} />
+        <ProgressBar completed={timeCompleted} bgColor="#0096FF"
+                  height="10px" baseBgColor="skyblue"
+                  labelAlignment="center"
+                  labelColor="aliceblue"
+                  isLabelVisible={false} />
         </div>
       </div>
 
