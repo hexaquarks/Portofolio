@@ -4,48 +4,48 @@ import pauseIcon from '../../assets/pause.png';
 import prevIcon from '../../assets/prev.png';
 import nextIcon from '../../assets/next.png';
 import ProgressBar from "@ramonak/react-progress-bar";
+import { IndexKind } from 'typescript';
 // import ProgressBar from './ProgressBarWrapper';
 const styles = require('../extras/Playlist.module.scss');
 
-const playlist = [
-  913128502,
-  755552476,
-  604329399
+const trackIds = [
+  558781332, //saviour
+  641232672, //inifnity
+  789251809, //lost in us
+  911387248, //red sea
+  604329399, //empty echo
+  674440619, //risk it all 
+  577195731, //leaving u 
+  588337998, //love is wide awake 
+  291839508, //reaching for my dreams
+  754912147 //uplifted 
 ];
 
-const imageLinks: any = [];
+let playlist: any = [];
 
 const SC = require('soundcloud');
 SC.initialize({
   client_id: '1dff55bf515582dc759594dac5ba46e9'
 });
 
-
-// const musicFetch = (trackId) => {
-//   return SC.stream('/tracks/' + trackId)
-//     .then(track => {
-//       return track;
-//     })
-// }
-
 async function getJson(trackId) {
   let response = await SC.stream('/tracks/' + trackId);
   return response;
 }
 
-async function getImage(trackId) {
+async function getInfo(trackId) {
   let response = await SC.get('/tracks/' + trackId);
   return response;
 }
 
 const Playlist = () => {
-  
+
   //first useState hook is to prevent on start 
   //useEffect with currMusic and playState dependency array
   const [skipCount, setSkipCount] = useState(0);
   const [currMusic, setCurrMusic] = useState<any>(null);
   const [playState, setPlayState] = useState<boolean>(false);
-  const [playlistIndex, setPlaylistIndex ]  = useState(0);
+  const [playlistIndex, setPlaylistIndex] = useState(0);
 
   //time progress
   const [realTime, setRealTime] = useState(false);
@@ -62,35 +62,52 @@ const Playlist = () => {
         setTimeCompleted(currCount => currCount + 1);
       }, 1000);
     } else {
-        clearInterval(interval);
+      clearInterval(interval);
     }
-   return () => clearInterval(interval);
+    return () => clearInterval(interval);
   }, [realTime]);
 
   const manageRealTime = () => {
     setRealTime(!realTime);
   }
-  
+
   const reset = () => {
     setTimeCompleted(0);
   }
 
   useEffect(() => {
-      const fetchImages = async () => {
-        let imageUrlString;
-        for(var i = 0 ;i < playlist.length ;i++){
-          imageUrlString = await getImage(playlist[i]);
-          imageLinks.push (
-            imageUrlString.artwork_url
-          )
-        }
-      }
-      fetchImages();
+    const fetchImages = async () => {
+      let response;
+      playlist = await Promise.all(trackIds.map(async (val, index) => {
+        response = await getInfo(trackIds[index]);
+        playlist.push({
+          trackId: trackIds[index],
+          image: response.artwork_url,
+          name: response.title
+        })
+        // return {
+        //   trackId: trackIds[index],
+        //   image: response.artwork_url,
+        //   name: response.title
+        // };
+      }));
+      // for (var i = 0; i < trackIds.length; i++) {
+      //   response = await getInfo(trackIds[i]);
+      //   console.log(response.title);
+      //   playlist.push({
+      //     trackId: trackIds[i],
+      //     image: response.artwork_url,
+      //     name: response.title
+      //   });
+      // }
+    }
+    fetchImages();
+    console.log(playlist);
   }, []);
 
   useEffect(() => {
     const setMusicFetch = async () => {
-      const music = await getJson(playlist[playlistIndex]);
+      const music = await getJson(trackIds[playlistIndex]);
       music.setVolume(0.1);
       setCurrMusic(music);
     }
@@ -99,8 +116,8 @@ const Playlist = () => {
 
 
   useEffect(() => {
-    if(skipCount<2) setSkipCount(skipCount+1);
-    if(skipCount >= 2) {
+    if (skipCount < 2) setSkipCount(skipCount + 1);
+    if (skipCount >= 2) {
       const playMusicFetch = async () => {
         console.log("IN")
         playState ? await currMusic.play() : await currMusic.pause();
@@ -110,20 +127,20 @@ const Playlist = () => {
   }, [currMusic, playState]);
 
   const enableMusic = async () => {
-      if(currMusic){
-        setPlayState(!playState);
-        manageRealTime();
-      }
+    if (currMusic) {
+      setPlayState(!playState);
+      manageRealTime();
+    }
   }
 
   const changeMusic = async (direction) => {
-    
+
     setPlaylistIndex(
-      direction === 'next' 
-        ? playlistIndex < playlist.length-1 
-          ? playlistIndex + 1  
+      direction === 'next'
+        ? playlistIndex < playlist.length - 1
+          ? playlistIndex + 1
           : playlistIndex
-        : playlistIndex > 0 
+        : playlistIndex > 0
           ? playlistIndex - 1
           : playlistIndex
     )
@@ -131,7 +148,7 @@ const Playlist = () => {
   }
 
   const handleClick = async (buttonType) => {
-    buttonType === 'play' 
+    buttonType === 'play'
       ? enableMusic()
       : changeMusic(buttonType);
   }
@@ -139,34 +156,43 @@ const Playlist = () => {
   return (
     <div className={styles.container}>
       <div className={styles.picture} >
-        <img src={imageLinks[playlistIndex]} width="100" height="100" />
+        {
+          typeof playlist[playlistIndex] !== 'undefined'
+            ? <img src={playlist[playlistIndex].image} width="100" height="100" />
+            : <p>Loading</p>
+        }
       </div>
       <div className={styles.controls}>
+        {
+          typeof playlist[playlistIndex] !== 'undefined'
+            ? <span>{playlist[playlistIndex].name}</span>
+            : <p>Loading</p>
+        }
         <div className={styles.actions}>
           <div className={styles.prev}
-               onClick={() => { handleClick('prev') }}>
+            onClick={() => { handleClick('prev') }}>
             <img src={prevIcon} width="35" height="35" />
           </div>
           <div className={styles.playState}
-               onClick={() => { handleClick('play') }}>
+            onClick={() => { handleClick('play') }}>
             <img src={playState === false
               ? playIcon
               : pauseIcon}
-              alt="playStateIcon" width="50" height="50" 
-              style={{alignSelf: `center`}}/>
+              alt="playStateIcon" width="50" height="50"
+              style={{ alignSelf: `center` }} />
           </div>
           <div className={styles.next}
-               onClick={() => { handleClick('next') }}>
+            onClick={() => { handleClick('next') }}>
             <img src={nextIcon} width="35" height="35" />
           </div>
 
         </div>
         <div className={styles.time}>
-        <ProgressBar completed={timeCompleted} bgColor="#0096FF"
-                  height="10px" baseBgColor="skyblue"
-                  labelAlignment="center"
-                  labelColor="aliceblue"
-                  isLabelVisible={false} />
+          <ProgressBar completed={timeCompleted} bgColor="#0096FF"
+            height="10px" baseBgColor="skyblue"
+            labelAlignment="center"
+            labelColor="aliceblue"
+            isLabelVisible={false} />
         </div>
       </div>
 
