@@ -3,8 +3,8 @@
     width: 325px;
     height: 100px;
     overflow: hidden;
-    background-color: rgb(231, 231, 231);
-    border-radius: px;
+    background-color: aliceblue;
+    border-radius: 25px;
     margin-top: 150px;
 
     .picture {
@@ -14,6 +14,7 @@
     }
     .controls {
         width: 225px;
+        margin-top: -8px;
         // margin-left: 50px;
         display: block;
         justify-content: center;
@@ -25,6 +26,7 @@
             width: 225px;
             height: 75px;
             background-color: inherit;
+            margin-left: 5px;
             // border: 3px solid #100c08;
             border-radius: 0px;
 
@@ -41,7 +43,7 @@
                 display: flex;
                 background-color: inherit;
                 align-self: center;
-                padding-left: 20px;
+                padding-left: 10px;
             }
             .next {
                 width: 30%;
@@ -50,11 +52,18 @@
                 align-self: center;
 
             }
+
+            .prev img:active, .playState img:active, .next img:active {
+                background-color: lightgray;
+                border-radius: 50px;
+                // transition: 2s;
+            }
         }
         .time{
             /* Add another calss for the slider with SASS appropriate*/ 
+            margin: 5px 5px 25px 13px;
             height: 25px;
-            width: 225px;
+            width: 195px;
             // background-color: red;
         }
 

@@ -3,6 +3,8 @@ import playIcon from '../../assets/play.png';
 import pauseIcon from '../../assets/pause.png';
 import prevIcon from '../../assets/prev.png';
 import nextIcon from '../../assets/next.png';
+// import ProgressBar from "@ramonak/react-progress-bar";
+import ProgressBar from './ProgressBarWrapper';
 const styles = require('../extras/Playlist.module.scss');
 
 const playlist = [
@@ -103,19 +105,23 @@ const Playlist = () => {
       : changeMusic(buttonType);
   }
 
+  const props = {
+    height: "5",
+    completed: 0,
+    bg: "#0096FF",
+    baseBg: "skyblue"
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.picture} >
         <img src={imageLinks[playlistIndex]} width="100" height="100" />
       </div>
       <div className={styles.controls}>
-        <div className={styles.time}>
-
-        </div>
         <div className={styles.actions}>
           <div className={styles.prev}
                onClick={() => { handleClick('prev') }}>
-            <img src={prevIcon} width="50" height="50" />
+            <img src={prevIcon} width="35" height="35" />
           </div>
           <div className={styles.playState}
                onClick={() => { handleClick('play') }}>
@@ -127,9 +133,12 @@ const Playlist = () => {
           </div>
           <div className={styles.next}
                onClick={() => { handleClick('next') }}>
-            <img src={nextIcon} width="50" height="50" />
+            <img src={nextIcon} width="35" height="35" />
           </div>
 
+        </div>
+        <div className={styles.time}>
+          <ProgressBar {...props} />
         </div>
       </div>
 

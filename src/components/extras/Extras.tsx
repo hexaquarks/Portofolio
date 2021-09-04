@@ -1,3 +1,4 @@
+import ProgressBar from '@ramonak/react-progress-bar';
 import chessPicture from '../../assets/chess_picture.jpg';
 import Playlist from './Playlist';
 
