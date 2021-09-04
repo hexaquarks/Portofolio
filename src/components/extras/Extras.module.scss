@@ -4,6 +4,8 @@
     background-color: #100c08;
     position: relative;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
     &:before {
       width: 200px;
@@ -37,6 +39,43 @@
         animation-name: containerFadeIn;
         animation-duration: 0.75s;
     }
+
+    .imageContainer {
+      width: 300px;
+      justify-content: center;
+      align-self: center;
+      // margin-left: 8%;
+      margin-top: 7%;
+
+      img {
+        width: 300px;
+        border-radius: 40px;
+      }
+    }
+  
+    .descriptionContainer {
+      width: 300px;
+      justify-content:center;
+      align-self:center;
+      margin-left: 6%;
+      margin-top: 7%;
+      color: rgb(231, 231, 231);
+
+     > p {
+      font-size: 24px;
+      line-height: 34px;
+      font-family: 'Playfair Display', serif;
+     }
+    }
+
+    .playlistsContaier {
+      width: 325px;
+      justify-content:center;
+      align-self:center;
+      margin-left: 3%;
+    }
+
+
 }
 
 // .chessPicture { 
@@ -47,6 +86,7 @@
 // }
 
 .gridContainer {
+
   >div > img {
     grid-area: img;
     width: 350px;

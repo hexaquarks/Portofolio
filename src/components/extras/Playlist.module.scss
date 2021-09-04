@@ -2,27 +2,23 @@
     display: flex;
     width: 325px;
     height: 100px;
+    overflow: hidden;
     background-color: rgb(231, 231, 231);
-    border-radius: 30px;
+    border-radius: px;
+    margin-top: 150px;
 
     .picture {
         width: 100px;
-        background-color: rgb(231, 231, 231);
-        margin-right: 25px;
+        display: block;
+        justify-content: center;
     }
     .controls {
         width: 225px;
         // margin-left: 50px;
         display: block;
         justify-content: center;
-        background-color: inherit;
+        // background-color: inherit;
 
-        .time{
-            /* Add another calss for the slider with SASS appropriate*/ 
-            height: 25px;
-            width: 225px;
-            background-color: red;
-        }
         .actions{
             display : flex;
             justify-content: center;
@@ -54,6 +50,12 @@
                 align-self: center;
 
             }
+        }
+        .time{
+            /* Add another calss for the slider with SASS appropriate*/ 
+            height: 25px;
+            width: 225px;
+            // background-color: red;
         }
 
     }

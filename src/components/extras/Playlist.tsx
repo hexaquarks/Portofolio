@@ -1,4 +1,4 @@
-import { useState, useEffect, useReducer } from 'react';
+import { useState, useEffect, useLayoutEffect } from 'react';
 import playIcon from '../../assets/play.png';
 import pauseIcon from '../../assets/pause.png';
 import prevIcon from '../../assets/prev.png';
@@ -10,6 +10,8 @@ const playlist = [
   755552476,
   604329399
 ];
+
+const imageLinks: any = [];
 
 const SC = require('soundcloud');
 SC.initialize({
@@ -29,68 +31,94 @@ async function getJson(trackId) {
   return response;
 }
 
-const Playlist = () => {
+async function getImage(trackId) {
+  let response = await SC.get('/tracks/' + trackId);
+  return response;
+}
 
+const Playlist = () => {
+  
+  //first useState hook is to prevent on start 
+  //useEffect with currMusic and playState dependency array
+  const [skipCount, setSkipCount] = useState(true);
   const [currMusic, setCurrMusic] = useState<any>(null);
   const [playState, setPlayState] = useState<boolean>(false);
   const [playlistIndex, setPlaylistIndex ]  = useState(0);
-  const forceUpdate = useReducer(() => ({}), {})[1] as () => void
 
   useEffect(() => {
-    getJson(playlist[playlistIndex]).then((track) => {
-      track.setVolume(0.4);
-      console.log(track);
-      setCurrMusic(track);
-    });
-  }, [playState])
+      const fetchImages = async () => {
+        let imageUrlString;
+        for(var i = 0 ;i < playlist.length ;i++){
+          imageUrlString = await getImage(playlist[i]);
+          imageLinks.push (
+            imageUrlString.artwork_url
+          )
+        }
+      }
+      fetchImages();
+  }, []);
 
-  // useEffect(() => {
-  //   getJson(playlist[playlistIndex]).then((track) => {
-  //     track.setVolume(0.4);
-  //     console.log(track);
-  //     setCurrMusic(track);
-  //   });
-  // }, [])
+  useEffect(() => {
+    const setMusicFetch = async () => {
+      const music = await getJson(playlist[playlistIndex]);
+      music.setVolume(0.1);
+      setCurrMusic(music);
+    }
+    setMusicFetch();
+  }, [playlistIndex]);
 
+
+  useEffect(() => {
+    if(skipCount) setSkipCount(false);
+    if(!skipCount) {
+      const playMusicFetch = async () => {
+        playState ? await currMusic.play() : await currMusic.pause();
+      }
+      playMusicFetch();
+    }
+  }, [currMusic, playState]);
 
   const enableMusic = async () => {
       if(currMusic){
         setPlayState(!playState);
-        playState ? await currMusic.pause() 
-                  : await currMusic.play();
       }
   }
 
   const changeMusic = async (direction) => {
+    
     setPlaylistIndex(
-      direction === 'next' ? await playlistIndex+1 : await playlistIndex-1
+      direction === 'next' 
+        ? playlistIndex < playlist.length-1 
+          ? playlistIndex + 1  
+          : playlistIndex
+        : playlistIndex > 0 
+          ? playlistIndex - 1
+          : playlistIndex
     )
-    console.log(playlistIndex);
   }
 
-  const handlePlayClicked = async (buttonType) => {
-    if (buttonType === 'play') {
-      enableMusic();
-    } else if (buttonType === 'prev') {
-      changeMusic('prev')
-    } else if (buttonType === 'next') {
-      changeMusic('next');
-    }
+  const handleClick = async (buttonType) => {
+    buttonType === 'play' 
+      ? enableMusic()
+      : changeMusic(buttonType);
   }
+
   return (
     <div className={styles.container}>
-      <div className={styles.picture} />
+      <div className={styles.picture} >
+        <img src={imageLinks[playlistIndex]} width="100" height="100" />
+      </div>
       <div className={styles.controls}>
         <div className={styles.time}>
 
         </div>
         <div className={styles.actions}>
           <div className={styles.prev}
-               onClick={() => { handlePlayClicked('prev') }}>
+               onClick={() => { handleClick('prev') }}>
             <img src={prevIcon} width="50" height="50" />
           </div>
           <div className={styles.playState}
-               onClick={() => { handlePlayClicked('play') }}>
+               onClick={() => { handleClick('play') }}>
             <img src={playState === false
               ? playIcon
               : pauseIcon}
@@ -98,7 +126,7 @@ const Playlist = () => {
               style={{alignSelf: `center`}}/>
           </div>
           <div className={styles.next}
-               onClick={() => { handlePlayClicked('next') }}>
+               onClick={() => { handleClick('next') }}>
             <img src={nextIcon} width="50" height="50" />
           </div>
 
