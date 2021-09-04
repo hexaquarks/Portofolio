@@ -54,17 +54,26 @@
     }
   
     .descriptionContainer {
-      width: 300px;
-      justify-content:center;
-      align-self:center;
+      display:block;
+      width: 350px;
+      // justify-content:center;
+      // align-self:center;
       margin-left: 6%;
       margin-top: 7%;
       color: rgb(231, 231, 231);
 
      > p {
-      font-size: 24px;
+      margin: 0 auto;
+      font-size: 20px;
       line-height: 34px;
       font-family: 'Playfair Display', serif;
+
+      &::first-letter {
+        color: #c69c6d;
+        float: left;
+        font-size: 4em;
+        margin: 0.2em .2em 0 0;
+      }
      }
     }
 

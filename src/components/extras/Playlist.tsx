@@ -78,28 +78,28 @@ const Playlist = () => {
   useEffect(() => {
     const fetchImages = async () => {
       let response;
-      playlist = await Promise.all(trackIds.map(async (val, index) => {
-        response = await getInfo(trackIds[index]);
-        playlist.push({
-          trackId: trackIds[index],
-          image: response.artwork_url,
-          name: response.title
-        })
-        // return {
-        //   trackId: trackIds[index],
-        //   image: response.artwork_url,
-        //   name: response.title
-        // };
-      }));
-      // for (var i = 0; i < trackIds.length; i++) {
-      //   response = await getInfo(trackIds[i]);
-      //   console.log(response.title);
+      // playlist = await Promise.all(trackIds.map(async (val, index) => {
+      //   response = await getInfo(trackIds[index]);
       //   playlist.push({
-      //     trackId: trackIds[i],
+      //     trackId: trackIds[index],
       //     image: response.artwork_url,
       //     name: response.title
-      //   });
-      // }
+      //   })
+      //   // return {
+      //   //   trackId: trackIds[index],
+      //   //   image: response.artwork_url,
+      //   //   name: response.title
+      //   // };
+      // }));
+      for (var i = 0; i < trackIds.length; i++) {
+        response = await getInfo(trackIds[i]);
+        console.log(response.title);
+        playlist.push({
+          trackId: trackIds[i],
+          image: response.artwork_url,
+          name: response.title
+        });
+      }
     }
     fetchImages();
     console.log(playlist);
@@ -119,8 +119,11 @@ const Playlist = () => {
     if (skipCount < 2) setSkipCount(skipCount + 1);
     if (skipCount >= 2) {
       const playMusicFetch = async () => {
-        console.log("IN")
-        playState ? await currMusic.play() : await currMusic.pause();
+        try {
+          playState ? await currMusic.play() : await currMusic.pause();
+        } catch (e) {
+          
+        }
       }
       playMusicFetch();
     }
@@ -149,8 +152,8 @@ const Playlist = () => {
 
   const handleClick = async (buttonType) => {
     buttonType === 'play'
-      ? enableMusic()
-      : changeMusic(buttonType);
+      ? await enableMusic()
+      : await changeMusic(buttonType);
   }
 
   return (
@@ -165,7 +168,7 @@ const Playlist = () => {
       <div className={styles.controls}>
         {
           typeof playlist[playlistIndex] !== 'undefined'
-            ? <span>{playlist[playlistIndex].name}</span>
+            ? <p>{playlist[playlistIndex].name}</p>
             : <p>Loading</p>
         }
         <div className={styles.actions}>
@@ -189,7 +192,7 @@ const Playlist = () => {
         </div>
         <div className={styles.time}>
           <ProgressBar completed={timeCompleted} bgColor="#0096FF"
-            height="10px" baseBgColor="skyblue"
+            height="8px" baseBgColor="skyblue"
             labelAlignment="center"
             labelColor="aliceblue"
             isLabelVisible={false} />
