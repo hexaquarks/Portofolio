@@ -6,13 +6,20 @@ import CourseFolder from "./CourseFolder";
 const LatexFolders = () => {
 
     const [xPos, setXPos] = useState(0);
+    const leftMax = 780;
 
     const onClick = (direction) => {
         if (direction === 'left') {
-            xPos === -780 ? setXPos(xPos) : setXPos(xPos - 130);
+            xPos === -leftMax ? setXPos(xPos) : setXPos(xPos - 130);
         } else {
             xPos === 0 ? setXPos(xPos) : setXPos(xPos + 130);
         }
+    }
+
+    const manageOpacity = (direction, xPos) => {
+        if(xPos===0) return direction==='left' ? 25 : 100;
+        else if(xPos < 0 && xPos > -leftMax) return 100;
+        else if(xPos=== -leftMax) return direction==='left' ? 100 : 25;
     }
 
     const courseNames = [
@@ -30,7 +37,8 @@ const LatexFolders = () => {
     return (
         <div className={styles.forecast_window}>
             <button className={styles.left_arrow}
-                onClick={() => onClick('right')}>
+                onClick={() => onClick('right')}
+                style={{opacity: `${manageOpacity('left' , xPos)}%`}}>
             </button>
             <div className={styles.forecast_slider}>
                 <div className={styles.forecast_container} style={{ transform: `translateX(${xPos}px)` }}>
@@ -40,7 +48,8 @@ const LatexFolders = () => {
                 </div>
             </div>
             <button className={styles.right_arrow}
-                onClick={() => onClick('left')}>
+                onClick={() => onClick('left')}
+                style={{opacity: `${manageOpacity('right' , xPos)}%`}}>
             </button>
         </div>
     )

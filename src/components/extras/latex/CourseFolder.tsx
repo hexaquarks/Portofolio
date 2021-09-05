@@ -26,6 +26,9 @@ function CourseFolder(props) {
         onMouseLeave={() => {
           handleMouseLeave();
         }}
+        onClick={() => {
+          
+        }}
       >
         <img className={-xPos/130 !== index-1 ? styles.shrinkImage : ''} src={image} width="130" alt="alternative" />
       </div>
