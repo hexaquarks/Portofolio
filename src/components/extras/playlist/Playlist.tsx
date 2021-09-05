@@ -1,12 +1,11 @@
 import { useState, useEffect, useLayoutEffect, useRef } from 'react';
-import playIcon from '../../assets/play.png';
-import pauseIcon from '../../assets/pause.png';
-import prevIcon from '../../assets/prev.png';
-import nextIcon from '../../assets/next.png';
+import playIcon from '../../../assets/play.png';
+import pauseIcon from '../../../assets/pause.png';
+import prevIcon from '../../../assets/prev.png';
+import nextIcon from '../../../assets/next.png';
 import ProgressBar from "@ramonak/react-progress-bar";
-import { IndexKind } from 'typescript';
 // import ProgressBar from './ProgressBarWrapper';
-const styles = require('../extras/Playlist.module.scss');
+const styles = require('./Playlist.module.scss');
 
 const trackIds = [
   558781332, //saviour

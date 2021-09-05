@@ -2,8 +2,8 @@ import ProgressBar from '@ramonak/react-progress-bar';
 import chessPicture from '../../assets/chess_picture.jpg';
 import chessIcon from '../../assets/chessIcon.png';
 import lichessIcon from '../../assets/lichessIcon.png';
-import Playlist from './Playlist';
-import LatexFolders from './LatexFolders';
+import Playlist from './playlist/Playlist';
+import LatexFolders from './latex/LatexFolders';
 import { StylesProvider } from '@material-ui/core';
 
 const styles = require('../extras/Extras.module.scss');
