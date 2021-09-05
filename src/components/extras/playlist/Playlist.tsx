@@ -58,8 +58,8 @@ const Playlist = () => {
     let interval;
     if (realTime) {
       interval = setInterval(() => {
-        let currCount = countRef.current;
-        setTimeCompleted(currCount => currCount + 1);
+        let trackDurationTime = playlist[playlistIndex].duration;
+        setTimeCompleted(currCount => currCount + 100000/trackDurationTime);
       }, 1000);
     } else {
       clearInterval(interval);
@@ -93,11 +93,12 @@ const Playlist = () => {
       // }));
       for (var i = 0; i < trackIds.length; i++) {
         response = await getInfo(trackIds[i]);
-        console.log(response.title);
+        console.log(response);
         playlist.push({
           trackId: trackIds[i],
           image: response.artwork_url,
-          name: response.title
+          name: response.title,
+          duration: response.duration
         });
       }
     }
