@@ -41,16 +41,33 @@
     }
 
     .imageContainer {
+      background: url('../../assets/chess_picture.jpg');
       width: 300px;
-      justify-content: center;
-      align-self: center;
-      // margin-left: 8%;
+      height: 400px;
+      background-size: cover;
+      border-radius: 35px;
+      overflow: hidden;
       margin-top: 7%;
-
-      img {
-        width: 300px;
-        border-radius: 40px;
+      position: relative;
+      isolation: isolate;
+      box-shadow: 2px 3px 30px 9px rgba(26, 26, 26, 0.58);
+      
+      &::before {
+        position: absolute;
+        inset: 0;
+        content: "";
+        z-index: -1;
+        background:
+         linear-gradient(
+           0deg,
+           rgba(0 0 0 / 0.9),
+           rgba(0 0 0 / 0.1)
+         )
       }
+      // img {
+      //   width: 300px;
+      //   border-radius: 40px;
+      // }
     }
   
     .descriptionContainer {
@@ -134,20 +151,6 @@
     line-height: 34px;
      font-family: 'Playfair Display', serif;
   }
-  // img {
-  //   width: 350px; 
-  //   margin: 175px 20px 20px 60px;
-  // }
-  // &:before {
-  //   position:absolute;
-  //   right:100px; 
-  //   top:200px;
-  //   content: 'I am an avid competitive chess player who started playing ~3 years ago. I am currently in the 99.5 percentile ';
-  //   background-color: #100c08;
-  //   color: rgb(231, 231, 231);
-  //   width: 300px;
-  //   height: auto;
-  // }
 }
 
 
