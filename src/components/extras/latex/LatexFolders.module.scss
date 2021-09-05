@@ -99,6 +99,52 @@
 
   .decriptionPanel {
     // position: absolute;
+    display: flex;
+    position: fixed !important;
+    width: 375px;
+    height: 130px;
+    inset: 0;
+    margin-top: -20px;
+    background-color: aliceblue;
+    border: 10px solid rgba(255, 255, 255, 0.822);
+    color: black;
+    z-index: 999 !important;
+    transition: 3s;
+
+    .image {
+      width: 30%;
+      background: url('../../../assets/folderOpen.png');
+      background-size: cover;
+    }
+
+    .description {
+      width: 70%;
+
+      .filesGrid {
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+      }
+      .filesGrid  {
+        flex: 0 0 calc(25% - 1em);
+        min-height: 25px;
+        width: 130px;
+        margin: 0.25em 0.5em;
+
+        > a > button img {
+          height: 12px;
+          margin-right: 5px;
+        }
+         span {
+          width: 11ch;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .decriptionPanel2 {
+    // position: absolute;
     position: fixed !important;
     width: auto;
     height: auto;
@@ -111,4 +157,14 @@
   
     border-radius: 10px 10px 10px 10px;
     transition: 1s;
+  }
+
+  @keyframes containerFadeIn {
+    from {
+      transform: translateX(2000px);
+    }
+  
+    to {
+      transform: translateX(0);
+    }
   }
