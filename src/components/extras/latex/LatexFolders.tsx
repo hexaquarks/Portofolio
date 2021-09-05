@@ -17,9 +17,9 @@ const LatexFolders = () => {
     }
 
     const manageOpacity = (direction, xPos) => {
-        if(xPos===0) return direction==='left' ? 25 : 100;
-        else if(xPos < 0 && xPos > -leftMax) return 100;
-        else if(xPos=== -leftMax) return direction==='left' ? 100 : 25;
+        if (xPos === 0) return direction === 'left' ? 25 : 100;
+        else if (xPos < 0 && xPos > -leftMax) return 100;
+        else if (xPos === -leftMax) return direction === 'left' ? 100 : 25;
     }
 
     const courseNames = [
@@ -38,18 +38,19 @@ const LatexFolders = () => {
         <div className={styles.forecast_window}>
             <button className={styles.left_arrow}
                 onClick={() => onClick('right')}
-                style={{opacity: `${manageOpacity('left' , xPos)}%`}}>
+                style={{ opacity: `${manageOpacity('left', xPos)}%` }}>
             </button>
-            <div className={styles.forecast_slider}>
+            
+            <div className={`${styles.forecast_slider}`}>
                 <div className={styles.forecast_container} style={{ transform: `translateX(${xPos}px)` }}>
                     {courseNames.map((value, index) => (
-                        <CourseFolder value={value} key={index} xPos={xPos} index={index}/>
+                        <CourseFolder value={value} key={index} xPos={xPos} index={index} />
                     ))}
                 </div>
             </div>
             <button className={styles.right_arrow}
                 onClick={() => onClick('left')}
-                style={{opacity: `${manageOpacity('right' , xPos)}%`}}>
+                style={{ opacity: `${manageOpacity('right', xPos)}%` }}>
             </button>
         </div>
     )

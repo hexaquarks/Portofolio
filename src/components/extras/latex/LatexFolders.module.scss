@@ -1,10 +1,23 @@
+
+
+// .clearfix:before,
+// .clearfix:after {
+//     content: ".";    
+//     display: flex;    
+//     // height: 0;    
+//     overflow: hidden; 
+// }
+// .clearfix:after { clear: both; }
+// .clearfix { zoom: 1; } /* IE < 8 */
+
 .forecast_window {
+  
     width: 415px;
     height: 130px;
     display:flex;
     align-items: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto auto;
+    // position: relative;
 
     .shrinkImage{
         transform: scale(0.7);
@@ -14,7 +27,6 @@
         transform: scale(1.2);
         cursor: pointer;
     }
-
 
     .left_arrow {
         background: url('../../../assets/left_arrow.png');
@@ -35,7 +47,7 @@
         border: none;
       
         transform: scalex(-1);
-        position:relative;
+        position:static;
         cursor: pointer;
         left:7px;
         top: 5x;
@@ -50,7 +62,8 @@
   }
 
   .forecast_slider {
-  
+    
+    // position: relative;
     border-radius: 12px;
     background-color: #1F1F1F;
     color: #ffffff;
@@ -67,6 +80,7 @@
         text-align: center;
       
         transition: transform 500ms;
+        
 
         span {
             // margin-bottom: 4px;  
@@ -81,4 +95,20 @@
             margin-right: 15px;
         }
       }
+  }
+
+  .decriptionPanel {
+    // position: absolute;
+    position: fixed !important;
+    width: auto;
+    height: auto;
+    top: -100px;
+    background-color: aliceblue;
+    border: 10px solid rgba(255, 255, 255, 0.822);
+    color: black;
+    z-index: 999 !important;
+    box-shadow: 2px 3px 30px 9px rgba(255, 255, 255, 0.25);
+  
+    border-radius: 10px 10px 10px 10px;
+    transition: 1s;
   }
