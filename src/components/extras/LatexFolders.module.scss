@@ -1,10 +1,18 @@
 .forecast_window {
-    width: 520px;
+    width: 415px;
     height: 130px;
     display:flex;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
+
+    .shrinkImage{
+        transform: scale(0.7);
+    }
+    img {
+        transition: 0.75s;
+        transform: scale(1.2);
+    }
 
     .left_arrow {
         background: url('../../assets/left_arrow.png');
@@ -41,7 +49,7 @@
 
   .forecast_slider {
   
-    border-radius: 0px 0px 16px 16px;
+    border-radius: 12px;
     background-color: #1F1F1F;
     color: #ffffff;
   
@@ -52,23 +60,23 @@
         display: flex;
         width: 700px;
         height: 130px;
-        margin-top: 10px;
+        margin-top: 20px;
         align-items: center;
         text-align: center;
       
         transition: transform 500ms;
 
-        > div {
+        span {
+            // margin-bottom: 4px;  
+            margin-top:10px;
+            font-family: 'Arvo', serif;
+            font-size:  18px;
+            // width: 8ch;
+          }
+
+        .folderElement {
             margin-left: 12px;
             margin-right: 15px;
-
-            > p {
-                margin-bottom: 4px;  
-                margin-top:2px;
-                font-family: 'Arvo', serif;
-                font-size:  14px;
-                width: 8ch;
-              }
         }
       }
   }

@@ -107,11 +107,22 @@
      }
     }
 
-    .playlistsContaier {
+    .playlistLatexWrapper {
+      display: block;
       width: 325px;
-      justify-content:center;
-      align-self:center;
+      // justify-content:center;
+      // align-self:center;
       margin-left: 3%;
+      position: relative;
+        
+      .playlistsContaier {
+        position: absolute;
+        top: 0;
+      }
+      .latexContainer {
+        position: absolute;
+        bottom: 20px;
+      }
     }
 
 

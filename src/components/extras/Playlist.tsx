@@ -11,6 +11,7 @@ const styles = require('../extras/Playlist.module.scss');
 const trackIds = [
   558781332, //saviour
   641232672, //inifnity
+  405177912, //we can be free
   789251809, //lost in us
   911387248, //red sea
   604329399, //empty echo

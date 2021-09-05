@@ -4,15 +4,24 @@ import openFolder from '../../assets/folderOpen.png';
 import closedFolder from '../../assets/folderClosed.png';
 
 const LatexFolders = () => {
-
+    
     const [xPos, setXPos] = useState(0);
+    const [image, setImage] = useState(closedFolder);
     const onClick = (direction) => {
         if (direction === 'left') {
-            xPos === -900 ? setXPos(xPos) : setXPos(xPos - 100);
+            xPos === -780 ? setXPos(xPos) : setXPos(xPos - 130);
         } else {
-            xPos === 0 ? setXPos(xPos) : setXPos(xPos + 100);
+            xPos === 0 ? setXPos(xPos) : setXPos(xPos + 130);
         }
     }
+
+    const handleMouseEnter = () => {
+        setImage(openFolder);
+     }
+     
+     const handleMouseLeave = () =>  {
+        setImage(closedFolder);
+     }
 
     return (
         <div className={styles.forecast_window}>
@@ -21,7 +30,7 @@ const LatexFolders = () => {
             </button>
             <div className={styles.forecast_slider}>
                 <div className={styles.forecast_container} style={{ transform: `translateX(${xPos}px)` }}>
-                    {buildLatexFolder()}
+                    {buildLatexFolder(image,xPos,handleMouseEnter,handleMouseLeave)}
                 </div>
             </div>
             <button className={styles.right_arrow}
@@ -31,7 +40,7 @@ const LatexFolders = () => {
     )
 }
 
-const buildLatexFolder = () => {
+const buildLatexFolder = (image,xPos,handleMouseEnter,handleMouseLeave) => {
     const courseNames = [
         { id: 'MATH 314', name: 'Advanced Calculus' },
         { id: 'MATH 475', name: 'Hons. Partial Differential Equations' },
@@ -46,10 +55,12 @@ const buildLatexFolder = () => {
 
     var folders = courseNames.map((value, index) => {
         return (
-            <div>
+            <div className={styles.folderContainer}>
                 <span>{value.id}</span>
-                <img src={closedFolder} width="75"/>
-                <p>{value.name}</p>
+                <div onMouseEnter={() => {handleMouseEnter()}} onMouseLeave={() => {handleMouseLeave()}}>
+                    <img className={-xPos/130 !== index-1 ? styles.shrinkImage : ''} src={image} width="130"/>
+                </div>
+                {/* <p>{value.name}</p> */}
             </div>
         );
     });

@@ -4,6 +4,7 @@ import chessIcon from '../../assets/chessIcon.png';
 import lichessIcon from '../../assets/lichessIcon.png';
 import Playlist from './Playlist';
 import LatexFolders from './LatexFolders';
+import { StylesProvider } from '@material-ui/core';
 
 const styles = require('../extras/Extras.module.scss');
 
@@ -44,10 +45,14 @@ const Extras = () => {
             {/* <div>
                 <img src={chessPicture} className={styles.chessPicture} />
             </div> */}
-            <div className={styles.playlistsContainer}>
-                <Playlist />
+            <div className={styles.playlistLatexWrapper}>
+                <div className={styles.playlistsContainer}>
+                    <Playlist />
+                </div>
+                <div className={styles.latexContainer}>
+                    <LatexFolders />
+                </div>
             </div>
-            <LatexFolders />
         </div>
     );
 }
