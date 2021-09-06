@@ -250,3 +250,8 @@
       transform: translateX(0);
     }
   }
+
+  .description.removeDropDown {
+    transition: 1s;
+    transform: translateY(-400px);
+  }

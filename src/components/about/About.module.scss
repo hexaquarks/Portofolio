@@ -108,7 +108,7 @@ hr {
 .dropArrow {
     position: relative;
     transition: .25s;
-    z-index: 999 !important;
+    // z-index: 999 !important;
 
     &:hover {
         cursor: pointer;

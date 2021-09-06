@@ -13,6 +13,7 @@ function CourseFolder(props) {
 
   const [image, setImage] = useState(closedFolder);
   const [showDescription, setShowDescription] = useState(false);
+  const [removeDropDown, setRemoveDropDown] = useState(false);
 
   const handleMouseOver = () => {
     setImage(openFolder);
@@ -22,38 +23,43 @@ function CourseFolder(props) {
     setImage(closedFolder);
   };
 
+  const removeDropDownFunc = () => {
+    console.log("innnn");
+    setRemoveDropDown(true);
+  }
+
   const numberOfElements = [
-    {name: 'MATH314', files: ["Notes", "Ass4", "code"]},
-    {name: 'PHYS350', files: ["Ass1","Ass2","Ass3","Ass4","Ass5","Ass6","Ass7", "code"]},
-    {name: 'PHYS356', files: ["Ass1","Ass2","Ass3","Ass4","Ass5","Ass6","Ass7", "code"]},
-    {name: 'MATH327', files: ["Ass1","Ass2","Ass3","Ass4","Ass5", "code"]},
-    {name: 'MATH475', files: ["Ass1","Ass2","Ass3", "code"]},
-    {name: 'MATH325', files: ["Final","Ass1","Ass2","Ass3","Ass4","Ass5", "code"]}, 
-    {name: 'MATH240', files: ["Ass1","Ass2","Ass3","Ass4", "code"]},
-    {name: 'PHYS241', files: ["Final","Ass1","Ass2","Ass3","Ass4","Ass5", "code"]},
-    {name: 'PHYS230', files: ["Ass5","Ass7","Ass8","Ass9","Ass10"]},
+    { name: 'MATH314', files: ["Notes", "Ass4", "code"] },
+    { name: 'PHYS350', files: ["Ass1", "Ass2", "Ass3", "Ass4", "Ass5", "Ass6", "Ass7", "code"] },
+    { name: 'PHYS356', files: ["Ass1", "Ass2", "Ass3", "Ass4", "Ass5", "Ass6", "Ass7", "code"] },
+    { name: 'MATH327', files: ["Ass1", "Ass2", "Ass3", "Ass4", "Ass5", "code"] },
+    { name: 'MATH475', files: ["Ass1", "Ass2", "Ass3", "code"] },
+    { name: 'MATH325', files: ["Final", "Ass1", "Ass2", "Ass3", "Ass4", "Ass5", "code"] },
+    { name: 'MATH240', files: ["Ass1", "Ass2", "Ass3", "Ass4", "code"] },
+    { name: 'PHYS241', files: ["Final", "Ass1", "Ass2", "Ass3", "Ass4", "Ass5", "code"] },
+    { name: 'PHYS230', files: ["Ass5", "Ass7", "Ass8", "Ass9", "Ass10"] },
   ];
 
   return (
     <div className={styles.folderContainer} key={key}>
-      <Fade in={showDescription}>
-          <div className={`${styles.decriptionPanel}`}>
-            <div className={styles.imageContainer}>
-              <span>
-                {value.name}
-                <p>
-                  <img src={downArrow} width="30" />
-                </p>
-              </span>
-              <div className={styles.image} />
-            </div>
-            <div className={styles.description}>
-              <div className={styles.filesGrid} >
-                {buildButtons(numberOfElements, index)}
-              </div>  
-            </div>
+
+      <div className={`${styles.decriptionPanel}` + ''}>
+        <div className={styles.imageContainer}>
+          <span >
+            {value.name}
+            <p>
+              <img src={downArrow} width="30" onClick={() => {removeDropDownFunc()}}/>
+            </p>
+          </span>
+          <div className={styles.image}  ></div>
+        </div>
+        <div className={styles.description}>
+          <div className={styles.filesGrid} >
+            {buildButtons(numberOfElements, index)}
           </div>
-        </Fade>
+        </div>
+      </div>
+
       <span>{value.id}</span>
       <div
         onMouseEnter={() => {
@@ -72,37 +78,37 @@ function CourseFolder(props) {
   );
 }
 
-const buildButtons =(numberOfElements, index) => {
+const buildButtons = (numberOfElements, index) => {
   var temp: any = [];
   const globalLink = "https://github.com/hexaquarks/Latex_Files/"; //link header
   const folder = "tree/main/"; //for folder
   const notes = "blob/main/"; //for any file
 
-  for(var i=0 ; i<numberOfElements[index].files.length; i++){
+  for (var i = 0; i < numberOfElements[index].files.length; i++) {
 
     let firstLetter = numberOfElements[index].files[i].charAt(0);
     let refLink = globalLink;
     let imgLink = '';
     let text = '';
 
-    firstLetter === 'c' 
+    firstLetter === 'c'
       ? refLink += folder + numberOfElements[index].name + '/' + numberOfElements[index].name + '_Tex'
       : refLink += notes + numberOfElements[index].name + '/' + numberOfElements[index].name + '_' + numberOfElements[index].files[i] + '.pdf';
 
-    if(firstLetter === 'N'){
+    if (firstLetter === 'N') {
       imgLink = book;
       text = 'Class Notes' + '\xa0\xa0\xa0\xa0';
-    }else if(firstLetter === 'A' || firstLetter ==='F') {
+    } else if (firstLetter === 'A' || firstLetter === 'F') {
       imgLink = note;
-      firstLetter === 'A' 
-        ? text = 'Assignment' + ' ' + numberOfElements[index].files[i].substr(numberOfElements[index].files[i].length -1)
+      firstLetter === 'A'
+        ? text = 'Assignment' + ' ' + numberOfElements[index].files[i].substr(numberOfElements[index].files[i].length - 1)
         : text = `Final Exam` + '\xa0\xa0\xa0\xa0\xa0\xa0';
-    }else {
-      imgLink = code; 
+    } else {
+      imgLink = code;
       text = `Code Repo` + '\xa0\xa0\xa0\xa0\xa0\xa0';
     }
 
-    temp.push (
+    temp.push(
       <a href={refLink} target="_blank">
         <button>
           <img src={imgLink} height="12" />
@@ -111,9 +117,9 @@ const buildButtons =(numberOfElements, index) => {
           </span>
         </button>
       </a>
-      );
+    );
   }
-  
+
   return temp;
 }
 
