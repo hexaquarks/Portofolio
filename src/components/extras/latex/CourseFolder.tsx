@@ -42,13 +42,14 @@ function CourseFolder(props) {
         <div className={styles.imageContainer}>
           <span >
             {value.name}
-            <div>
+          </span>
+          <div className={styles.image}  >
+          <div>
               <img src={downArrow} width="30" onClick={() => {
                 setShowDescriptionChild(!showDescriptionChild); 
                 setEnableArrows(false)}}/>
             </div>
-          </span>
-          <div className={styles.image}  ></div>
+          </div>
         </div>
         <div className={styles.description}>
           <div className={styles.filesGrid} >

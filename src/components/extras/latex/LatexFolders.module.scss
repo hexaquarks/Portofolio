@@ -142,15 +142,23 @@
         position: relative;
         font-size: 12px;
         height: 50px;
+        min-width: 110px;
+      }
+      .image {
+        position: absolute;
+        bottom: 0;
+        width: 90px;
+        height: 80px;
+        background: url('../../../assets/folderOpen.png');
+        background-size: cover;
 
         > div {
           position: absolute;
           content: "";
-          top: 100px;
-          left: 160px;
-          width: 30px;
-          height: 30px;
-          // border-radius: 20px 20px 20px 20px;
+          bottom: -24px;
+          left: 175px;
+          width: 31px;
+          height: 31px;
           background-color: aliceblue;
           z-index: -1;
           cursor: pointer;
@@ -162,18 +170,7 @@
             transform: rotate(-45deg);
             
           }
-
         }
-      }
-      .image {
-        position: absolute;
-        bottom: 0;
-        width: 90px;
-        height: 80px;
-        background: url('../../../assets/folderOpen.png');
-        background-size: cover;
-        // margin-left: -10px;
-        // padding-right: 10px;
       };
     }
 
