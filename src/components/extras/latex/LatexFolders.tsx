@@ -6,9 +6,13 @@ import CourseFolder from "./CourseFolder";
 const LatexFolders = () => {
 
     const [xPos, setXPos] = useState(0);
+    const [enableArrows, setEnableArrows] = useState(true);
+
     const leftMax = 780;
 
     const onClick = (direction) => {
+        if(enableArrows) return;
+
         if (direction === 'left') {
             xPos === -leftMax ? setXPos(xPos) : setXPos(xPos - 130);
         } else {
@@ -17,6 +21,8 @@ const LatexFolders = () => {
     }
 
     const manageOpacity = (direction, xPos) => {
+        if(enableArrows) return 25;
+        
         if (xPos === 0) return direction === 'left' ? 25 : 100;
         else if (xPos < 0 && xPos > -leftMax) return 100;
         else if (xPos === -leftMax) return direction === 'left' ? 100 : 25;
@@ -44,7 +50,7 @@ const LatexFolders = () => {
             <div className={`${styles.forecast_slider}`}>
                 <div className={styles.forecast_container} style={{ transform: `translateX(${xPos}px)` }}>
                     {courseNames.map((value, index) => (
-                        <CourseFolder value={value} key={index} xPos={xPos} index={index} />
+                        <CourseFolder value={value} key={index} xPos={xPos} index={index} setEnableArrows={setEnableArrows}/>
                     ))}
                 </div>
             </div>

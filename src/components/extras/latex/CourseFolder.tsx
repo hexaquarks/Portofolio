@@ -9,12 +9,10 @@ import code from '../../../assets/code.png';
 import { Fade } from '@material-ui/core';
 
 function CourseFolder(props) {
-  const { value, key, xPos, index } = props;
+  const { value, key, xPos, index,  setEnableArrows} = props;
 
   const [image, setImage] = useState(closedFolder);
-  const [showDescription, setShowDescription] = useState(false);
-  const [dropDown, setDropDown] = useState(false);
-  const [leftVal, setLeftVal] = useState(-xPos);
+  const [showDescriptionChild, setShowDescriptionChild] = useState(false);
 
   const handleMouseOver = () => {
     setImage(openFolder);
@@ -24,10 +22,6 @@ function CourseFolder(props) {
     setImage(closedFolder);
   };
 
-  // const removeDescription = () => {
-  //   console.log("innnn");
-  //   setDropDown(false);
-  // }
 
   const numberOfElements = [
     { name: 'MATH314', files: ["Notes", "Ass4", "code"] },
@@ -44,13 +38,15 @@ function CourseFolder(props) {
   return (
     <div className={styles.folderContainer}>
 
-      <div className={`${styles.decriptionPanel}`} key={xPos} style={ {left: -xPos ,top: showDescription ? `0px` : `-160px`} }>
+      <div className={`${styles.decriptionPanel}`} key={xPos} style={ {left: -xPos ,top: showDescriptionChild ? `0px` : `-160px`} }>
         <div className={styles.imageContainer}>
           <span >
             {value.name}
-            <p>
-              <img src={downArrow} width="30" onClick={() => {setShowDescription(!showDescription);}}/>
-            </p>
+            <div>
+              <img src={downArrow} width="30" onClick={() => {
+                setShowDescriptionChild(!showDescriptionChild); 
+                setEnableArrows(false)}}/>
+            </div>
           </span>
           <div className={styles.image}  ></div>
         </div>
@@ -70,9 +66,8 @@ function CourseFolder(props) {
           handleMouseLeave();
         }}
         onClick={() => {
-          // setLeftVal(-xPos);
-          setShowDescription(!showDescription);
-
+          setShowDescriptionChild(!showDescriptionChild);
+          setEnableArrows(true);
         }}
       >
         <img className={-xPos / 130 !== index - 1 ? styles.shrinkImage : ''} src={image} width="130" alt="alternative" />
