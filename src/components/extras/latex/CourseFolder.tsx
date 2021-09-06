@@ -14,6 +14,7 @@ function CourseFolder(props) {
   const [image, setImage] = useState(closedFolder);
   const [showDescription, setShowDescription] = useState(false);
   const [dropDown, setDropDown] = useState(false);
+  const [leftVal, setLeftVal] = useState(-xPos);
 
   const handleMouseOver = () => {
     setImage(openFolder);
@@ -41,9 +42,9 @@ function CourseFolder(props) {
   ];
 
   return (
-    <div className={styles.folderContainer} key={key}>
+    <div className={styles.folderContainer}>
 
-      <div className={`${styles.decriptionPanel}`} style={ {top: showDescription ? `0px` : `-160px` ,left: `${xPos}px`} }>
+      <div className={`${styles.decriptionPanel}`} key={xPos} style={ {left: -xPos ,top: showDescription ? `0px` : `-160px`} }>
         <div className={styles.imageContainer}>
           <span >
             {value.name}
@@ -61,7 +62,7 @@ function CourseFolder(props) {
       </div>
 
       <span>{value.id}</span>
-      <div
+      <div key={index}
         onMouseEnter={() => {
           handleMouseOver();
         }}
@@ -69,7 +70,9 @@ function CourseFolder(props) {
           handleMouseLeave();
         }}
         onClick={() => {
+          // setLeftVal(-xPos);
           setShowDescription(!showDescription);
+
         }}
       >
         <img className={-xPos / 130 !== index - 1 ? styles.shrinkImage : ''} src={image} width="130" alt="alternative" />
