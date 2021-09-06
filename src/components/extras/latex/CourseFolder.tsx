@@ -13,7 +13,7 @@ function CourseFolder(props) {
 
   const [image, setImage] = useState(closedFolder);
   const [showDescription, setShowDescription] = useState(false);
-  const [removeDropDown, setRemoveDropDown] = useState(false);
+  const [dropDown, setDropDown] = useState(false);
 
   const handleMouseOver = () => {
     setImage(openFolder);
@@ -23,10 +23,10 @@ function CourseFolder(props) {
     setImage(closedFolder);
   };
 
-  const removeDropDownFunc = () => {
-    console.log("innnn");
-    setRemoveDropDown(true);
-  }
+  // const removeDescription = () => {
+  //   console.log("innnn");
+  //   setDropDown(false);
+  // }
 
   const numberOfElements = [
     { name: 'MATH314', files: ["Notes", "Ass4", "code"] },
@@ -43,12 +43,12 @@ function CourseFolder(props) {
   return (
     <div className={styles.folderContainer} key={key}>
 
-      <div className={`${styles.decriptionPanel}` + ''}>
+      <div className={`${styles.decriptionPanel}`} style={ {top: showDescription ? `0px` : `-160px` ,left: `${xPos}px`} }>
         <div className={styles.imageContainer}>
           <span >
             {value.name}
             <p>
-              <img src={downArrow} width="30" onClick={() => {removeDropDownFunc()}}/>
+              <img src={downArrow} width="30" onClick={() => {setShowDescription(!showDescription);}}/>
             </p>
           </span>
           <div className={styles.image}  ></div>

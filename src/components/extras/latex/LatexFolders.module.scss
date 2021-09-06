@@ -98,18 +98,20 @@
   }
 
   .decriptionPanel {
-    // position: absolute;
+    position: absolute;
     display: flex;
-    position: fixed !important;
+    // position: fixed !important;
     width: 375px;
     height: 110px;
     inset: 0;
+    // top: -160px;
+    left: 320px;
     margin-top: -20px;
     background-color: aliceblue;
     border: 10px solid rgba(255, 255, 255, 0.822);
     color: black;
     z-index: 999 !important;
-    transition: 3s;
+    transition: 1.5s;
 
     .imageContainer {
       display: inline-block;
