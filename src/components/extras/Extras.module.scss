@@ -1,6 +1,6 @@
 .container {
     width: 100vw;
-    height: 500px;
+    height: 600px;
     background-color: #100c08;
     position: relative;
     display: flex;
@@ -94,8 +94,7 @@
       }
      }
      .chessHandles {
-       position: absolute;
-       bottom: 0;
+       padding-top: 65px;
 
        td {
          text-decoration: wavy;
@@ -120,8 +119,7 @@
         top: 0;
       }
       .latexContainer {
-        position: absolute;
-        bottom: 20px;
+        padding-top: 65px;
       }
     }
 

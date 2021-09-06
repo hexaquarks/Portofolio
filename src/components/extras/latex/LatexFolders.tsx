@@ -24,13 +24,13 @@ const LatexFolders = () => {
 
     const courseNames = [
         { id: 'MATH 314', name: 'Advanced Calculus' },
+        { id: 'PHYS 350', name: 'Hons. Quantum Mechanics' },
+        { id: 'PHYS 356', name: 'Hons. Electricity and Magnetism' },
+        { id: 'MATH 327', name: 'Matrix Numerical Analysis' },
         { id: 'MATH 475', name: 'Hons. Partial Differential Equations' },
         { id: 'MATH 325', name: 'Hons. Ordinary Differntial Equations' },
         { id: 'MATH 240', name: 'Discret Mathematics' },
         { id: 'PHYS 241', name: 'Signals Processing' },
-        { id: 'PHYS 350', name: 'Hons. Quantum Mechanics' },
-        { id: 'PHYS 356', name: 'Hons. Electricity and Magnetism' },
-        { id: 'MATH 327', name: 'Matrix Numerical Analysis' },
         { id: 'PHYS 230', name: 'Dynamics of Simple Systems' }
     ]
 
