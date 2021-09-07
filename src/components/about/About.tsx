@@ -89,10 +89,8 @@ const About = () => {
     const [midDropDown, setMidDropDown] = useState(false);
     const [botDropDown, setBotDropDown] = useState(false);
 
-    const [{restFalse, type}, setRestFalse] = useState({
-        restFalse: true,
-        type: ''
-    });
+    // const [restFalse, setRestFalse] = useState(null);
+    const [selected, setSelected] = useState<any>(null);
     
 
     const onClick = (type) => {
@@ -140,7 +138,8 @@ const About = () => {
                 <hr />
                 <p>
                     {information.map((value, index) => (
-                        <DropDown information={information} index={index} />
+                        <DropDown information={information} index={index}
+                            onClick={() => setSelected(s => s === value ? null : value)}  selected={selected === value} key={value}/>
                     ))}
                 </p>
             </div>
