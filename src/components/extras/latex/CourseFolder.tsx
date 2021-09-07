@@ -43,7 +43,7 @@ function CourseFolder(props) {
           <span >
             {value.name}
           </span>
-          <div className={styles.image}  >
+          <div className={styles.image}>
           <div>
               <img src={downArrow} width="30" onClick={() => {
                 setShowDescriptionChild(!showDescriptionChild); 
@@ -58,7 +58,7 @@ function CourseFolder(props) {
         </div>
       </div>
 
-      <span>{value.id}</span>
+      <span >{value.id}</span>
       <div key={index}
         onMouseEnter={() => {
           handleMouseOver();

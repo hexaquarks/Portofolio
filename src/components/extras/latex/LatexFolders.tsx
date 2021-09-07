@@ -6,7 +6,7 @@ import CourseFolder from "./CourseFolder";
 const LatexFolders = () => {
 
     const [xPos, setXPos] = useState(0);
-    const [enableArrows, setEnableArrows] = useState(true);
+    const [enableArrows, setEnableArrows] = useState(false);
 
     const leftMax = 780;
 

@@ -149,7 +149,7 @@
       font-family: 'Perpetua', serif;
     }
   
-    li:hover {
+    .rotate {
       animation: rotate 1s;
       animation-fill-mode: forwards !important;
     }
@@ -163,5 +163,8 @@ img[alt~="cover_picture"]{
 }
 
 @keyframes rotate {
-    50% { transform: rotate(180deg); }
+    50% { 
+      transform: rotateY(180deg); 
+      color: #c69c6d;
+    }
 }
