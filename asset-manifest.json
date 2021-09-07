@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/Portofolio/static/css/main.60e051d5.chunk.css",
+    "main.js": "/Portofolio/static/js/main.16c37e6c.chunk.js",
+    "main.js.map": "/Portofolio/static/js/main.16c37e6c.chunk.js.map",
+    "runtime-main.js": "/Portofolio/static/js/runtime-main.11e6301b.js",
+    "runtime-main.js.map": "/Portofolio/static/js/runtime-main.11e6301b.js.map",
+    "static/js/2.45a67db7.chunk.js": "/Portofolio/static/js/2.45a67db7.chunk.js",
+    "static/js/2.45a67db7.chunk.js.map": "/Portofolio/static/js/2.45a67db7.chunk.js.map",
+    "static/js/3.2a0eb68a.chunk.js": "/Portofolio/static/js/3.2a0eb68a.chunk.js",
+    "static/js/3.2a0eb68a.chunk.js.map": "/Portofolio/static/js/3.2a0eb68a.chunk.js.map",
+    "index.html": "/Portofolio/index.html",
+    "static/css/main.60e051d5.chunk.css.map": "/Portofolio/static/css/main.60e051d5.chunk.css.map",
+    "static/js/2.45a67db7.chunk.js.LICENSE.txt": "/Portofolio/static/js/2.45a67db7.chunk.js.LICENSE.txt",
+    "static/media/bdeb_icon.713de637.png": "/Portofolio/static/media/bdeb_icon.713de637.png",
+    "static/media/bookIcon.030c132c.png": "/Portofolio/static/media/bookIcon.030c132c.png",
+    "static/media/chain.f4cd1693.gif": "/Portofolio/static/media/chain.f4cd1693.gif",
+    "static/media/chessIcon.d50f2b78.png": "/Portofolio/static/media/chessIcon.d50f2b78.png",
+    "static/media/Extras.module.scss": "/Portofolio/static/media/chess_picture.a240961d.jpg",
+    "static/media/code.dfacb9f7.png": "/Portofolio/static/media/code.dfacb9f7.png",
+    "static/media/css_icon.9a14acaa.png": "/Portofolio/static/media/css_icon.9a14acaa.png",
+    "static/media/LatexFolders.module.scss": "/Portofolio/static/media/folderOpen.a8a1c426.png",
+    "static/media/Projects.module.scss": "/Portofolio/static/media/gifWeatherTry3.b22b886f.gif",
+    "static/media/Cover.module.scss": "/Portofolio/static/media/githubWhite.6fdc80f1.png",
+    "static/media/html_icon.cd9c6006.png": "/Portofolio/static/media/html_icon.cd9c6006.png",
+    "static/media/java_icon.035c7beb.png": "/Portofolio/static/media/java_icon.035c7beb.png",
+    "static/media/javascript_icon_2.83903b30.png": "/Portofolio/static/media/javascript_icon_2.83903b30.png",
+    "static/media/lichessIcon.6961d92a.png": "/Portofolio/static/media/lichessIcon.6961d92a.png",
+    "static/media/mcgill_icon.0d4a98b5.png": "/Portofolio/static/media/mcgill_icon.0d4a98b5.png",
+    "static/media/notes.edfe6aee.png": "/Portofolio/static/media/notes.edfe6aee.png",
+    "static/media/profile_picture.db829be4.png": "/Portofolio/static/media/profile_picture.db829be4.png",
+    "static/media/react_icon.74cb56e4.png": "/Portofolio/static/media/react_icon.74cb56e4.png",
+    "static/media/sceneBuilder_icon.f1feca83.png": "/Portofolio/static/media/sceneBuilder_icon.f1feca83.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.11e6301b.js",
+    "static/js/2.45a67db7.chunk.js",
+    "static/css/main.60e051d5.chunk.css",
+    "static/js/main.16c37e6c.chunk.js"
+  ]
+}
