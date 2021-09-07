@@ -7,16 +7,18 @@
     display: flex;
     position: relative;
 
-    &:before {
-      background: url('../../assets/chain.gif');
-      background-size:cover;
-      content: '';
+    >a{
+      cursor: pointer;
+    }
+
+    .chainGif {
       width: 100px;
       height:100px;
       right:35px;
       bottom:-10px;
       position:absolute;
       z-index: 999 !important;
+
     }
 
     &:after { 
@@ -32,9 +34,14 @@
     }
 }
 
-.container > span:before {
+.container > a:before {
     content: '';
-    background-color: rgb(231, 231, 231);
+    // background-color: rgb(231, 231, 231);
+    background-image: url('../../assets/githubWhite.png');
+    background-repeat: no-repeat;
+    background-size: 60% 100%;
+    background-position-x: center;
+
     width: 75px;
     height:40px;
 
