@@ -159,10 +159,17 @@ const Playlist = () => {
 
   return (
     <div className={styles.container}>
+      <h2>
+        Music 
+      </h2> 
+      <hr />
       <div className={styles.picture} >
         {
           typeof playlist[playlistIndex] !== 'undefined'
-            ? <img src={playlist[playlistIndex].image} width="100" height="100" />
+            ? <img src={playlist[playlistIndex].image} 
+                   width="100" 
+                   height="100"
+              />
             : <p>Loading</p>
         }
       </div>
@@ -174,34 +181,48 @@ const Playlist = () => {
         }
         <div className={styles.actions}>
           <div className={styles.prev}
-            onClick={() => { handleClick('prev') }}>
+               onClick={() => { 
+                 handleClick('prev')
+               }}
+          >
             <img src={prevIcon} width="35" height="35" />
           </div>
           <div className={styles.playState}
-            onClick={() => { handleClick('play') }}>
+            onClick={() => { 
+              handleClick('play') 
+              }}
+          >
             <img src={playState === false
-              ? playIcon
-              : pauseIcon}
-              alt="playStateIcon" width="50" height="50"
-              style={{ alignSelf: `center` }} />
+                          ? playIcon
+                          : pauseIcon}
+                alt="playStateIcon" 
+                width="50" 
+                height="50"
+                style={{ alignSelf: `center` }} />
           </div>
           <div className={styles.next}
-            onClick={() => { handleClick('next') }}>
-            <img src={nextIcon} width="35" height="35" />
+            onClick={() => {
+               handleClick('next') 
+               }}
+          >
+            <img src={nextIcon}
+                 width="35" 
+                 height="35" 
+            />
           </div>
 
         </div>
         <div className={styles.time}>
-          <ProgressBar completed={timeCompleted} bgColor="#0096FF"
-            height="8px" baseBgColor="skyblue"
-            labelAlignment="center"
-            labelColor="aliceblue"
-            isLabelVisible={false} />
+          <ProgressBar completed={timeCompleted} 
+                       bgColor="#0096FF"
+                       height="8px" 
+                       baseBgColor="skyblue"
+                       labelAlignment="center"
+                       labelColor="aliceblue"
+                       isLabelVisible={false}
+         />
         </div>
       </div>
-
-
-      {/* Hello world { externalFunction() } */}
     </div>
   )
 }

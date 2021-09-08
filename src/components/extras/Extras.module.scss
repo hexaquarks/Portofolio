@@ -1,6 +1,7 @@
 .container {
     width: 100vw;
     height: 600px;
+    padding-top: 125px;
     background-color: #100c08;
     position: relative;
     display: flex;
@@ -8,6 +9,7 @@
     justify-content: center;
 
     &:before {
+      top: 0;
       width: 200px;
       height: 50px;
       right: 0px;
@@ -46,16 +48,40 @@
       height: 400px;
       background-size: cover;
       border-radius: 35px;
-      overflow: hidden;
+      // overflow: hidden;
       margin-top: 7%;
       position: relative;
       isolation: isolate;
       box-shadow: 2px 3px 30px 9px rgba(26, 26, 26, 0.58);
       
+      > h2 {
+        position: absolute;
+        top: -135px;
+        width: 8ch;
+          font-family: 'Playfair Display', serif;
+          font-size: 40px;
+          background: linear-gradient(to right, #e98f29, #c69c6d 50%, rgb(235,235,235) 50%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-size: 200% 100%;
+          background-position: 100%;
+      
+          transition: background-position 500ms ease;
+      }
+
+      > hr {
+        position:absolute;
+        top: -15px;
+        width: calc(102% * 2.2);
+       }
+
       &::before {
         position: absolute;
         inset: 0;
         content: "";
+        // margin: 35px;
+        // opacity:0.001;
         z-index: -1;
         background:
          linear-gradient(

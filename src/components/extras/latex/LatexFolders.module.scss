@@ -10,7 +10,7 @@
 // .clearfix:after { clear: both; }
 // .clearfix { zoom: 1; } /* IE < 8 */
 
-.forecast_window {
+.window {
   
     width: 415px;
     height: 130px;
@@ -61,7 +61,7 @@
       }
   }
 
-  .forecast_slider {
+  .slider {
     
     // position: relative;
     border-radius: 12px;
@@ -71,7 +71,7 @@
     overflow:hidden;
     float:right;
 
-    .forecast_container {
+    .container {
         display: flex;
         width: 700px;
         height: 130px;
@@ -201,21 +201,6 @@
         }
       }
     }
-  }
-  .decriptionPanel2 {
-    // position: absolute;
-    position: fixed !important;
-    width: auto;
-    height: auto;
-    top: -100px;
-    background-color: aliceblue;
-    border: 10px solid rgba(255, 255, 255, 0.822);
-    color: black;
-    z-index: 999 !important;
-    box-shadow: 2px 3px 30px 9px rgba(255, 255, 255, 0.25);
-  
-    border-radius: 10px 10px 10px 10px;
-    transition: 1s;
   }
 
   @keyframes containerFadeIn {

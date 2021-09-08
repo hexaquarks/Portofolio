@@ -13,11 +13,9 @@ const LatexFolders = () => {
     const onClick = (direction) => {
         if(enableArrows) return;
 
-        if (direction === 'left') {
-            xPos === -leftMax ? setXPos(xPos) : setXPos(xPos - 130);
-        } else {
-            xPos === 0 ? setXPos(xPos) : setXPos(xPos + 130);
-        }
+        (direction === 'left')
+            ? xPos === -leftMax ? setXPos(xPos) : setXPos(xPos - 130)
+            : xPos === 0 ? setXPos(xPos) : setXPos(xPos + 130);
     }
 
     const manageOpacity = (direction, xPos) => {
@@ -41,14 +39,14 @@ const LatexFolders = () => {
     ]
 
     return (
-        <div className={styles.forecast_window}>
+        <div className={styles.window}>
             <button className={styles.left_arrow}
                 onClick={() => onClick('right')}
                 style={{ opacity: `${manageOpacity('left', xPos)}%` }}>
             </button>
             
-            <div className={`${styles.forecast_slider}`}>
-                <div className={styles.forecast_container} style={{ transform: `translateX(${xPos}px)` }}>
+            <div className={`${styles.slider}`}>
+                <div className={styles.container} style={{ transform: `translateX(${xPos}px)` }}>
                     {courseNames.map((value, index) => (
                         <CourseFolder value={value} key={index} xPos={xPos} index={index} setEnableArrows={setEnableArrows}/>
                     ))}

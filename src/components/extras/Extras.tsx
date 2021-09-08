@@ -12,13 +12,14 @@ const Extras = () => {
     return (
         <div className={styles.container}>
             <div className={styles.imageContainer}>
-                {/* <img src={chessPicture} className={styles.chessPicture} /> */}
+                <h2>
+                    Chess
+                </h2>
+                <hr />
             </div>
             <div className={styles.descriptionContainer}>
                 <p>I am a competitive chess player who began playing ~3 years ago. My favorite player is Mikhail Tal because of his flashy sacrifice tactical brilliances, I have a keen for tactics, and my opening repertoire consistes mainly of : Scotch, Philidor, Sicilian, Queen's Gambit, Karo-Kan, etc. </p>
                 <div className={styles.chessHandles}>
-                    {/* <img src={chessIcon} height="40"/> 
-                            <span>ELO ~ 1900</span>  */}
                     <table>
                         <thead>
                             <tr>
@@ -33,18 +34,8 @@ const Extras = () => {
                             </tr>
                         </tbody>
                     </table>
-                    {/* <span>
-                            <img src={chessIcon} height="40"/> 
-                            <img src={lichessIcon} width="40"/>
-                        </span>
-                        <span>
-                            <h6>ELO ~1900</h6>
-                        </span> */}
                 </div>
             </div>
-            {/* <div>
-                <img src={chessPicture} className={styles.chessPicture} />
-            </div> */}
             <div className={styles.playlistLatexWrapper}>
                 <div className={styles.playlistsContainer}>
                     <Playlist />

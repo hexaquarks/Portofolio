@@ -5,8 +5,30 @@
     overflow: hidden;
     background-color: aliceblue;
     border-radius: 25px;
-    margin-top: 150px;
+    margin-top: 80px;
     margin-left: 20px;
+
+    > h2 {
+        position: absolute;
+        top: -55px;
+        width: 8ch;
+          font-family: 'Playfair Display', serif;
+          font-size: 40px;
+          background: linear-gradient(to right, #e98f29, #c69c6d 50%, rgb(235,235,235) 50%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-size: 200% 100%;
+          background-position: 100%;
+      
+          transition: background-position 500ms ease;
+      }
+
+      > hr {
+        position:absolute;
+        top: 65px;
+        width: 100%;
+       }
 
     .picture {
         width: 100px;
