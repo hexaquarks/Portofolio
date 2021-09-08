@@ -1,18 +1,18 @@
 .window {
-  
     width: 415px;
     height: 130px;
     display:flex;
     align-items: center;
     // margin: auto auto;
-    padding-top: 100px;
+    // padding-top: 160px;
     // margin-right: 50px;
     margin-right: 50px;
+    position: relative;
     // position: relative;
 
     > h2 {
       position: absolute;
-      top: 220px;
+      top: -120px;
       left: 30px;
       width: 8ch;
         font-family: 'Playfair Display', serif;
@@ -29,9 +29,9 @@
 
     > hr {
       position:absolute;
-      top: 340px;
+      top: 0;
       left: 30px;
-      width: 109%;
+      width: 360px;
      }
 
     .shrinkImage{
@@ -64,7 +64,7 @@
         transform: scalex(-1);
         position:relative;
         cursor: pointer;
-        margin-right: auto;
+        // margin-right: auto;
         left:7px;
         top: 5x;
         height: 25px;
@@ -234,3 +234,11 @@
     transition: 1s;
     transform: translateY(-400px);
   }
+
+  @media only screen and (max-width: 930px){ 
+    .window { 
+        width: 100%;
+        .slider  {width: 100%;}
+        .container {width: 100%;}
+      }
+}

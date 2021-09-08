@@ -50,6 +50,7 @@
       background-size: cover;
       border-radius: 35px;
       margin-top: 80px;
+      margin-left: 50px;
       // overflow: hidden;
       // margin-top: 7%;
       position: relative;
@@ -131,60 +132,19 @@
 
     .playlistLatexWrapper {
       display: block;
-      width: 325px;
-      // justify-content:center;
-      // align-self:center;
+      width: 380px;
       margin-left: 3%;
+      margin-right: 30px;
       position: relative;
         
-      .playlistsContaier {
-        position: absolute;
-        top: 0;
+      .playlistsContainer {
+        
       }
       .latexContainer {
-        padding-top: 65px;
+        padding-top: 170px;
       }
     }
-
-
 }
-
-// .chessPicture { 
-//   position: relative;
-//   width: 400px; 
-//   margin: 175px 20px 20px 60px;
-//   // height: 400px;
-// }
-
-.gridContainer {
-
-  >div > img {
-    grid-area: img;
-    width: 350px;
-    border-radius: 100px;
-  }
-
-  display: grid;
-  grid-template-columns: 350px 300px;
-  grid-template-rows: 350px;
-  gap: 0px 0px; 
-  grid-template-areas: 
-        "img .";
-  margin: 175px 20px 20px 60px;
-
-  > div>  p, >div >span {
-    color: white;
-  }
-
-  > div > p {
-    margin-left: 50px;
-    font-size: 24px;
-    width: 400px;
-    line-height: 34px;
-     font-family: 'Playfair Display', serif;
-  }
-}
-
 
 @keyframes containerFadeIn {
     from {
@@ -199,3 +159,41 @@
       transform: translate3d(0, 0, 0);
     }
   }
+
+  @media only screen and (max-width: 1275px){
+      .container .playlistLatexWrapper {
+        display: flex;
+        width: 700px;
+        margin-top: 80px;
+        margin-left: -3%;
+
+        .playlistsContainer {
+          // margin-left: 5%;
+        }
+        .latexContainer {
+          padding-top: 65px;
+          margin-left: 5%;
+        }
+      }
+  }
+
+  @media only screen and (max-width: 930px){
+    .container {
+      width: 90%;
+
+      .imageContainer {  width: 40%; }
+      .descriptionContainer {
+        width: 40%;
+        > p { font-size: 2vw; }
+      }
+      .chessHandles {
+        width: 40%;
+        margin-left: 10%;
+        margin-top: -5%;
+      }
+      .playlistLatexWrapper {
+        .playlistsContainer { width: 40%; } 
+        .latexContainer { width: 40%; }
+      }
+    }
+}
