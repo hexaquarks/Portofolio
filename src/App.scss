@@ -1,6 +1,8 @@
 body {
   background-color: #100c08;
   display: flex;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .App {
@@ -41,7 +43,7 @@ body {
   }
 }
 
-@media only screen and (max-width: 920px) {
+@media only screen and (max-width: 970px) {
   .secondSeparator {
     top: 1350px;
   }
@@ -55,3 +57,16 @@ body {
     top: 2325px;
   }
 } 
+// $t: 0.0333;
+// @function separatorHeight($viewportWidth) {
+//   @return percentage($t * #{$viewportWidth});
+// }
+
+// @media only screen and (max-width: 575px) {
+//   .firstSeparator{
+//     //   from 0 to 12 top to bottom
+//     // top: 11%;
+//     top: 12%;
+//     // height: 10%;
+//   }
+// }

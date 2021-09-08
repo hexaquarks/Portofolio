@@ -71,7 +71,7 @@ function CourseFolder(props) {
           setEnableArrows(true);
         }}
       >
-        <img className={-xPos / 130 !== index - 1 ? styles.shrinkImage : ''} src={image} width="130" alt="alternative" />
+        <img className={-xPos / 130 !== index - 1 ? `${styles.shrinkImage}` : ''} src={image} width="130" alt="alternative" />
       </div>
     </div>
   );

@@ -198,7 +198,7 @@ span {
     }
   }
 
-@media only screen and (max-width: 920px) {
+@media only screen and (max-width: 970px) {
     .container {
         .leftParagraph, .middleParagraph {
             margin: 40px;
@@ -219,4 +219,17 @@ span {
             }
         }
     }
+  }
+
+  @media only screen and (max-width: 605px) {
+      .container {
+          .leftParagraph>p , .middleParagraph>p{
+            font-size: 3.5vw;
+            margin-right: 5%;
+          }
+
+          .rightParagraph>p {
+              margin-left: -8%;
+          }
+      }
   }

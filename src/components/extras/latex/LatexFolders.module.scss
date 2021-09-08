@@ -234,11 +234,4 @@
     transition: 1s;
     transform: translateY(-400px);
   }
-
-  @media only screen and (max-width: 930px){ 
-    .window { 
-        width: 100%;
-        .slider  {width: 100%;}
-        .container {width: 100%;}
-      }
-}
+  

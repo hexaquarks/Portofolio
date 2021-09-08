@@ -1,5 +1,5 @@
 .container {
-    width: 100vw;
+    width: 95vw;
     height: 600px;
     padding-top: 125px;
     background-color: #100c08;
@@ -76,7 +76,7 @@
       > hr {
         position:absolute;
         top: -15px;
-        width: calc(102% * 2.2);
+        width: 100%*2;
        }
 
       &::before {
@@ -192,8 +192,18 @@
         margin-top: -5%;
       }
       .playlistLatexWrapper {
-        .playlistsContainer { width: 40%; } 
-        .latexContainer { width: 40%; }
+        margin-left: 5%;
+        width: 100%;
+        // .playlistsContainer { width: 40vw; } 
       }
     }
+}
+
+@media only screen and (max-width: 870px){
+  .container .playlistLatexWrapper {
+    width: 350px;
+    display: block;
+    .playlistsContainer{
+    }
+  }
 }

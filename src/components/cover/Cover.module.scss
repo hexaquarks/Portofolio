@@ -2,7 +2,7 @@
 
 .container {
     background-color: rgb(231, 231, 231);
-    width: 100vw;
+    width: 98vw;
     height:500px;
     display: flex;
     position: relative;
@@ -174,4 +174,55 @@ img[alt~="cover_picture"]{
       transform: rotateY(180deg); 
       color: #c69c6d;
     }
+}
+
+@media only screen and (max-width: 750px) {
+  img[alt~="cover_picture"]{
+    position:absolute;
+    right:0;
+    top:50px;
+    height: 85%;
+    width: 50%;
+  }
+
+  .container{width: 100%;}
+
+  .container .description {
+    >h2 {
+      display: inline-block;
+      font-size: 20px;
+      max-width: 300px;
+      min-width: 120px;
+      // min-width: 200px;
+      height: auto;
+      // min-width: 0;
+      // height: 20vh;
+      // min-width: 0;
+      // max-height: 300px;
+      // min-width: 70%;
+    }
+    >ul {
+      margin-bottom: 40%;
+    }
+    li {
+      font-size: 8vw;
+    }
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  img[alt~="cover_picture"]{
+    display: none;
+  }
+  .container .description {
+    margin-left: 15%;
+    > h2 {
+      margin-left: 3%;
+      width: 800px;
+      min-width: calc(60vw);
+    }
+    li {
+      font-size: 11vw;
+    }
+  }
 }
