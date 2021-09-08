@@ -6,11 +6,14 @@
     background-color: aliceblue;
     border-radius: 25px;
     margin-top: 80px;
-    margin-left: 20px;
+    margin-left: 45px;
+    flex-wrap: wrap;
+    flex-direction: column;
 
     > h2 {
         position: absolute;
         top: -55px;
+        left: 30px;
         width: 8ch;
           font-family: 'Playfair Display', serif;
           font-size: 40px;
@@ -27,7 +30,8 @@
       > hr {
         position:absolute;
         top: 65px;
-        width: 100%;
+        left: 30px;
+        width: 109%;
        }
 
     .picture {
