@@ -1,10 +1,14 @@
+import informationIcon from '../../assets/informationIcon.jpg';
 const styles = require('./Contact.module.scss');
 
 const Contact = () => {
     return (
         <form method="POST">
         <div className={styles.container}>
-            <h1> Contact Me </h1>
+            <div className={styles.header}>
+            <img src={informationIcon} />
+                <h1> Contact Me </h1>
+            </div>
                 <div className={styles.firstName}> 
                     <label htmlFor="fname">First name</label>
                     <input
