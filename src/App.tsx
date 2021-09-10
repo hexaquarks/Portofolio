@@ -6,6 +6,7 @@ import About from './components/about/About';
 import Projects from './components/projects/Projects';
 import Extras from './components/extras/Extras';
 import { useEffect } from 'react';
+import Contact from './components/contact/Contact';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
       </svg>
 
       <Extras />
+      <Contact />
     </div>
   );
 }
