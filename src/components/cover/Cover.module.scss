@@ -19,6 +19,18 @@
       position:absolute;
       z-index: 999 !important;
 
+      img[alt~="secondChain"]{
+        position:absolute;
+        top: 15px;
+        left: -40px;
+      }   
+      
+      img[alt~="firstChain"]{
+        position: absolute;
+        top: 10px;
+        
+      }  
+
     }
 
     &:after { 
@@ -168,6 +180,7 @@ img[alt~="cover_picture"]{
     height: 100%;
     object-fit: contain;
 }
+
 
 @keyframes rotate {
     50% { 

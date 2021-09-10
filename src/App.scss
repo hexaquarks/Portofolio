@@ -34,14 +34,14 @@ body {
   margin: auto;
 }
 
-@media only screen and (min-width: 1720px) {
-  .secondSeparator {
-    top: 900px;
-  }
-  .thirdSeparator {
-    top: 1550px;
-  }
-}
+// @media only screen and (max-width: 1720px) {
+//   .secondSeparator {
+//     top: 900px;
+//   }
+//   .thirdSeparator {
+//     top: 1550px;
+//   }
+// }
 
 @media only screen and (max-width: 970px) {
   .secondSeparator {

@@ -57,6 +57,8 @@
 
     .rightParagraph { 
         width: 800px; 
+        margin-left: 10%;
+        margin-right: 10%;
 
         & > p {
             display: grid;
@@ -129,6 +131,11 @@ hr {
     border-radius: 10px 10px 10px 10px;
     transition: 1s;
     z-index: 999 !important;
+
+    i {
+        color: #cc893d;
+        font-weight: 600;
+    }
 }
 
 

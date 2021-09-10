@@ -8,8 +8,9 @@ const Navbar = () => {
     return (
         <div className={styles.navbar}>
             <NavbarComponent name='Home' />
+            <NavbarComponent name='About' />
             <NavbarComponent name='Projects' />
-            <NavbarComponent name='About Me' />
+            <NavbarComponent name='Extras' />
             <NavbarComponent name='Contact' />
         </div>
     );

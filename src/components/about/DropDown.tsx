@@ -7,13 +7,7 @@ const styles = require('./About.module.scss');
 
 const DropDown = (props) => {
 
-    const { information, index, selected, onClick , key} = props;
-    const [dropDown, setDropDown] = useState(false);
-
-    // const onClick = () => {
-    //     setDropDown(!dropDown);
-    //     setRestFalse(index);
-    // }
+    const { information, index, selected, onClick } = props;
     
     return (
         <React.Fragment>
@@ -33,7 +27,7 @@ const DropDown = (props) => {
                                         <li>
                                             {value.course}
                                             <i>
-                                                {value.language}
+                                                {' ' + value.language}
                                             </i>
                                         </li>
                                     ))}

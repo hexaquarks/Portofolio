@@ -123,7 +123,9 @@ const Projects = () => {
                     }}>
                     <span></span>
                     <h6>
-                        <img src={githubIcon} width="30" height="30" />
+                        <a href="https://github.com/hexaquarks/Particle_Fun" target="_blank">
+                            <img src={githubIcon} width="30" height="30" />
+                        </a>
                     </h6>
                     <p>The program alows the user to add and remove particles with variable size. The program simulates gravitational force, electrostatic force and allows for elastic collisions. Further, the dynamic quantity of particles can be arranged in shapes such as: circle, square, diamond, spiral, loose spiral, sunflower spiral. And finally, the shapes can then also be divided and rotated.</p>
                     <div className={styles.technologiesContainerFirst}>
@@ -154,15 +156,17 @@ const Projects = () => {
                         cursor: cursorStyle('right', 'bottom'),
                         opacity: rightBottomOpacity
                     }} >
-                   
+
                     <span></span>
-                     <h6>
-                        <img src={githubIcon} width="30" height="30" />
+                    <h6>
+                        <a href="https://github.com/hexaquarks/Weather_App" target="_blank">
+                            <img src={githubIcon} width="30" height="30" />
+                        </a>
                     </h6>
-                    <p>The program fetches data from <a href="https://openweathermap.org/" style={{textDecoration: `none;`}}>OpenWweather</a> API and displays the daily information overview and detailed information. Further, a 24 hours and 7 days forecast for temperature and precipitation, is displayed in a carousel container along with bar graphs respectively. </p>
+                    <p>The program fetches data from <a href="https://openweathermap.org/" style={{ textDecoration: `none;` }}>OpenWweather</a> API and displays the daily information overview and detailed information. Further, a 24 hours and 7 days forecast for temperature and precipitation, is displayed in a carousel container along with bar graphs respectively. </p>
                     <div className={styles.technologiesContainerSecond}>
-                        <img src={reactIcon} width="40px" height="40px" 
-                            style={{marginRight: `10px`}}/>
+                        <img src={reactIcon} width="40px" height="40px"
+                            style={{ marginRight: `10px` }} />
                         <span >React</span>
                         <img src={javascriptIcon} width="30px" height="40px"
                             style={{ marginTop: `-6px` }} />

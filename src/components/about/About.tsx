@@ -85,31 +85,8 @@ const information = [
 ]
 
 const About = () => {
-    const [topDropDown, setTopDropDown] = useState(false);
-    const [midDropDown, setMidDropDown] = useState(false);
-    const [botDropDown, setBotDropDown] = useState(false);
-
-    // const [restFalse, setRestFalse] = useState(null);
     const [selected, setSelected] = useState<any>(null);
-    
 
-    const onClick = (type) => {
-        if (type === 'top') {
-            setTopDropDown(!topDropDown);
-            setBotDropDown(false);
-            setMidDropDown(false);
-        } else if (type === 'mid') {
-            setMidDropDown(!midDropDown);
-            setTopDropDown(false);
-            setBotDropDown(false);
-        } else if (type === 'bot') { 
-            setBotDropDown(!botDropDown);
-            setTopDropDown(false);
-            setMidDropDown(false);
-        }
-
-        
-    }
     return (
         <div className={styles.container}>
             {/* <button onClick={reloadGif}>Replay</button> */}

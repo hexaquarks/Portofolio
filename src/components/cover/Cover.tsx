@@ -23,8 +23,11 @@ const Cover = () => {
     return (
         <div className={styles.container}>
             <div className={styles.chainGif}>
-                <img src={`${chainGif}?${Math.random()}`}
-                    width="100" height="110" >
+                <img src={`${chainGif}?${Math.random()}`} alt="firstChain"
+                    width="100" height="90" >
+                </img>
+                <img src={`${chainGif}?${Math.random()}`} alt="secondChain"
+                    width="100" height="90" >
                 </img>
             </div>
             <a href="https://github.com/hexaquarks" target="_blank">
