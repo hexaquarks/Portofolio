@@ -11,7 +11,7 @@ const styles = require('../about/About.module.scss');
 const information = [
     {
         title: 'McGill University',
-        description: 'Mahor Physics and Computer Science',
+        description: 'Major Physics and Computer Science',
         year: '[2021-current]',
         image: mcgillIcon,
         coursework: [
@@ -52,6 +52,7 @@ const information = [
             },
             {
                 course: '(Hons.) Partial Differential Equations',
+                language: ''
             },
             {
                 course: 'Signals Processing',
@@ -60,13 +61,13 @@ const information = [
         ]
     },
     {
-        title: 'Cegep-De-Bois-de-Boulogn',
+        title: 'Cegep-De-Bois-de-Boulogne',
         description: 'Computer Science and Mathematics',
         year: '[2015-2019]',
         image: bdebIcon,
         coursework: [
             {
-                course: 'Introduction ot Programming',
+                course: 'Introduction to Programming',
                 language: '(Java)'
             },
             {
