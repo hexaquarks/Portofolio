@@ -1,5 +1,7 @@
+import React from 'react';
 import { useState } from 'react';
 import { useAlert } from 'react-alert'
+import { Element } from 'react-scroll'
 
 import informationIcon from '../../assets/informationIcon.jpg';
 import planeIcon from '../../assets/paperPlane.png';
@@ -42,7 +44,9 @@ const Contact = () => {
         )
     };
     return (
-        <form onSubmit={handleSubmit}>
+        <React.Fragment>
+        <Element id="contactDiv" name="contactDiv">
+                <form onSubmit={handleSubmit} >
             <div className={styles.container}>
                 <div className={styles.header}>
                     <img src={informationIcon} />
@@ -94,6 +98,9 @@ const Contact = () => {
                 </button>
             </div>
         </form>
+        </Element>
+        </React.Fragment>
+        
     )
 }
 

@@ -4,14 +4,22 @@ import NavbarComponent from '../navbar/NavbarComponent';
 const styles = require('../navbar/Navbar.module.scss');
 
 const Navbar = () => {
+    const props = [
+        {name: 'Home' , targetName: 'homeDiv'},
+        {name: 'About' , targetName: 'aboutDiv'},
+        {name: 'Projects' , targetName: 'projectsDiv'},
+        {name: 'Extras' , targetName: 'extrasDiv'},
+        {name: 'Contact' , targetName: 'contactDiv'}
+    ]
 
     return (
         <div className={styles.navbar}>
-            <NavbarComponent name='Home' />
-            <NavbarComponent name='About' />
-            <NavbarComponent name='Projects' />
-            <NavbarComponent name='Extras' />
-            <NavbarComponent name='Contact' />
+            {props.map((value, index) => (
+                <NavbarComponent 
+                    name={value.name}
+                    targetName={value.targetName}
+                    key={index} />
+            ))}
         </div>
     );
 }

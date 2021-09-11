@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Element } from 'react-scroll';
 import javaIcon from '../../assets/java_icon.png';
 import javaFXIcon from '../../assets/javaFX_icon.png';
 import sceneBuilderIcon from '../../assets/sceneBuilder_icon.png';
@@ -106,83 +107,85 @@ const Projects = () => {
 
     }
     return (
-        <div className={styles.container}>
-            <div className={styles.firstProjectGif}
-                style={{ transformStyle: 'preserve-3d' }}>
+        <Element id="projectsDiv" name="projectsDiv">
+            <div className={styles.container}>
+                <div className={styles.firstProjectGif}
+                    style={{ transformStyle: 'preserve-3d' }}>
 
-                <div className={styles.firstProjectPicture}
-                    onClick={() => { changePicture('top', 'left') }}
-                    style={{ opacity: leftTopOpacity, cursor: cursorStyle('left', 'top') }}>
+                    <div className={styles.firstProjectPicture}
+                        onClick={() => { changePicture('top', 'left') }}
+                        style={{ opacity: leftTopOpacity, cursor: cursorStyle('left', 'top') }}>
+                    </div>
+                    <div className={styles.firstProjectDescription}
+                        onClick={() => { changePicture('bottom', 'left') }}
+                        style={{
+                            transform: leftBottomStyle,
+                            cursor: cursorStyle('left', 'bottom'),
+                            opacity: leftBottomOpacity
+                        }}>
+                        <span></span>
+                        <h6>
+                            <a href="https://github.com/hexaquarks/Particle_Fun" target="_blank">
+                                <img src={githubIcon} width="30" height="30" />
+                            </a>
+                        </h6>
+                        <p>The program alows the user to add and remove particles with variable size. The program simulates gravitational force, electrostatic force and allows for elastic collisions. Further, the dynamic quantity of particles can be arranged in shapes such as: circle, square, diamond, spiral, loose spiral, sunflower spiral. And finally, the shapes can then also be divided and rotated.</p>
+                        <div className={styles.technologiesContainerFirst}>
+                            <img src={javaIcon} width="45px" height="45px" />
+                            <span >Java</span>
+                            <img src={javaFXIcon} width="50px" height="60px"
+                                style={{ marginTop: `-6px` }} />
+                            <span >JavaFX</span>
+                            <img src={sceneBuilderIcon} width="30px" height="40px"
+                                style={{ marginLeft: `7px` }} alt="scenebuilder" />
+                            <span >SceneBuilder</span>
+                            <img src={cssIcon} width="30px" height="35px"
+                                style={{ marginLeft: `7px`, marginTop: `2px` }}
+                                alt="css" />
+                            <span >CSS</span>
+                        </div>
+                    </div>
                 </div>
-                <div className={styles.firstProjectDescription}
-                    onClick={() => { changePicture('bottom', 'left') }}
-                    style={{
-                        transform: leftBottomStyle,
-                        cursor: cursorStyle('left', 'bottom'),
-                        opacity: leftBottomOpacity
-                    }}>
-                    <span></span>
-                    <h6>
-                        <a href="https://github.com/hexaquarks/Particle_Fun" target="_blank">
-                            <img src={githubIcon} width="30" height="30" />
-                        </a>
-                    </h6>
-                    <p>The program alows the user to add and remove particles with variable size. The program simulates gravitational force, electrostatic force and allows for elastic collisions. Further, the dynamic quantity of particles can be arranged in shapes such as: circle, square, diamond, spiral, loose spiral, sunflower spiral. And finally, the shapes can then also be divided and rotated.</p>
-                    <div className={styles.technologiesContainerFirst}>
-                        <img src={javaIcon} width="45px" height="45px" />
-                        <span >Java</span>
-                        <img src={javaFXIcon} width="50px" height="60px"
-                            style={{ marginTop: `-6px` }} />
-                        <span >JavaFX</span>
-                        <img src={sceneBuilderIcon} width="30px" height="40px"
-                            style={{ marginLeft: `7px` }} alt="scenebuilder" />
-                        <span >SceneBuilder</span>
-                        <img src={cssIcon} width="30px" height="35px"
-                            style={{ marginLeft: `7px`, marginTop: `2px` }} 
-                            alt="css" />
-                        <span >CSS</span>
+
+                <div className={styles.secondProjectGif}
+                    style={{ transformStyle: 'preserve-3d' }}>
+                    <div className={styles.secondProjectPicture}
+                        onClick={() => { changePicture('top', 'right') }}
+                        style={{ opacity: rightTopOpacity, cursor: cursorStyle('right', 'top') }} />
+                    <div className={styles.secondProjectDescription}
+                        onClick={() => { changePicture('bottom', 'right') }}
+                        style={{
+                            transform: rightBottomStyle,
+                            cursor: cursorStyle('right', 'bottom'),
+                            opacity: rightBottomOpacity
+                        }} >
+
+                        <span></span>
+                        <h6>
+                            <a href="https://github.com/hexaquarks/Weather_App" target="_blank">
+                                <img src={githubIcon} width="30" height="30" />
+                            </a>
+                        </h6>
+                        <p>The program fetches data from <a href="https://openweathermap.org/" style={{ textDecoration: `none;` }}>OpenWweather</a> API and displays the daily information overview and detailed information. Further, a 24 hours and 7 days forecast for temperature and precipitation, is displayed in a carousel container along with bar graphs respectively. </p>
+                        <div className={styles.technologiesContainerSecond}>
+                            <img src={reactIcon} width="40px" height="40px"
+                                style={{ marginRight: `10px` }} />
+                            <span >React</span>
+                            <img src={javascriptIcon} width="30px" height="40px"
+                                style={{ marginTop: `-6px` }} />
+                            <span >Javascript</span>
+                            <img src={cssIcon} width="40px" height="40px"
+                                style={{ marginLeft: `1px` }} alt="scenebuilder" />
+                            <span >CSS</span>
+                            <img src={htmlIcon} width="30px" height="39px"
+                                style={{ marginLeft: `0px`, marginTop: `2px` }}
+                                alt="css" />
+                            <span >HTML5</span>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div className={styles.secondProjectGif}
-                style={{ transformStyle: 'preserve-3d' }}>
-                <div className={styles.secondProjectPicture}
-                    onClick={() => { changePicture('top', 'right') }}
-                    style={{ opacity: rightTopOpacity, cursor: cursorStyle('right', 'top') }} />
-                <div className={styles.secondProjectDescription}
-                    onClick={() => { changePicture('bottom', 'right') }}
-                    style={{
-                        transform: rightBottomStyle,
-                        cursor: cursorStyle('right', 'bottom'),
-                        opacity: rightBottomOpacity
-                    }} >
-
-                    <span></span>
-                    <h6>
-                        <a href="https://github.com/hexaquarks/Weather_App" target="_blank">
-                            <img src={githubIcon} width="30" height="30" />
-                        </a>
-                    </h6>
-                    <p>The program fetches data from <a href="https://openweathermap.org/" style={{ textDecoration: `none;` }}>OpenWweather</a> API and displays the daily information overview and detailed information. Further, a 24 hours and 7 days forecast for temperature and precipitation, is displayed in a carousel container along with bar graphs respectively. </p>
-                    <div className={styles.technologiesContainerSecond}>
-                        <img src={reactIcon} width="40px" height="40px"
-                            style={{ marginRight: `10px` }} />
-                        <span >React</span>
-                        <img src={javascriptIcon} width="30px" height="40px"
-                            style={{ marginTop: `-6px` }} />
-                        <span >Javascript</span>
-                        <img src={cssIcon} width="40px" height="40px"
-                            style={{ marginLeft: `1px` }} alt="scenebuilder" />
-                        <span >CSS</span>
-                        <img src={htmlIcon} width="30px" height="39px"
-                            style={{ marginLeft: `0px`, marginTop: `2px` }} 
-                            alt="css"/>
-                        <span >HTML5</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </Element>
     );
 }
 

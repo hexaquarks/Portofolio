@@ -4,6 +4,7 @@ import downArrow from '../../assets/down_arrow.png';
 import { useState } from 'react';
 import Fade from '@material-ui/core/Fade';
 import DropDown from './DropDown';
+import { Element } from 'react-scroll'
 
 const styles = require('../about/About.module.scss');
 
@@ -13,21 +14,21 @@ const information = [
         description: 'Mahor Physics and Computer Science',
         year: '[2021-current]',
         image: mcgillIcon,
-        coursework : [
+        coursework: [
             {
-                course: 'Introduction to Computer Science', 
+                course: 'Introduction to Computer Science',
                 language: '(Java)'
             },
             {
-                course: 'Software Systems', 
+                course: 'Software Systems',
                 language: '(C, Bash)'
             },
             {
-                course: 'Matrix Numerical Analysis', 
+                course: 'Matrix Numerical Analysis',
                 language: '(MATLAB)'
             },
             {
-                course: 'Discrete Mathematics', 
+                course: 'Discrete Mathematics',
             }
         ]
     },
@@ -36,24 +37,24 @@ const information = [
         description: 'Honours Physics',
         year: '[2019-2021]',
         image: mcgillIcon,
-        coursework : [
+        coursework: [
             {
-                course: '(Hons.) Quantum Mechanics I', 
+                course: '(Hons.) Quantum Mechanics I',
                 language: '(Mathematica)'
             },
             {
-                course: '(Hons.) Electricity and Magnetism I', 
+                course: '(Hons.) Electricity and Magnetism I',
                 language: '(Python)'
             },
             {
-                course: '(Hons.) Ordinary Differential Equations', 
+                course: '(Hons.) Ordinary Differential Equations',
                 language: '(MATLAB)'
             },
             {
-                course: '(Hons.) Partial Differential Equations', 
+                course: '(Hons.) Partial Differential Equations',
             },
             {
-                course: 'Signals Processing' ,
+                course: 'Signals Processing',
                 language: '(Python)'
             }
         ]
@@ -63,21 +64,21 @@ const information = [
         description: 'Computer Science and Mathematics',
         year: '[2015-2019]',
         image: bdebIcon,
-        coursework : [
+        coursework: [
             {
-                course: 'Introduction ot Programming', 
+                course: 'Introduction ot Programming',
                 language: '(Java)'
             },
             {
-                course: 'Data Structures and OOP', 
+                course: 'Data Structures and OOP',
                 language: '(Java)'
             },
             {
-                course: 'Programming with Graphical Interfaces', 
+                course: 'Programming with Graphical Interfaces',
                 language: '(Java)'
             },
             {
-                course: 'Degree Programming Final Project' ,
+                course: 'Degree Programming Final Project',
                 language: '(Java)'
             }
         ]
@@ -88,39 +89,41 @@ const About = () => {
     const [selected, setSelected] = useState<any>(null);
 
     return (
-        <div className={styles.container}>
-            {/* <button onClick={reloadGif}>Replay</button> */}
-            <div className={styles.leftParagraph}>
-                <h2>
-                    Work
-                </h2>
-                <hr />
-                <p>
-                    I am currently a full-time student majoring in Physics and Computer Science after doing 2 years of Honours Physics. I practice coding daily and have experience with: Java, JavaFX, Python, Javascript, HTML5, CSS and ReactJS.
-                </p>
+        <Element id="aboutDiv" name="aboutDiv">
+            <div className={styles.container}>
+                {/* <button onClick={reloadGif}>Replay</button> */}
+                <div className={styles.leftParagraph}>
+                    <h2>
+                        Work
+                    </h2>
+                    <hr />
+                    <p>
+                        I am currently a full-time student majoring in Physics and Computer Science after doing 2 years of Honours Physics. I practice coding daily and have experience with: Java, JavaFX, Python, Javascript, HTML5, CSS and ReactJS.
+                    </p>
+                </div>
+                <div className={styles.middleParagraph}>
+                    <h2>
+                        Personal
+                    </h2>
+                    <hr />
+                    <p>
+                        I am passionate developper with a strong interest in the natural sciences (physics, natural philosophy) ,and mathematics. In my free time I like to play chess, dabble with LaTeX, watch Netflix, and take baths.
+                    </p>
+                </div>
+                <div className={styles.rightParagraph}>
+                    <h2>
+                        Education
+                    </h2>
+                    <hr />
+                    <p>
+                        {information.map((value, index) => (
+                            <DropDown information={information} index={index}
+                                onClick={() => setSelected(s => s === value ? null : value)} selected={selected === value} key={value} />
+                        ))}
+                    </p>
+                </div>
             </div>
-            <div className={styles.middleParagraph}>
-                <h2>
-                    Personal
-                </h2>
-                <hr />
-                <p>
-                    I am passionate developper with a strong interest in the natural sciences (physics, natural philosophy) ,and mathematics. In my free time I like to play chess, dabble with LaTeX, watch Netflix, and take baths.
-                </p>
-            </div>
-            <div className={styles.rightParagraph}>
-                <h2>
-                    Education
-                </h2>
-                <hr />
-                <p>
-                    {information.map((value, index) => (
-                        <DropDown information={information} index={index}
-                            onClick={() => setSelected(s => s === value ? null : value)}  selected={selected === value} key={value}/>
-                    ))}
-                </p>
-            </div>
-        </div>
+        </Element>
     );
 }
 
