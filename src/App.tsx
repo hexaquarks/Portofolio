@@ -12,8 +12,8 @@ import { useEffect } from 'react';
 import Contact from './components/contact/Contact';
 
 const options = {
-  position: positions.MIDDLE,
-  timeout: 2000,
+  position: positions.TOP_CENTER,
+  timeout: 4000,
   type: types.SUCCESS,
   offset: '30px',
   transition: transitions.SCALE,

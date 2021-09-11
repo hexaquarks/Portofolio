@@ -7,6 +7,7 @@ import planeIcon from '../../assets/paperPlane.png';
 const styles = require('./Contact.module.scss');
 
 const Contact = () => {
+    
     const [status, setStatus] = useState("submit");
     const alert = useAlert();
 
@@ -34,7 +35,11 @@ const Contact = () => {
           });
         setStatus("Submit");
         let result = await response.json();
-        alert.show('Message submitted succesfully')
+        alert.show(
+            <div className={styles.alert}>
+                Message submitted succesfully
+            </div>
+        )
     };
     return (
         <form onSubmit={handleSubmit}>
@@ -82,13 +87,11 @@ const Contact = () => {
                         placeholder="Your message..." 
                         id="message" required />
                 </div>
-                {/* <div className={styles.subit}> */}
                 <button type="submit">
                     <img src={planeIcon} />
                     <span>
                     </span>
                 </button>
-                {/* </div> */}
             </div>
         </form>
     )
