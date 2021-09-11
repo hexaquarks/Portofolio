@@ -40,7 +40,7 @@ form{
     }
 }
 input {
-    border: 2px solid #ec9735;
+    border: 1px solid #ec9735;
     width: 100%;
     height: 25px;
     border-radius: 4px;
@@ -64,7 +64,17 @@ label {
             font-size: 40px;
             white-space: nowrap;
             color: white;
+
+            background: linear-gradient(to right, #e98f29, #c69c6d 50%, rgb(235,235,235) 50%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 100%;
+            background-position: 100%;
+            transition: background-position 500ms ease;
         }
+        & > h1:hover { background-position: 0 100%; }
+
         img {
             width: 70%;
             height: 70%;
@@ -87,7 +97,7 @@ label {
         grid-area: in;
         
         textarea {
-            border: 2px solid #ec9735;
+            border: 1px solid #ec9735;
             width: 100%;
             height: 70px;
             border-radius: 4px;
@@ -105,7 +115,7 @@ label {
         border-radius: 22px;
         cursor: pointer;
         margin-top: -25px;
-        border: 2px solid #ec9735;
+        border: 1px solid #ec9735;
 
         span:after {
             content: 'Submit';

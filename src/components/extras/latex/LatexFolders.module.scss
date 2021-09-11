@@ -23,6 +23,8 @@
         transition: background-position 500ms ease;
     }
 
+    & > h2:hover { background-position: 0 100%; }
+
     > hr {
       position:absolute;
       top: 0;

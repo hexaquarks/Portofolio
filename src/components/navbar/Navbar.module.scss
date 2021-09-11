@@ -2,14 +2,23 @@
     position:fixed;
     z-index: 9999 !important;
     top:0;
-    width: 97vw;
-    height: 50px;
+    width: 100%;
+    height: 40px;
     display: flex; 
     flex-wrap: wrap;
     justify-content: flex-end;
+    .icons {
+        cursor: pointer;
+        position: absolute;
+        left: 0;
+        margin: 5px 0px 5px 7px;
+        img:hover {
+            filter: drop-shadow(0px 0px 6px #c69c6d);
+        }
+    }
     background-color: #100c08;
+    border-bottom: 1px solid #c69c6d;
 }
-
 .component {
     width: 100px;
     margin: 10px -5px 10px -5px;
@@ -19,8 +28,15 @@
     transition: color 0.2s;
     cursor: pointer;
 
-    &:hover {
-        color: white;
-        filter: drop-shadow(0px 0px 6px rgb(248, 0, 0));
+    a {
+        color: rgb(255, 245, 231);
     }
+    &:hover {
+        color: #c69c6d;
+        filter: drop-shadow(0px 0px 6px #c69c6d);
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .component { font-size: 4.25vw;}
 }

@@ -13,7 +13,7 @@ body {
   display: block;
   width:100%; 
   height: 175px;
-  top: 400px;
+  top: 350px;
   margin: auto;
 }
 
@@ -22,7 +22,7 @@ body {
   display: block;
   width:100%; 
   height: 175px;
-  top: 1175px;
+  top: 1125px;
   margin: auto;
 }
 .thirdSeparator {
@@ -30,7 +30,7 @@ body {
   display: block;
   width:100%; 
   height: 175px;
-  top: 1850px;
+  top: 1800px;
   margin: auto;
 }
 .fourthSeparator {
@@ -44,16 +44,16 @@ body {
 
 @media only screen and (max-width: 970px) {
   .secondSeparator {
-    top: 1350px;
+    top: 1300px;
   }
   .thirdSeparator{
-    top: 2500px !important;
+    top: 2450px !important;
   }
 }
 
 @media only screen and (max-width: 650px) {
   .thirdSeparator{
-    top: 2500px !important;
+    top: 2420px !important;
   }
   .fourthSeparator{
     bottom:480px;
@@ -62,6 +62,6 @@ body {
  
 @media only screen and (max-width: 1110px){
   .thirdSeparator{
-    top: 2325px;
+    top: 2275px;
   }
 } 

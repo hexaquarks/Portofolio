@@ -72,6 +72,8 @@
           transition: background-position 500ms ease;
       }
 
+      & > h2:hover { background-position: 0 100%; }
+
       > hr {
         position:absolute;
         top: -15px;
@@ -201,6 +203,12 @@
 
 @media only screen and (max-width: 650px){
   .container  {
+    &:before {
+      right: -50px;
+    }
+    &:after {
+      right: 110px;
+    }
    .imageContainer{display: none;}
    .descriptionContainer{
      width: 80%; 
