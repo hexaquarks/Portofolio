@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Portofolio/static/css/main.a628a398.chunk.css",
+    "main.css": "/Portofolio/static/css/main.a221da2f.chunk.css",
     "main.js": "/Portofolio/static/js/main.1f40de6a.chunk.js",
     "main.js.map": "/Portofolio/static/js/main.1f40de6a.chunk.js.map",
     "runtime-main.js": "/Portofolio/static/js/runtime-main.844340b6.js",
@@ -10,7 +10,7 @@
     "static/js/3.01bd2fc6.chunk.js": "/Portofolio/static/js/3.01bd2fc6.chunk.js",
     "static/js/3.01bd2fc6.chunk.js.map": "/Portofolio/static/js/3.01bd2fc6.chunk.js.map",
     "index.html": "/Portofolio/index.html",
-    "static/css/main.a628a398.chunk.css.map": "/Portofolio/static/css/main.a628a398.chunk.css.map",
+    "static/css/main.a221da2f.chunk.css.map": "/Portofolio/static/css/main.a221da2f.chunk.css.map",
     "static/js/2.519517bf.chunk.js.LICENSE.txt": "/Portofolio/static/js/2.519517bf.chunk.js.LICENSE.txt",
     "static/media/bdeb_icon.713de637.png": "/Portofolio/static/media/bdeb_icon.713de637.png",
     "static/media/bookIcon.030c132c.png": "/Portofolio/static/media/bookIcon.030c132c.png",
@@ -36,7 +36,7 @@
   "entrypoints": [
     "static/js/runtime-main.844340b6.js",
     "static/js/2.519517bf.chunk.js",
-    "static/css/main.a628a398.chunk.css",
+    "static/css/main.a221da2f.chunk.css",
     "static/js/main.1f40de6a.chunk.js"
   ]
 }
