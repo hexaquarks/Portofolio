@@ -3,12 +3,8 @@
     height: 130px;
     display:flex;
     align-items: center;
-    // margin: auto auto;
-    // padding-top: 160px;
-    // margin-right: 50px;
     margin-right: 50px;
     position: relative;
-    // position: relative;
 
     > h2 {
       position: absolute;
@@ -64,7 +60,6 @@
         transform: scalex(-1);
         position:relative;
         cursor: pointer;
-        // margin-right: auto;
         left:7px;
         top: 5x;
         height: 25px;
@@ -78,10 +73,7 @@
   }
 
   .slider {
-    
-    // position: relative;
     border-radius: 12px;
-    // background-color: #1F1F1F;
     color: #ffffff;
   
     overflow:hidden;
@@ -100,11 +92,9 @@
         
 
         span {
-            // margin-bottom: 4px;  
             margin-top:10px;
             font-family: 'Arvo', serif;
             font-size:  18px;
-            // width: 8ch;
           }
 
         .folderElement {
@@ -117,7 +107,6 @@
   .decriptionPanel {
     position: absolute;
     display: flex;
-    // position: fixed !important;
     width: 375px;
     height: 110px;
     inset: 0;
@@ -201,12 +190,9 @@
         justify-content: flex-start;
       }
       .filesGrid > a {
-        // flex: 0 0 calc(25% - 1em);
         min-height: 25px;
         width: 130px;
-        // max-width: 120px;
-        // margin: 0.1em 0.5em;
-
+        
         img {
           height: 12px;
           margin-right: 5px;

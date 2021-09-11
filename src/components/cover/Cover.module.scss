@@ -7,9 +7,7 @@
     display: flex;
     position: relative;
 
-    >a{
-      cursor: pointer;
-    }
+    >a{ cursor: pointer; }
 
     .chainGif {
       width: 100px;
@@ -28,9 +26,7 @@
       img[alt~="firstChain"]{
         position: absolute;
         top: 10px;
-        
       }  
-
     }
 
     &:after { 
@@ -48,7 +44,6 @@
 
 .container > a:before {
     content: '';
-    // background-color: rgb(231, 231, 231);
     background-image: url('../../assets/githubWhite.png');
     background-repeat: no-repeat;
     background-size: 60% 100%;
@@ -66,8 +61,6 @@
     position:absolute;
     z-index: 999 !important;
 
-    /* transform: rotate(1deg) translate(279px, 28px);
-	animation: T-animation 3s linear infinite alternate-reverse; */
     animation: animationFrames linear 6.20s;
     animation-iteration-count: infinite;
     transform-origin: 100% 0%;
@@ -206,13 +199,7 @@ img[alt~="cover_picture"]{
       font-size: 20px;
       max-width: 300px;
       min-width: 120px;
-      // min-width: 200px;
       height: auto;
-      // min-width: 0;
-      // height: 20vh;
-      // min-width: 0;
-      // max-height: 300px;
-      // min-width: 70%;
     }
     >ul {
       margin-bottom: 40%;
@@ -230,6 +217,7 @@ img[alt~="cover_picture"]{
   .container .description {
     margin-left: 15%;
     > h2 {
+      font-size: 23px;
       margin-left: 3%;
       width: 800px;
       min-width: calc(60vw);
