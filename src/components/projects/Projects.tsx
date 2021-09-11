@@ -135,10 +135,11 @@ const Projects = () => {
                             style={{ marginTop: `-6px` }} />
                         <span >JavaFX</span>
                         <img src={sceneBuilderIcon} width="30px" height="40px"
-                            style={{ marginLeft: `7px` }} />
+                            style={{ marginLeft: `7px` }} alt="scenebuilder" />
                         <span >SceneBuilder</span>
                         <img src={cssIcon} width="30px" height="35px"
-                            style={{ marginLeft: `7px`, marginTop: `2px` }} />
+                            style={{ marginLeft: `7px`, marginTop: `2px` }} 
+                            alt="css" />
                         <span >CSS</span>
                     </div>
                 </div>
@@ -172,10 +173,11 @@ const Projects = () => {
                             style={{ marginTop: `-6px` }} />
                         <span >Javascript</span>
                         <img src={cssIcon} width="40px" height="40px"
-                            style={{ marginLeft: `1px` }} />
+                            style={{ marginLeft: `1px` }} alt="scenebuilder" />
                         <span >CSS</span>
                         <img src={htmlIcon} width="30px" height="39px"
-                            style={{ marginLeft: `0px`, marginTop: `2px` }} />
+                            style={{ marginLeft: `0px`, marginTop: `2px` }} 
+                            alt="css"/>
                         <span >HTML5</span>
                     </div>
                 </div>

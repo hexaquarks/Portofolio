@@ -484,37 +484,49 @@ a:hover {
   @media only screen and (max-width: 625px) {
     .container {
       width:100%;
-      .firstProjectGif {
+      height:clamp(700px, 140vh, 1040px);
+      
+      .firstProjectGif, .secondProjectGif {
+        &:before {
+          font-size: 7vw;
+          top:-40px;
+        }
         width: 70%;
-        height: calc(65vw);
+        height: calc(75vw);
 
-        .firstProjectPicture{
+        .firstProjectPicture, .secondProjectPicture{
           width: 100%;
-          height: calc(65vw);
+          height: calc(75vw);
         }
 
-        .firstProjectDescription{
+        .firstProjectDescription, .secondProjectDescription{
           width: 100%;
-          height: calc(65vw);
+          height: calc(75vw);
           
           & p {
-            font-size: 3vw;
+            font-size: clamp(0.7rem, 3.5vw, 2rem);
           }
           & span {
-            top: calc(245px - 3vw);
+           display:none;
           }
+
+          & > div { grid-template-columns: 50px 125px 50px 150px; }
         }
       }
-
+      .firstProjectDescription { 
+        .technologiesContainerFirst {
+          position: absolute;
+          top: calc(125px + 25%);
+        }
+      }
+      .secondProjectDescription{
+        .technologiesContainerSecond {
+          position: absolute;
+          top: calc(125px + 25%);
+        }
+      }
     }
-    
-    // .secondProjectDescription {
-    //   left:-40px;
-    //   bottom: -40px;
-    // }
-    // .secondProjectGif {
-    //   margin-top: -20px;
-    // }
+
   }
 
 

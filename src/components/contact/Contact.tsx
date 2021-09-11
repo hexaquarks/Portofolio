@@ -1,4 +1,5 @@
 import informationIcon from '../../assets/informationIcon.jpg';
+import planeIcon from '../../assets/paperPlane.png';
 const styles = require('./Contact.module.scss');
 
 const Contact = () => {
@@ -6,8 +7,8 @@ const Contact = () => {
         <form method="POST">
         <div className={styles.container}>
             <div className={styles.header}>
-            <img src={informationIcon} />
-                <h1> Contact Me </h1>
+             <img src={informationIcon} />
+                <h1> Contact Me</h1>
             </div>
                 <div className={styles.firstName}> 
                     <label htmlFor="fname">First name</label>
@@ -50,7 +51,13 @@ const Contact = () => {
 
                     </textarea>
                 </div>
-                <button>Submit</button>
+                {/* <div className={styles.subit}> */}
+                    <button>
+                        <img src={planeIcon} />
+                        <span>
+                        </span>
+                    </button>
+                {/* </div> */}
         </div>
         </form> 
     )

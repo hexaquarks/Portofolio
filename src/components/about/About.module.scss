@@ -230,13 +230,20 @@ span {
 
   @media only screen and (max-width: 605px) {
       .container {
+          width: 130vw;
+          height: fit-content;
+          .leftParagraph{
+              width: 100%;
+          }
           .leftParagraph>p , .middleParagraph>p{
-            font-size: 3.5vw;
+            font-size: clamp(1rem, 3.5vw, 2rem);
             margin-right: 5%;
+            width: 100%;
           }
 
           .rightParagraph>p {
-              margin-left: -8%;
+            margin-left: -10vw;
+              font-size: 4.5vw;
           }
       }
   }

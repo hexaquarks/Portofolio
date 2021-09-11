@@ -185,7 +185,7 @@
       .imageContainer {  width: 40%; }
       .descriptionContainer {
         width: 40%;
-        > p { font-size: 2vw; }
+        > p { font-size: clamp(1rem, 2vw, 20px) }
       }
       .chessHandles {
         width: 40%;
@@ -215,9 +215,11 @@
   .container  {
    .imageContainer{display: none;}
    .descriptionContainer{
-     width: 80%; 
+     width: 90%; 
      >p  {
        font-size: 20px;
+       margin-top: -20%;
+       margin-right: -5%;
      }
     }
   }
