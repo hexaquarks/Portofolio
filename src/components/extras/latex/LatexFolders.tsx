@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import styles from './LatexFolders.module.scss';
-
 import CourseFolder from "./CourseFolder";
+
+import styles from './LatexFolders.module.scss';
 
 const LatexFolders = () => {
 

@@ -92,7 +92,6 @@ const About = () => {
     return (
         <Element id="aboutDiv" name="aboutDiv">
             <div className={styles.container}>
-                {/* <button onClick={reloadGif}>Replay</button> */}
                 <div className={styles.leftParagraph}>
                     <h2>
                         Work

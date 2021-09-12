@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import styles from './LatexFolders.module.scss';
 import downArrow from '../../../assets/down_arrow.png';
 import openFolder from '../../../assets/folderOpen.png';
@@ -6,7 +7,6 @@ import closedFolder from '../../../assets/folderClosed.png';
 import note from '../../../assets/notes.png';
 import book from '../../../assets/bookIcon.png';
 import code from '../../../assets/code.png';
-import { Fade } from '@material-ui/core';
 
 function CourseFolder(props) {
   const { value, key, xPos, index,  setEnableArrows} = props;

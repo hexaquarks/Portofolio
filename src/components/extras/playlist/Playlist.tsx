@@ -78,22 +78,9 @@ const Playlist = () => {
   useEffect(() => {
     const fetchImages = async () => {
       let response;
-      // playlist = await Promise.all(trackIds.map(async (val, index) => {
-      //   response = await getInfo(trackIds[index]);
-      //   playlist.push({
-      //     trackId: trackIds[index],
-      //     image: response.artwork_url,
-      //     name: response.title
-      //   })
-      //   // return {
-      //   //   trackId: trackIds[index],
-      //   //   image: response.artwork_url,
-      //   //   name: response.title
-      //   // };
-      // }));
       for (var i = 0; i < trackIds.length; i++) {
         response = await getInfo(trackIds[i]);
-        console.log(response);
+
         playlist.push({
           trackId: trackIds[i],
           image: response.artwork_url,
@@ -103,7 +90,6 @@ const Playlist = () => {
       }
     }
     fetchImages();
-    console.log(playlist);
   }, []);
 
   useEffect(() => {
@@ -118,6 +104,8 @@ const Playlist = () => {
 
   useEffect(() => {
     if (skipCount < 2) setSkipCount(skipCount + 1);
+
+    // skipCount < 2 && setSkipCount(skipCount + 1);
     if (skipCount >= 2) {
       const playMusicFetch = async () => {
         try {

@@ -1,5 +1,5 @@
-import react from 'react';
 import NavbarComponent from '../navbar/NavbarComponent';
+
 import linkedinIcon from '../../assets/linkedinIcon.png';
 import githubIcon from '../../assets/githubOrange.png';
 

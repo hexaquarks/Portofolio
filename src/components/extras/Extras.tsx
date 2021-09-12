@@ -1,11 +1,11 @@
 import ProgressBar from '@ramonak/react-progress-bar';
+import Playlist from './playlist/Playlist';
+import LatexFolders from './latex/LatexFolders';
+import { Element } from 'react-scroll';
+
 import chessPicture from '../../assets/chess_picture.jpg';
 import chessIcon from '../../assets/chessIcon.png';
 import lichessIcon from '../../assets/lichessIcon.png';
-import Playlist from './playlist/Playlist';
-import LatexFolders from './latex/LatexFolders';
-import { StylesProvider } from '@material-ui/core';
-import { Element } from 'react-scroll';
 
 const styles = require('../extras/Extras.module.scss');
 

@@ -1,4 +1,3 @@
-
 import './App.scss';
 import { transitions, positions, Provider, types } from 'react-alert'
 import AlertTemplate from 'react-alert-template-basic'
@@ -8,7 +7,6 @@ import Cover from './components/cover/Cover';
 import About from './components/about/About';
 import Projects from './components/projects/Projects';
 import Extras from './components/extras/Extras';
-import { useEffect } from 'react';
 import Contact from './components/contact/Contact';
 
 const options = {

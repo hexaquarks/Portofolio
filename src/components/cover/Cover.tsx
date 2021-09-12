@@ -1,8 +1,9 @@
+import { useEffect, useState } from 'react';
+import { Element } from 'react-scroll'
+
 import coverPicture from '../../assets/profile_picture.png';
 import TitleLetter from './TitleLetter';
 import chainGif from '../../assets/chain.gif';
-import { useEffect, useState } from 'react';
-import { Element } from 'react-scroll'
 
 const styles = require('../cover/Cover.module.scss');
 

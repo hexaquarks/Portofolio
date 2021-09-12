@@ -10,15 +10,11 @@ const styles = require('./Contact.module.scss');
 
 const Contact = () => {
     
-    const [status, setStatus] = useState("submit");
     const alert = useAlert();
 
     const handleSubmit = async (e : any) => {
         e.preventDefault();
-        setStatus("Sending...");
-        console.log(e.target.elements);
         const { fname, lname, subject,email, message } = e.target.elements;
-        console.log(fname);
         let details = {
             fname: fname.value,
             lname: lname.value,
@@ -26,7 +22,6 @@ const Contact = () => {
             email: email.value,
             message: message.value
         };
-        console.log(details.fname);
         let response = await fetch("http://localhost:5000/contact", {
             method: "POST",
             headers: {
@@ -35,7 +30,6 @@ const Contact = () => {
             },
             body: JSON.stringify(details),
           });
-        setStatus("Submit");
         let result = await response.json();
         alert.show(
             <div className={styles.alert}>

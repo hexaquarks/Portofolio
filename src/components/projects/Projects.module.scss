@@ -155,7 +155,6 @@
       content: "";
       width: 30px; height: 30px;
       cursor: pointer;
-      // background-color: inherit;
       left: 265px;
       animation: breath 2s linear infinite;
 
@@ -185,7 +184,6 @@
     & > span:after {
       position: absolute;
       content: '';
-      // top: 45px;
       right: 0;
       width: 0;
       height: 0;
@@ -457,13 +455,6 @@ a:hover {
     .container::before,
     .container::after {
         margin-top: -70px;
-    }
-  }
-  
-  @media only screen and (max-width: 800px) {
-    .container::before,
-    .container::after {
-      // margin-top: -30px;
     }
   }
 

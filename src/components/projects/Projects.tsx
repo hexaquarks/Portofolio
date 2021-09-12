@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Element } from 'react-scroll';
+
 import javaIcon from '../../assets/java_icon.png';
 import javaFXIcon from '../../assets/javaFX_icon.png';
 import sceneBuilderIcon from '../../assets/sceneBuilder_icon.png';
@@ -8,6 +9,7 @@ import javascriptIcon from '../../assets/javascript_icon_2.png';
 import htmlIcon from '../../assets/html_icon.png';
 import reactIcon from '../../assets/react_icon.png';
 import githubIcon from '../../assets/githubBlack.png';
+
 const styles = require('../projects/Projects.module.scss');
 
 const Projects = () => {
@@ -27,9 +29,6 @@ const Projects = () => {
         rightBottomOpacity: '50%',
         rightTopOpacity: '100%'
     });
-    // const [{leftAnimationTop, leftAnimationBottom}, setLeftAnimation] = useState({
-    //     leftAnimationTop: 
-    // })
 
     const cursorStyle = (direction, stack) => {
         if (direction === 'left') {
