@@ -10,6 +10,7 @@
     >a{ cursor: pointer; }
 
     .chainGif {
+      display:none;
       width: 100px;
       height:100px;
       right:35px;
@@ -30,6 +31,7 @@
     }
 
     &:after { 
+      display: none;
       background-size:cover;
       content: '';
       width: 100px;
@@ -170,7 +172,7 @@
 
 img[alt~="cover_picture"]{
     width: auto;
-    height: 100%;
+    height: 95%;
     margin-top: 1.5%;
     object-fit: contain;
 }

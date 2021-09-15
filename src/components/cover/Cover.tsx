@@ -33,10 +33,10 @@ const Cover = () => {
                         width="100" height="90" >
                     </img>
                 </div>
-                <a href="https://github.com/hexaquarks" target="_blank">
+                {/* <a href="https://github.com/hexaquarks" target="_blank">
                     <span>
                     </span>
-                </a>
+                </a> */}
                 <div className={styles.description} >
                     <ul>
                         {nameLetters.map((value, index) => (
