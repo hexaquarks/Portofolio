@@ -25,6 +25,12 @@
           background-position: 100%;
       
           transition: background-position 500ms ease;
+          img{
+              position: absolute; 
+              content: '';
+              top: 5px;
+              cursor: pointer;
+          }
       }
 
       & > h2:hover { background-position: 0 100%; }

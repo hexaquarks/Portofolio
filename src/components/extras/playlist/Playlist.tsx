@@ -3,6 +3,7 @@ import playIcon from '../../../assets/play.png';
 import pauseIcon from '../../../assets/pause.png';
 import prevIcon from '../../../assets/prev.png';
 import nextIcon from '../../../assets/next.png';
+import soundcloudLogo from '../../../assets/soundcloudLogo.png';
 import ProgressBar from "@ramonak/react-progress-bar";
 // import ProgressBar from './ProgressBarWrapper';
 const styles = require('./Playlist.module.scss');
@@ -149,6 +150,12 @@ const Playlist = () => {
     <div className={styles.container}>
       <h2>
         Music 
+        <a href="https://soundcloud.com/mihail-anghelici/sets/uplifting-trance" 
+            target="_blank">
+              <img src={soundcloudLogo} 
+             width="75"
+            style={{marginLeft : '10px'}}/>
+        </a>
       </h2> 
       <hr />
       <div className={styles.picture} >
