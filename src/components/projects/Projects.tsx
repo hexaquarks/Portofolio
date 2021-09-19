@@ -33,13 +33,13 @@ const Projects = () => {
     const cursorStyle = (direction, stack) => {
         if (direction === 'left') {
             if (stack === 'top') {
-                return (topPictureLeft === 'top') ? 'default' : 'pointer';
+                return (topPictureLeft === 'top') ? 'alias' : 'pointer';
             } else {
                 return (topPictureLeft === 'top') ? 'pointer' : 'default';
             }
         } else {
             if (stack === 'top') {
-                return (topPictureRight === 'top') ? 'default' : 'pointer';
+                return (topPictureRight === 'top') ? 'alias' : 'pointer';
             } else {
                 return (topPictureRight === 'top') ? 'pointer' : 'default';
             }
@@ -47,7 +47,6 @@ const Projects = () => {
     }
 
     const animationStyle = (direction, stack) => {
-        console.log("here")
         if (direction === 'left') {
             if (stack === 'top') {
                 return (topPictureLeft === 'top') ? 'opacityUp;' : 'opacityDown;';
@@ -62,10 +61,18 @@ const Projects = () => {
             }
         }
     }
+    const openInNewTab = (url) => {
+        const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+        if (newWindow) newWindow.opener = null
+      }
 
     const changePicture = (stack, direction) => {
 
         if (direction === 'left') {
+            if (stack === "top" && topPictureLeft==="top") {
+                openInNewTab('https://github.com/hexaquarks/Particle_Fun');
+            }
+
             if (stack === 'top' && topPictureLeft === 'bottom') {
                 setTopPictureLeft({
                     topPictureLeft: 'top',
@@ -85,6 +92,10 @@ const Projects = () => {
             }
         }
         if (direction === 'right') {
+            if (stack === "top" && topPictureRight==="top") {
+                openInNewTab('https://hexaquarks.github.io/Weather_App/#/');
+            }
+
             if (stack === 'top' && topPictureRight === 'bottom') {
                 setTopPictureRight({
                     topPictureRight: 'top',
