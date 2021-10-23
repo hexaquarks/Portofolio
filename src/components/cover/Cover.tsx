@@ -33,10 +33,6 @@ const Cover = () => {
                         width="100" height="90" >
                     </img>
                 </div>
-                {/* <a href="https://github.com/hexaquarks" target="_blank">
-                    <span>
-                    </span>
-                </a> */}
                 <div className={styles.description} >
                     <ul>
                         {nameLetters.map((value, index) => (
@@ -44,7 +40,7 @@ const Cover = () => {
                         ))}
                     </ul>
                     <h2>
-                        Prospecting software developper living in the Greater Montreal area. I am interested in most technologies across the back-end and front-end, and the respective practices associated with them.
+                        Software developper living in the Greater Montreal area. I am interested in most technologies across the back-end and front-end, and the respective practices associated with them.
                     </h2>
                 </div>
                 <img src={coverPicture} alt='cover_picture' />
