@@ -42,7 +42,7 @@ const DropDown = (props) => {
                 <img src={information[index].image} 
                     width={index === 2 ? '40' : '50'} 
                     height={index === 2 ? '40' : '50'} 
-                    style={{marginLeft: index === 2 ? '5px' : '0px', marginTop: index === 2 ? '2px' : '0px'}}
+                    style={{marginLeft: index === 2 ? '5px' : '0px', marginTop: index === 2 ? '20px' : '0px'}}
                     alt="mcgillIcon" />
             </div>
             <div >
