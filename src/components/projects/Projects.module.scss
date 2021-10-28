@@ -5,8 +5,7 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 190px;
-    padding-top: 50px;
-    padding-bottom: 125px;
+    padding: 50px 0px 125px 0px; 
     background-color: rgb(231, 231, 231);
     justify-content: center; 
     overflow: hidden;
@@ -145,9 +144,7 @@
       float:left;
       color: aliceblue;
       font-size: 18px;
-      margin-top: 70px;
-      margin-left: 20px;
-      margin-right: 10px;
+      margin: 70px 10px 0px 20px;
       font-family: 'Times New Roman';
     }
     & > h6 {
@@ -206,8 +203,7 @@
       color: aliceblue;
 
       & > span {
-        margin-top: 10px;
-        margin-left: 5px;
+        margin: 10px 0px 0px 5px; 
         font-weight: 600;
       }
     }
@@ -228,9 +224,7 @@
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
-    margin-left: 7%;
-    margin-right: 7%;
-    
+    margin: 0% 7% 0% 7%; 
     transform-style: preserve-3d;
 
     &:before {
@@ -350,8 +344,7 @@
       color: aliceblue;
 
       & > span { 
-        margin-top: 10px;
-        margin-left: 5px;
+        margin: 10px 0px 0px 5px; 
         font-weight: 600;
       }
     }
@@ -369,9 +362,7 @@
       float:left;
       color: aliceblue;
       font-size: 19px;
-      margin-top: 70px;
-      margin-left: 20px;
-      margin-right: 10px;
+      margin: 70px 10px 0px 20px;
       line-height: 24px;
       font-family: 'Times New Roman';
     }
