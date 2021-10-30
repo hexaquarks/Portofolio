@@ -5,8 +5,7 @@
     overflow: hidden;
     background-color: aliceblue;
     border-radius: 25px;
-    margin-top: 80px;
-    margin-left: 45px;
+    margin: 80px 0px 0px 45px;
     flex-wrap: wrap;
     flex-direction: column;
 
@@ -51,11 +50,8 @@
     }
     .controls {
         width: 225px;
-        // margin-top: -8px;
-        // margin-left: 50px;
         display: block;
         justify-content: center;
-        // background-color: inherit;
 
         .actions{
             display : flex;
@@ -64,7 +60,6 @@
             height: 55px;
             background-color: inherit;
             margin-left: 5px;
-            // border: 3px solid #100c08;
             border-radius: 0px;
 
             .prev{
@@ -103,36 +98,18 @@
         }
         p {
             width: 200px;
-            // height: 20px;
-            // overflow:hidden;
-            // text-overflow: clip;
             white-space: nowrap;
             overflow:hidden;
             margin: 10px 10px 0px 10px;
             font-size: 16px;
             color: black;
-            
-            // &::-webkit-scrollbar {
-            //     visibility: visible !important;
-            //     height: 15px !important ;
-            //     color: black !important;
-            //   }
+        
         }
         .time{
-            /* Add another calss for the slider with SASS appropriate*/ 
             margin: 0px 5px 25px 13px;
             height: 20px;
             width: 195px;
-            // background-color: red;
         }
 
     }
 }
-
-// @media only screen and (max-width: 930px){ 
-//     .container { 
-//         width: 100%;
-//         .picture {width: 30%;}
-//         .controls {width: 70%;}
-//     }
-// }
