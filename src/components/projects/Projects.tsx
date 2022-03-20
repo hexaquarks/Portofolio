@@ -14,6 +14,11 @@ const styles = require('../projects/Projects.module.scss');
 
 const Projects = () => {
 
+    const projectLinks = [
+        'https://github.com/hexaquarks/Particle_Fun',
+        'https://hexaquarks.github.io/Weather_App/#/'
+    ]
+
     const [{ topPictureLeft, leftTopStyle, leftBottomStyle, leftBottomOpacity, leftTopOpacity }, setTopPictureLeft] = useState({
         topPictureLeft: 'top',
         leftTopStyle: 'preserve-3d',
@@ -49,13 +54,13 @@ const Projects = () => {
       }
 
     const changePicture = (stack, direction) => {
-
-        if (direction === 'left') {
-            if (stack === "top" && topPictureLeft==="top") {
-                openInNewTab('https://github.com/hexaquarks/Particle_Fun');
-            }
-
-            if (stack === 'top' && topPictureLeft === 'bottom') {
+        let picture = (direction === 'left') ? topPictureLeft : topPictureRight
+       
+        if (stack === "top" && picture === "top") {
+            openInNewTab(projectLinks[(direction === 'left')? 0 : 1])
+        }
+        if (stack === 'top' && picture === 'bottom') {
+            if (direction === 'left') {
                 setTopPictureLeft({
                     topPictureLeft: 'top',
                     leftTopStyle: 'preserve-3d',
@@ -63,22 +68,7 @@ const Projects = () => {
                     leftTopOpacity: '100%',
                     leftBottomOpacity: '50%'
                 });
-            } else if (stack === 'bottom' && topPictureLeft === 'top') {
-                setTopPictureLeft({
-                    topPictureLeft: 'bottom',
-                    leftTopStyle: 'none',
-                    leftBottomStyle: 'translateZ(0px)',
-                    leftBottomOpacity: '100%',
-                    leftTopOpacity: '50%'
-                });
-            }
-        }
-        if (direction === 'right') {
-            if (stack === "top" && topPictureRight==="top") {
-                openInNewTab('https://hexaquarks.github.io/Weather_App/#/');
-            }
-
-            if (stack === 'top' && topPictureRight === 'bottom') {
+            } else {
                 setTopPictureRight({
                     topPictureRight: 'top',
                     rightTopStyle: 'preserve-3d',
@@ -86,7 +76,17 @@ const Projects = () => {
                     rightTopOpacity: '100%',
                     rightBottomOpacity: '50%'
                 });
-            } else if (stack === 'bottom' && topPictureRight === 'top') {
+            }
+        } else if (stack === 'bottom' && picture === 'top') {
+            if (direction === 'left') {
+                setTopPictureLeft({
+                    topPictureLeft: 'bottom',
+                    leftTopStyle: 'none',
+                    leftBottomStyle: 'translateZ(0px)',
+                    leftBottomOpacity: '100%',
+                    leftTopOpacity: '50%'
+                });
+            } else {
                 setTopPictureRight({
                     topPictureRight: 'bottom',
                     rightTopStyle: 'none',
@@ -96,7 +96,6 @@ const Projects = () => {
                 });
             }
         }
-
     }
     return (
         <Element id="projectsDiv" name="projectsDiv">
