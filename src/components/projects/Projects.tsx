@@ -30,37 +30,19 @@ const Projects = () => {
         rightTopOpacity: '100%'
     });
 
-    const cursorStyle = (direction, stack) => {
-        if (direction === 'left') {
-            if (stack === 'top') {
-                return (topPictureLeft === 'top') ? 'alias' : 'pointer';
-            } else {
-                return (topPictureLeft === 'top') ? 'pointer' : 'default';
-            }
+    const setStyle = (direction, stack, type) => {
+        let option = (type === 'cursor')
+            ? { first : 'alias' , second : 'pointer', third: 'default'}
+            : { first : 'opacityUp' , second : 'opacityDown', third: 'opacityDown' }
+        
+        let picture = (direction === 'left') ? topPictureLeft : topPictureRight
+        if (stack === 'top') {
+            return (picture === 'top') ? option.first : option.second;
         } else {
-            if (stack === 'top') {
-                return (topPictureRight === 'top') ? 'alias' : 'pointer';
-            } else {
-                return (topPictureRight === 'top') ? 'pointer' : 'default';
-            }
+            return (picture === 'top') ? option.second : option.third;
         }
     }
 
-    const animationStyle = (direction, stack) => {
-        if (direction === 'left') {
-            if (stack === 'top') {
-                return (topPictureLeft === 'top') ? 'opacityUp;' : 'opacityDown;';
-            } else {
-                return (topPictureLeft === 'top') ? 'opacityDown;' : 'opacityUp;';
-            }
-        } else {
-            if (stack === 'top') {
-                return (topPictureRight === 'top') ? 'opacityUp' : 'opacityDown';
-            } else {
-                return (topPictureRight === 'top') ? 'opacityDown' : 'opacityUp';
-            }
-        }
-    }
     const openInNewTab = (url) => {
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
         if (newWindow) newWindow.opener = null
@@ -124,13 +106,13 @@ const Projects = () => {
 
                     <div className={styles.firstProjectPicture}
                         onClick={() => { changePicture('top', 'left') }}
-                        style={{ opacity: leftTopOpacity, cursor: cursorStyle('left', 'top') }}>
+                        style={{ opacity: leftTopOpacity, cursor: setStyle('left', 'top', 'cursor') }}>
                     </div>
                     <div className={styles.firstProjectDescription}
                         onClick={() => { changePicture('bottom', 'left') }}
                         style={{
                             transform: leftBottomStyle,
-                            cursor: cursorStyle('left', 'bottom'),
+                            cursor: setStyle('left', 'bottom', 'cursor'),
                             opacity: leftBottomOpacity
                         }}>
                         <span></span>
@@ -161,12 +143,12 @@ const Projects = () => {
                     style={{ transformStyle: 'preserve-3d' }}>
                     <div className={styles.secondProjectPicture}
                         onClick={() => { changePicture('top', 'right') }}
-                        style={{ opacity: rightTopOpacity, cursor: cursorStyle('right', 'top') }} />
+                        style={{ opacity: rightTopOpacity, cursor: setStyle('right', 'top', 'cursor') }} />
                     <div className={styles.secondProjectDescription}
                         onClick={() => { changePicture('bottom', 'right') }}
                         style={{
                             transform: rightBottomStyle,
-                            cursor: cursorStyle('right', 'bottom'),
+                            cursor: setStyle('right', 'bottom', 'cursor'),
                             opacity: rightBottomOpacity
                         }} >
 
