@@ -4,26 +4,22 @@ import styles from './LatexFolders.module.scss';
 import downArrow from '../../../assets/down_arrow.png';
 import openFolder from '../../../assets/folderOpen.png';
 import closedFolder from '../../../assets/folderClosed.png';
-import note from '../../../assets/notes.png';
-import book from '../../../assets/bookIcon.png';
-import code from '../../../assets/code.png';
+import noteIcon from '../../../assets/notes.png';
+import bookIcon from '../../../assets/bookIcon.png';
+import codeIcon from '../../../assets/code.png';
 
 function CourseFolder(props) {
   const { value, key, xPos, index,  setEnableArrows} = props;
 
-  const [image, setImage] = useState(closedFolder);
-  const [showDescriptionChild, setShowDescriptionChild] = useState(false);
+  const [image, setImage] = useState<string>(closedFolder);
+  const [showDescriptionChild, setShowDescriptionChild] = useState<boolean>(false);
 
-  const handleMouseOver = () => {
-    setImage(openFolder);
-  };
+  const handleMouseOver = () => { setImage(openFolder); };
 
-  const handleMouseLeave = () => {
-    setImage(closedFolder);
-  };
+  const handleMouseLeave = () => { setImage(closedFolder); };
 
 
-  const numberOfElements = [
+  const courses = [
     { name: 'MATH314', files: ["Notes", "Ass4", "code"] },
     { name: 'PHYS350', files: ["Ass1", "Ass2", "Ass3", "Ass4", "Ass5", "Ass6", "Ass7", "code"] },
     { name: 'PHYS356', files: ["Ass1", "Ass2", "Ass3", "Ass4", "Ass5", "Ass6", "Ass7", "code"] },
@@ -37,80 +33,81 @@ function CourseFolder(props) {
 
   return (
     <div className={styles.folderContainer}>
-
-      <div className={`${styles.decriptionPanel}`} key={xPos} style={ {left: -xPos ,top: showDescriptionChild ? `0px` : `-160px`} }>
+      <div className={`${styles.decriptionPanel}`} 
+           key={xPos} 
+           style={ {left: -xPos ,top: showDescriptionChild ? `0px` : `-160px`} }>
         <div className={styles.imageContainer}>
           <span >
             {value.name}
           </span>
           <div className={styles.image}>
           <div>
-              <img src={downArrow} width="30" onClick={() => {
+              <img src={downArrow} width="30" onClick={ () => {
                 setShowDescriptionChild(!showDescriptionChild); 
-                setEnableArrows(false)}}/>
+                setEnableArrows(false)} }
+              />
             </div>
           </div>
         </div>
         <div className={styles.description}>
           <div className={styles.filesGrid} >
-            {buildButtons(numberOfElements, index)}
+            {buildButtons(courses, index)}
           </div>
         </div>
       </div>
 
       <span >{value.id}</span>
       <div key={index}
-        onMouseEnter={() => {
-          handleMouseOver();
-        }}
-        onMouseLeave={() => {
-          handleMouseLeave();
-        }}
+        onMouseEnter={() => { handleMouseOver(); }}
+        onMouseLeave={() => { handleMouseLeave(); }}
         onClick={() => {
           setShowDescriptionChild(!showDescriptionChild);
           setEnableArrows(true);
         }}
       >
-        <img className={-xPos / 130 !== index - 1 ? `${styles.shrinkImage}` : ''} src={image} width="130" alt="alternative" />
+        <img className={-xPos / 130 !== index - 1 ? `${styles.shrinkImage}` : ''} 
+             src={image} width="130" alt="alternative" 
+        />
       </div>
     </div>
   );
 }
 
-const buildButtons = (numberOfElements, index) => {
-  var temp: any = [];
+const buildButtons = (courses, index) => {
+  var buttons: any = [];
   const globalLink = "https://github.com/hexaquarks/Latex_Files/"; //link header
-  const folder = "tree/main/"; //for folder
-  const notes = "blob/main/"; //for any file
-
-  for (var i = 0; i < numberOfElements[index].files.length; i++) {
-
-    let firstLetter = numberOfElements[index].files[i].charAt(0);
-    let refLink = globalLink;
-    let imgLink = '';
+  const folderPath = "tree/main/"; //for folder
+  const notesPath = "blob/main/"; //for any file
+  
+  for (var i = 0; i < courses[index].files.length; i++) {
+    const course = courses[index];
+    
+    let firstLetter = course.files[i].charAt(0);
+    let link = globalLink;
+    let iconPath;
     let text = '';
 
     firstLetter === 'c'
-      ? refLink += folder + numberOfElements[index].name + '/' + numberOfElements[index].name + '_Tex'
-      : refLink += notes + numberOfElements[index].name + '/' + numberOfElements[index].name + '_' + numberOfElements[index].files[i] + '.pdf';
+      ? link += folderPath + course.name + '/' + course.name + '_Tex'
+      : link += notesPath + course.name + '/' + course.name + '_' + course.files[i] + '.pdf';
 
     if (firstLetter === 'N') {
-      imgLink = book;
+      iconPath = bookIcon;
       text = 'Class Notes' + '\xa0\xa0\xa0\xa0';
     } else if (firstLetter === 'A' || firstLetter === 'F') {
-      imgLink = note;
+      iconPath = noteIcon;
       firstLetter === 'A'
-        ? text = 'Assignment' + ' ' + numberOfElements[index].files[i].substr(numberOfElements[index].files[i].length - 1)
+        ? text = 'Assignment' + ' ' + course.files[i].substr(course.files[i].length - 1)
         : text = `Final Exam` + '\xa0\xa0\xa0\xa0\xa0\xa0';
     } else {
-      imgLink = code;
+      iconPath = codeIcon;
       text = `Code Repo` + '\xa0\xa0\xa0\xa0\xa0\xa0';
     }
 
-    temp.push(
-      <a href={refLink} target="_blank">
+    buttons.push(
+      <a href={link} target="_blank">
         <button>
-          <img src={imgLink} height="12" />
+          <img src={iconPath} height="12" />
           <span>
             {text}
           </span>
@@ -119,7 +116,7 @@ const buildButtons = (numberOfElements, index) => {
     );
   }
 
-  return temp;
+  return buttons;
 }
 
 export default CourseFolder;

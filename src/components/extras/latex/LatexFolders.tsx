@@ -3,27 +3,30 @@ import CourseFolder from "./CourseFolder";
 
 import styles from './LatexFolders.module.scss';
 
+const LEFT_MAX = 780;
+const SHIFT = 130;
+
 const LatexFolders = () => {
 
     const [xPos, setXPos] = useState(0);
     const [enableArrows, setEnableArrows] = useState(false);
 
-    const leftMax = 780;
 
     const onClick = (direction) => {
         if(enableArrows) return;
 
-        (direction === 'left')
-            ? xPos === -leftMax ? setXPos(xPos) : setXPos(xPos - 130)
-            : xPos === 0 ? setXPos(xPos) : setXPos(xPos + 130);
+        setXPos((direction === 'left') 
+            ? xPos === -LEFT_MAX ? xPos : xPos - SHIFT
+            : xPos === 0 ? xPos : xPos + SHIFT
+        );
     }
 
     const manageOpacity = (direction, xPos) => {
         if(enableArrows) return 25;
         
         if (xPos === 0) return direction === 'left' ? 25 : 100;
-        else if (xPos < 0 && xPos > -leftMax) return 100;
-        else if (xPos === -leftMax) return direction === 'left' ? 100 : 25;
+        else if (xPos < 0 && xPos > -LEFT_MAX) return 100;
+        else if (xPos === -LEFT_MAX) return direction === 'left' ? 100 : 25;
     }
 
     const courseNames = [
@@ -52,13 +55,16 @@ const LatexFolders = () => {
             <div className={`${styles.slider}`}>
                 <div className={styles.container} style={{ transform: `translateX(${xPos}px)` }}>
                     {courseNames.map((value, index) => (
-                        <CourseFolder value={value} key={index} xPos={xPos} index={index} setEnableArrows={setEnableArrows}/>
+                        <CourseFolder value={value} key={index} 
+                                      xPos={xPos} index={index} 
+                                      setEnableArrows={setEnableArrows}
+                        />
                     ))}
                 </div>
             </div>
             <button className={styles.right_arrow}
-                onClick={() => onClick('left')}
-                style={{ opacity: `${manageOpacity('right', xPos)}%` }}>
+                    onClick={() => onClick('left')}
+                    style={{ opacity: `${manageOpacity('right', xPos)}%` }}>
             </button>
         </div>
     )
