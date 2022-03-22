@@ -13,13 +13,12 @@ import githubIcon from '../../assets/githubBlack.png';
 const styles = require('../projects/Projects.module.scss');
 
 const Projects = () => {
-
     const projectLinks = [
         'https://github.com/hexaquarks/Particle_Fun',
         'https://hexaquarks.github.io/Weather_App/#/'
     ]
-
-    const [{ topPictureLeft, leftTopStyle, leftBottomStyle, leftBottomOpacity, leftTopOpacity }, setTopPictureLeft] = useState({
+    
+    const [{ topPictureLeft, leftTopStyle, leftBottomStyle, leftBottomOpacity, leftTopOpacity }, setTopPictureLeft] = useState<any | null>({
         topPictureLeft: 'top',
         leftTopStyle: 'preserve-3d',
         leftBottomStyle: 'translateZ(-10px)',
@@ -27,7 +26,7 @@ const Projects = () => {
         leftBottomOpacity: '50%'
 
     });
-    const [{ topPictureRight, rightTopStyle, rightBottomStyle, rightBottomOpacity, rightTopOpacity }, setTopPictureRight] = useState({
+    const [{ topPictureRight, rightTopStyle, rightBottomStyle, rightBottomOpacity, rightTopOpacity }, setTopPictureRight] = useState<any | null>({
         topPictureRight: 'top',
         rightTopStyle: 'preserve-3d',
         rightBottomStyle: 'translateZ(-10px)',
@@ -59,41 +58,37 @@ const Projects = () => {
         if (stack === "top" && picture === "top") {
             openInNewTab(projectLinks[(direction === 'left')? 0 : 1])
         }
+        const leftParams = {
+            topPictureLeft: ['top', 'bottom'],
+            leftTopStyle: ['preserve-3d', 'none'],
+            leftBottomStyle: ['translateZ(-10px)', 'translateZ(0px)'],
+            leftTopOpacity: ['100%', '50%'],
+            leftBottomOpacity: ['50%', '100%']
+        }
+        const rightParams = {
+            topPictureRight: ['top', 'bottom'],
+            rightTopStyle: ['preserve-3d', 'none'],
+            rightBottomStyle: ['translateZ(-10px)', 'translateZ(0px)'],
+            rightTopOpacity: ['100%', '50%'],
+            rightBottomOpacity: ['50%', '100%']
+        }
+        let obj = {};
+
         if (stack === 'top' && picture === 'bottom') {
             if (direction === 'left') {
-                setTopPictureLeft({
-                    topPictureLeft: 'top',
-                    leftTopStyle: 'preserve-3d',
-                    leftBottomStyle: 'translateZ(-10px)',
-                    leftTopOpacity: '100%',
-                    leftBottomOpacity: '50%'
-                });
+                Object.keys(leftParams).forEach(k=> obj[k] = leftParams[k][0]);
+                setTopPictureLeft(obj);
             } else {
-                setTopPictureRight({
-                    topPictureRight: 'top',
-                    rightTopStyle: 'preserve-3d',
-                    rightBottomStyle: 'translateZ(-10px)',
-                    rightTopOpacity: '100%',
-                    rightBottomOpacity: '50%'
-                });
+                Object.keys(rightParams).forEach(k=> obj[k] = rightParams[k][0]);
+                setTopPictureRight(obj);
             }
         } else if (stack === 'bottom' && picture === 'top') {
             if (direction === 'left') {
-                setTopPictureLeft({
-                    topPictureLeft: 'bottom',
-                    leftTopStyle: 'none',
-                    leftBottomStyle: 'translateZ(0px)',
-                    leftBottomOpacity: '100%',
-                    leftTopOpacity: '50%'
-                });
+                Object.keys(leftParams).forEach(k=> obj[k] = leftParams[k][1]);
+                setTopPictureLeft(obj);
             } else {
-                setTopPictureRight({
-                    topPictureRight: 'bottom',
-                    rightTopStyle: 'none',
-                    rightBottomStyle: 'translateZ(0px)',
-                    rightBottomOpacity: '100%',
-                    rightTopOpacity: '50%'
-                });
+                Object.keys(rightParams).forEach(k=> obj[k] = rightParams[k][1]);
+                setTopPictureRight(obj);
             }
         }
     }
