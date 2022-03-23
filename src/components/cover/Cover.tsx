@@ -34,11 +34,14 @@ const Cover = () => {
                     </img>
                 </div>
                 <div className={styles.description} >
-                    <ul>
-                        {nameLetters.map((value, index) => (
-                            <TitleLetter name={value} index={index} />
-                        ))}
-                    </ul>
+                    <div>
+                        <ul>
+                            {nameLetters.map((value, index) => (
+                                <TitleLetter name={value} index={index} />
+                            ))}
+                        </ul>
+
+                    </div>
                     <h2>
                         Software developper living in the Greater Montreal area. I am interested in most technologies across the back-end and front-end, and the respective practices associated with them.
                     </h2>

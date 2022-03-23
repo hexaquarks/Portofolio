@@ -98,7 +98,10 @@ const About = () => {
                     </h2>
                     <hr />
                     <p>
-                        I am currently a full-time student majoring in Physics and Computer Science after doing 2 years of Honours Physics. I practice coding daily and have experience with: Java, JavaFX, Python, Javascript, HTML5, CSS and ReactJS.
+                        I am currently a full-time student majoring in Physics 
+                        and Computer Science after doing 2 years of Honours Physics. 
+                        I practice coding daily and have experience with:
+                         Java, C++, Python, Javascript, Typescript, React, and more.
                     </p>
                 </div>
                 <div className={styles.middleParagraph}>
@@ -107,7 +110,10 @@ const About = () => {
                     </h2>
                     <hr />
                     <p>
-                        I am passionate developper with a strong interest in the natural sciences (physics, natural philosophy) ,and mathematics. In my free time I like to play chess, dabble with LaTeX, watch Netflix, and take baths.
+                        I am passionate developper with a strong interest in the 
+                        natural sciences (physics, natural philosophy) ,and mathematics.
+                         In my free time I like to develop personal projects, dabble with LaTeX,
+                          watch Netflix, and take baths.
                     </p>
                 </div>
                 <div className={styles.rightParagraph}>
@@ -118,7 +124,8 @@ const About = () => {
                     <p>
                         {information.map((value, index) => (
                             <DropDown information={information} index={index}
-                                onClick={() => setSelected(s => s === value ? null : value)} selected={selected === value} key={value} />
+                                onClick={() => setSelected(s => s === value ? null : value)} 
+                                selected={selected === value} key={value} />
                         ))}
                     </p>
                 </div>
